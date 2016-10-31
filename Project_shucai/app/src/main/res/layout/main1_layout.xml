@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/about_us"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="关于我们"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/image_setting"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="图片设置"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/name_setting"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="修改昵称"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/signature_setting"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="修改签名"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/new_follows"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="新增联系人"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/invite_friend"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="邀请好友"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/advice"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="意见反馈"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>

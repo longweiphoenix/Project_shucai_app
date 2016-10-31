@@ -35,4 +35,40 @@
         <item>支持我们</item>
         <item>退出账号</item>
     </string-array>
+
+    <string name="tijiao">提交</string>
+    <string name="person_name">YI家</string>
+    <string name="person_signature">爱家，爱生活</string>
+    <string name="followers_phone">联系人电话</string>
+    <string name="folloewers">联系人</string>
+    <string name="cellphone">手机</string>
+    <string name="save">保存</string>
+    <string name="invite_friend">邀请好友加入</string>
+    <string name="promotion_code">优惠码</string>
+    <string name="promotion_number">FAILD17</string>
+    <string name="copy_to_friend">长按复制分享给好友</string>
+    <string name="share_to_friend">分享优惠码给好友</string>
+
+    <string name="weixin_friend">微信好友</string>
+    <string name="friend_quan">朋友圈</string>
+    <string name="weibo">微博</string>
+    <string name="your_advice">写下您的宝贵建议和意见</string>
+    <string name="contact_way">联系方式(邮箱/手机号)</string>
+
+    <string name="healthy_menu">健康菜谱</string>
+    <string name="menu">菜谱</string>
+    <string name="check_the_details">查看详情</string>
+    <string name="recipe">RECIPE</string>
+    <string name="menu_one">板栗炖排骨</string>
+    <string name="menu_two">黄金虾仁蛋炒饭</string>
+    <string name="menu_three">群英荟萃炒饭</string>
+    <string name="price_one">食材费用：¥25.00</string>
+    <string name="price_two">食材费用：¥20.00</string>
+    <string name="price_three">食材费用：¥8.00</string>
+    <string name="material">准备食材：板栗50g 排骨500g</string>
+    <string name="material2">准备食材：虾仁 鸡蛋 西兰花 圣女果</string>
+    <string name="material3">准备食材：白菜 红枣 黄椒 火腿片</string>
+    <string name="home">首页</string>
+    <string name="shop">铺子</string>\
+    <string name="me">我</string>
 </resources>

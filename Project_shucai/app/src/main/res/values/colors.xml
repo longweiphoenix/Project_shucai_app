@@ -10,4 +10,12 @@
     <color name="camera_bg">#698d45</color><!--选择照相机的背景颜色-->
     <color name="head_cancel">#585858</color><!--取消更换头像-->
     <color name="lines">#8b8b8b</color>
+
+    <color name="fontblack">#505050</color>
+    <color name="fontgreen">#698D45</color>
+    <color name="linecolor">#CDCDCD</color>
+    <color name="deepgrey">#F7F8F9</color>
+    <color name="fontblack1">#323232</color>
+    <color name="fontblack2">#787878</color>
+    <color name="background">#F1F1F9</color>
 </resources>

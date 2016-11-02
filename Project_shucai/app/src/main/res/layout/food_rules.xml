@@ -15,7 +15,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="我的粮票"
+            android:text="粮票使用规则"
             android:textColor="#323232"
             android:textSize="18dp"
             android:gravity="center"/>

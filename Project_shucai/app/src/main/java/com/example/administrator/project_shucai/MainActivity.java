@@ -10,6 +10,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.organic_life);
+        setContentView(R.layout.goods_details_evaluate);
     }
 }

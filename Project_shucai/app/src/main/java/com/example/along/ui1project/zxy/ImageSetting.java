@@ -12,6 +12,6 @@ public class ImageSetting extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.me_three_level_person_setting_imagelayout);
+        setContentView(R.layout.activity_image_setting);
     }
 }

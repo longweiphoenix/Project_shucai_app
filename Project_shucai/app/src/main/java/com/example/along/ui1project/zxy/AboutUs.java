@@ -12,6 +12,6 @@ public class AboutUs extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.me_three_level_person_setting_about_us_layout);
+        setContentView(R.layout.activity_aboutus);
     }
 }

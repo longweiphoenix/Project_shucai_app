@@ -12,6 +12,6 @@ public class HealthyMenuOne extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.healthy_menu_one_layout);
+        setContentView(R.layout.activity_menu_one);
     }
 }

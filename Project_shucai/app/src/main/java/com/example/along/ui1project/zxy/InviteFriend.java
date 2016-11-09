@@ -12,6 +12,6 @@ public class InviteFriend extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.invite_friend_to_join_layout);
+        setContentView(R.layout.activity_invite_friend);
     }
 }

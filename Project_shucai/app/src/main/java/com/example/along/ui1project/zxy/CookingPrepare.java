@@ -12,6 +12,6 @@ public class CookingPrepare extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cooking_prepare_layout);
+        setContentView(R.layout.activity_cook_prepare);
     }
 }

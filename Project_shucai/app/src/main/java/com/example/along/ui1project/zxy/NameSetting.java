@@ -12,6 +12,6 @@ public class NameSetting extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mew_three_level_person_setting_name_layout);
+        setContentView(R.layout.activity_name_setting);
     }
 }

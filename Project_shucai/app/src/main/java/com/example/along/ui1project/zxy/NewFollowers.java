@@ -12,6 +12,6 @@ public class NewFollowers extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_followers_layout);
+        setContentView(R.layout.activity_add_followers);
     }
 }

@@ -12,6 +12,6 @@ public class SignatureSetting extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.me_three_level_person_setting_signature_layout);
+        setContentView(R.layout.activity_signature_setting);
     }
 }

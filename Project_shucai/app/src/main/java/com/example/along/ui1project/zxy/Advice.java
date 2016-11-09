@@ -12,6 +12,6 @@ public class Advice extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.advice_layout);
+        setContentView(R.layout.activity_advice);
     }
 }

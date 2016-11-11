@@ -9,16 +9,20 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-
-
-        <activity android:name="com.example.administrator.project_shucai.MainActivity">
-
+        <activity android:name="com.example.first.project.CreateAccountActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        //ljm
+        <activity android:name="com.example.first.project.LoginPageActivity"/>
+        <activity android:name="com.example.first.project.OrderToPageActivity"/>
+        <activity android:name="com.example.first.project.YiHomeActivity"/>
+        <activity android:name="com.example.first.project.FoodRulesActivity"/>
+        <activity android:name="com.example.first.project.MyFoodActivity"/>
     </application>
 
 </manifest>

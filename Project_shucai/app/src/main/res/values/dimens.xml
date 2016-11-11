@@ -20,4 +20,12 @@
     <dimen name="large_head_margin">40dp</dimen>
     <dimen name="home_list_view_height">60dp</dimen>
     <dimen name="watch_margin_fans">70dp</dimen>
+    <!--11.11newDimen-->
+    <dimen name="shop_sort_margin_list">10dp</dimen>
+    <dimen name="back_arrow_height18dp">18dp</dimen>
+    <dimen name="info_title_text18sp">18sp</dimen>
+    <dimen name="large_head_margin40dp">40dp</dimen>
+    <dimen name="shop_sort_out80dp">80dp</dimen>
+    <dimen name="shop_goods_show_img_width104dp">104dp</dimen>
+    <dimen name="shop_goods_show_img_height84dp">84dp</dimen>
 </resources>

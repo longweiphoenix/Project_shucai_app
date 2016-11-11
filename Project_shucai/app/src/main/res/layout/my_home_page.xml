@@ -43,7 +43,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="@dimen/info_margin"
                 android:layout_marginRight="@dimen/info_margin"
-                android:background="@mipmap/shopping_car" />
+                android:background="@mipmap/shopping_car_black" />
         </RelativeLayout>
 
         <ImageView

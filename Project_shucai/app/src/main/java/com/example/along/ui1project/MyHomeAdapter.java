@@ -18,7 +18,7 @@ public class MyHomeAdapter extends BaseAdapter {
     Context context;
     List<HashMap<String, Object>> list;
     LayoutInflater layoutInflater;
-
+    //自定义的适配器
     public MyHomeAdapter(Context context, List<HashMap<String, Object>> list) {
         this.list = list;
         this.context = context;
@@ -56,6 +56,7 @@ public class MyHomeAdapter extends BaseAdapter {
         viewHolder.textView.setText(map.get("list_text").toString());
         return convertView;
     }
+    //复用机制
     class ViewHolder{
         ImageView imageView;
         TextView textView;

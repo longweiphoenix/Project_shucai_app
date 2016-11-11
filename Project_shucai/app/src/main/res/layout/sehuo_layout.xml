@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/tobu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/arow"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:id="@+id/jiah"
+            android:layout_width="17dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/jiato"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/kbelove"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toLeftOf="@+id/jiah"
+            android:layout_marginRight="20dp"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#323232"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="冬日上火，三招解决"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textColor="#323232"/>
+    <ImageView
+        android:layout_width="336dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/shuo"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"/>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

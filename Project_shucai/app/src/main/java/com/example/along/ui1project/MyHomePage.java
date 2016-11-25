@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,6 +30,13 @@ public class MyHomePage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_home_page);
         myList = (ListView) findViewById(R.id.home_list_view);
+
+        myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
         layoutInflater = LayoutInflater.from(this);
         setListView();
     }

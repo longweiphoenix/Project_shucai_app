@@ -9,7 +9,7 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name="com.example.first.project.CreateAccountActivity">
+        <activity android:name="com.example.first.project.GoodsDetailsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,6 +23,7 @@
         <activity android:name="com.example.first.project.YiHomeActivity"/>
         <activity android:name="com.example.first.project.FoodRulesActivity"/>
         <activity android:name="com.example.first.project.MyFoodActivity"/>
+        <activity android:name="com.example.first.project.OrganicLifeActivity"/>
     </application>
 
 </manifest>

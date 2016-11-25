@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/img"
+        android:src="@mipmap/native_eggs"
+        android:scaleType="centerCrop"
+        android:layout_margin="@dimen/home_text_padding"
+        android:layout_width="@dimen/shop_goods_show_img_width104dp"
+        android:layout_height="@dimen/shop_goods_show_img_height84dp" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/vegetable_title"
+            android:text="农家土鸡蛋"
+            android:layout_marginTop="15dp"
+            android:textSize="@dimen/content_font_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vegetable_subtitle"
+            android:layout_marginTop="4dp"
+            android:text="有机纯天然，不添加任何化学试剂"
+            android:maxLines="1"
+            android:textSize="9sp"
+            android:textColor="@color/vegetable_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+            <TextView
+                android:id="@+id/price"
+                android:text="￥16.90"
+                android:textColor="@color/selected_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/unit"
+                android:text="/单位"
+                android:textSize="@dimen/content_font_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/vegetable_subtitle"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

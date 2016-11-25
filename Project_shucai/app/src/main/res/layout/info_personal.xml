@@ -13,7 +13,7 @@
         <TextView
             android:id="@+id/info_back_arrow"
             android:layout_width="@dimen/back_arrow_width"
-            android:layout_height="@dimen/back_arrow_height"
+            android:layout_height="@dimen/back_arrow_height18dp"
             android:layout_centerVertical="true"
             android:layout_margin="@dimen/info_margin"
             android:background="@mipmap/arrow" />
@@ -25,7 +25,7 @@
             android:layout_centerInParent="true"
             android:text="@string/personal_info_title"
             android:textColor="@color/title_font_color"
-            android:textSize="@dimen/info_title_text" />
+            android:textSize="@dimen/info_title_text18sp" />
     </RelativeLayout>
 
     <View
@@ -156,7 +156,7 @@
         android:id="@+id/sexual"
         android:layout_width="match_parent"
         android:layout_height="@dimen/info_heights"
-        android:layout_marginBottom="@dimen/large_head_margin"
+        android:layout_marginBottom="@dimen/large_head_margin40dp"
         android:layout_marginTop="@dimen/view_margin_line"
         android:background="@color/white"
         android:orientation="horizontal"

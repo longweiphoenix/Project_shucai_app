@@ -2,11 +2,9 @@ package com.example.along.ui1project;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.along.ui1project.fragment.MeAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,7 +25,7 @@ public class PersonalSetting extends Activity {
 
         list=new ArrayList<HashMap<String, Object>>();
         getItemData();
-        personalSettingListView.setAdapter(new MyHomeAdapter(PersonalSetting.this,list));
+        personalSettingListView.setAdapter(new MeAdapter(PersonalSetting.this,list));
     }
 
     public void getItemData(){

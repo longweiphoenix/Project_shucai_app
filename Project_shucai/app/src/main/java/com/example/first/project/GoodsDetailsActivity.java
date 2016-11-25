@@ -3,6 +3,7 @@ package com.example.first.project;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.along.ui1project.MyHomePage;
 import com.example.along.ui1project.R;
 import com.example.first.project.fragment.GoodsDetailsEvaluateFragment;
 import com.example.first.project.fragment.GoodsDetailsFragment;
@@ -52,6 +54,7 @@ public class GoodsDetailsActivity extends Activity {
         fragmentTransaction.commit();
     }
 
+    Intent intent;
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -66,6 +69,14 @@ public class GoodsDetailsActivity extends Activity {
                     left.setVisibility(View.INVISIBLE);
                     right.setVisibility(View.VISIBLE);
 
+                    break;
+                case R.id.arow:
+                    intent = new Intent(GoodsDetailsActivity.this, MyHomePage.class);
+                    startActivity(intent);
+                    break;
+                case R.id.service:
+                    intent = new Intent(); //跳转到客服
+                    startActivity(intent);
                     break;
             }
 

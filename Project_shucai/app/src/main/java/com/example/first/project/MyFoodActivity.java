@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.along.ui1project.MyHomePage;
 import com.example.along.ui1project.R;
 
 /**
@@ -29,12 +30,17 @@ public class MyFoodActivity extends Activity {
         rules.setOnClickListener(onClickListener);
 
     }
+    Intent intent;
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.rules:
-                    Intent intent = new Intent(MyFoodActivity.this,FoodRulesActivity.class);
+                    intent = new Intent(MyFoodActivity.this,FoodRulesActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.arow:
+                    intent = new Intent(MyFoodActivity.this, MyHomePage.class);
                     startActivity(intent);
                     break;
             }

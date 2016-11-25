@@ -9,7 +9,8 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name="com.example.first.project.GoodsDetailsActivity">
+        <activity android:name="com.example.first.project.CreateAccountActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,6 +19,8 @@
         </activity>
 
         //ljm
+        <activity android:name="com.example.first.project.GoodsDetailsActivity"
+            android:launchMode="singleTask"/>
         <activity android:name="com.example.first.project.LoginPageActivity"/>
         <activity android:name="com.example.first.project.OrderToPageActivity"/>
         <activity android:name="com.example.first.project.YiHomeActivity"/>

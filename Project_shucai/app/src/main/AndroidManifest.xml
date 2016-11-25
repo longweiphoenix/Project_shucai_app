@@ -9,7 +9,6 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".MyHomePage">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,8 +23,7 @@
         <activity android:name="com.example.first.project.FoodRulesActivity" />
         <activity android:name="com.example.first.project.MyFoodActivity" />
         <activity android:name="com.example.first.project.OrganicLifeActivity" />
-        <!--lijunming-->
-
+            <!--lijunming-->
 
         <!--longweifeng-->
         <activity android:name=".PersonalInfo" />
@@ -47,6 +45,7 @@
         <activity android:name="com.example.zxy.SignatureSetting" />
         <activity android:name="com.example.zxy.NewFollowers" />
         <!--zxy-->
+
     </application>
 
 </manifest>

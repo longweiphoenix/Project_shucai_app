@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.along.ui1project.MyHomePage;
 import com.example.along.ui1project.R;
 
 /**登录页面
@@ -41,6 +42,10 @@ public class LoginPageActivity extends Activity {
                 case R.id.create_account:
                     intent = new Intent(LoginPageActivity.this,CreateAccountActivity.class);
                     startActivity(intent); //跳转到创建账号页面
+                    break;
+                case R.id.register:
+                    intent = new Intent(LoginPageActivity.this, MyHomePage.class);
+                    startActivity(intent);
                     break;
             }
         }

@@ -40,7 +40,6 @@ public class MyHomePage extends Activity {
 
         setListView();
     }
-
     public void getData() {
         String[] myText = getResources().getStringArray(R.array.myListText);
         Integer[] img = new Integer[]{R.mipmap.my_order, R.mipmap.food_stamps, R.mipmap.my_collections,

@@ -15,7 +15,7 @@
              android:layout_height="65dp"
              android:orientation="horizontal">
              <ImageView
-                android:id="@+id/followers_setting_arow"
+                android:id="@+id/menu_arow_imageview"
                 android:layout_width="13dp"
                 android:layout_height="21dp"
                 android:background="@mipmap/arow"
@@ -137,6 +137,7 @@
                          android:layout_centerHorizontal="true"/>
                  </RelativeLayout>
                  <Button
+                     android:id=""
                      android:layout_width="match_parent"
                      android:layout_height="45dp"
                      android:background="@color/fontgreen"

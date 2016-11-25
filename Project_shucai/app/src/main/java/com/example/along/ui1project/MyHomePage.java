@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.along.ui1project.fragment.MeAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,7 +28,7 @@ public class MyHomePage extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.my_home_page);
+        setContentView(R.layout.me_page);
         myList = (ListView) findViewById(R.id.home_list_view);
         layoutInflater = LayoutInflater.from(this);
         myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -57,7 +57,7 @@ public class MyHomePage extends Activity {
     public void setListView() {
         list = new ArrayList<>();
         getData();
-        myList.setAdapter(new MyHomeAdapter(this, list));
+        myList.setAdapter(new MeAdapter(this, list));
         /*View view = layoutInflater.inflate(R.layout.home_list_view_footer, null);
         view.setLayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         homePage= (TextView) view.findViewById(R.id.home);

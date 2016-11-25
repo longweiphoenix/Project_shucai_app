@@ -8,8 +8,8 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
+            android:layout_width="@dimen/home_setting_width"
+            android:layout_height="@dimen/home_setting_height"
             android:layout_centerVertical="true"
             android:layout_margin="8dp"
             android:background="@null"
@@ -21,11 +21,12 @@
             android:text="首页"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
-            android:textSize="18sp"
+            android:textSize="@dimen/content_font_size"
             android:textColor="#323232"/>
         <ImageView
-            android:layout_width="22dp"
-            android:layout_height="22dp"
+            android:id="@+id/shopping_car"
+            android:layout_width="@dimen/home_setting_height"
+            android:layout_height="@dimen/home_setting_height"
             android:layout_centerVertical="true"
             android:layout_marginRight="12dp"
             android:layout_alignParentRight="true"

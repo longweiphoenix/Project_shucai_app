@@ -1,4 +1,4 @@
-package com.example.along.ui1project;
+package com.example.along.ui1project.fragment;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,18 +8,20 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.along.ui1project.R;
+
 import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by Long on 2016/10/25.
  */
-public class MyHomeAdapter extends BaseAdapter {
+public class MeAdapter extends BaseAdapter {
     Context context;
     List<HashMap<String, Object>> list;
     LayoutInflater layoutInflater;
     //自定义的适配器
-    public MyHomeAdapter(Context context, List<HashMap<String, Object>> list) {
+    public MeAdapter(Context context, List<HashMap<String, Object>> list) {
         this.list = list;
         this.context = context;
         layoutInflater = LayoutInflater.from(context);

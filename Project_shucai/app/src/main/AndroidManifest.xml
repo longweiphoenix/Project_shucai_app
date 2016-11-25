@@ -9,13 +9,21 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
+<<<<<<< HEAD
         <activity android:name="com.example.first.project.GoodsDetailsActivity">
+=======
+
+
+        <activity android:name=".MyHomePage">
+
+>>>>>>> feature/longweifeng
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         //ljm
         <activity android:name="com.example.first.project.LoginPageActivity"/>
@@ -24,6 +32,24 @@
         <activity android:name="com.example.first.project.FoodRulesActivity"/>
         <activity android:name="com.example.first.project.MyFoodActivity"/>
         <activity android:name="com.example.first.project.OrganicLifeActivity"/>
+=======
+        <activity android:name=".PersonalInfo"/>
+        <activity android:name=".PersonalSetting"/>
+        <activity android:name=".ShopShowActivity"/>
+        <activity android:name="com.example.zxy.AboutUs"/>
+        <activity android:name="com.example.zxy.Advice"/>
+        <activity android:name="com.example.zxy.CookingPrepare"/>
+        <activity android:name="com.example.zxy.CookingProcess"/>
+        <activity android:name="com.example.zxy.HealthyMenuOne"/>
+        <activity android:name="com.example.zxy.HealthyMenuThree"/>
+        <activity android:name="com.example.zxy.HealthyMenuTwo"/>
+        <activity android:name="com.example.zxy.ImageSetting"/>
+        <activity android:name="com.example.zxy.InviteFriend"/>
+        <activity android:name="com.example.zxy.NameSetting"/>
+        <activity android:name="com.example.zxy.SignatureSetting"/>
+        <activity android:name="com.example.zxy.NewFollowers"/>
+
+>>>>>>> feature/longweifeng
     </application>
 
 </manifest>

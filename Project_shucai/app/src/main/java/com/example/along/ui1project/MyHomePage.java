@@ -30,14 +30,14 @@ public class MyHomePage extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_home_page);
         myList = (ListView) findViewById(R.id.home_list_view);
-
+        layoutInflater = LayoutInflater.from(this);
         myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
             }
         });
-        layoutInflater = LayoutInflater.from(this);
+
         setListView();
     }
 

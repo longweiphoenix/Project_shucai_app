@@ -3,10 +3,14 @@ package com.example.first.project;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
+import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.example.along.ui1project.R;
@@ -33,6 +37,7 @@ public class CreateAccountActivity extends Activity {
         findView();
 
         register.setOnClickListener(onClickListener);
+        accountHead.setOnClickListener(onClickListener);
     }
 
     //点击事件
@@ -40,13 +45,35 @@ public class CreateAccountActivity extends Activity {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case R.id.register:
+                case R.id.register: //登录
                     intent = new Intent(CreateAccountActivity.this,LoginPageActivity.class);
                     startActivity(intent);//跳转到登录页面
+                    break;
+                case R.id.account_head: //改变头像
+
+                    portrait();
                     break;
             }
         }
     };
+    PopupWindow popupWindow;
+
+    //弹出相机和相册对话框
+    public void portrait(){
+        //创建视图转换器
+        LayoutInflater inflater = LayoutInflater.from(CreateAccountActivity.this);
+        View view = inflater.inflate(R.layout.account_head_image,null);
+        //获取屏幕尺寸
+        DisplayMetrics metric = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metric);
+
+        int x = metric.widthPixels;
+
+        //创建对话框
+        popupWindow = new PopupWindow(view,x,500);
+        popupWindow.showAsDropDown(accountHead);
+        popupWindow.setOutsideTouchable(true);
+    }
 
     //找到控件
     public void findView(){

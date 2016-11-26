@@ -73,6 +73,7 @@
         android:background="@color/view_margin_line" />
 
     <LinearLayout
+        android:id="@+id/name_setting"
         android:layout_width="match_parent"
         android:layout_height="@dimen/info_heights"
         android:layout_marginTop="@dimen/view_margin_line"
@@ -113,6 +114,7 @@
         android:background="@color/view_margin_line" />
 
     <LinearLayout
+        android:id="@+id/sexual"
         android:layout_width="match_parent"
         android:layout_height="@dimen/info_heights"
         android:layout_marginTop="@dimen/view_margin_line"
@@ -154,7 +156,7 @@
         android:background="@color/view_margin_line" />
 
     <LinearLayout
-        android:id="@+id/sexual"
+
         android:layout_width="match_parent"
         android:layout_height="@dimen/info_heights"
         android:layout_marginBottom="@dimen/large_head_margin40dp"

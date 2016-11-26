@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -23,10 +24,12 @@ public class ShopShowActivity extends Activity {
     ListView goodsList;
     Context context=ShopShowActivity.this;
     List<ShopItem> list;
+    LayoutInflater inflater;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_shop_layout);
+        inflater=LayoutInflater.from(ShopShowActivity.this);
         search= (TextView) findViewById(R.id.search_goods);
         shoppingCar= (TextView) findViewById(R.id.shopping_car);
         allSort= (RadioButton) findViewById(R.id.all_sort);
@@ -37,7 +40,7 @@ public class ShopShowActivity extends Activity {
 
         list=new ArrayList<ShopItem>();
         getAllData();
-        goodsList.setAdapter(new ShopShowAdapter(list,R.layout.shop_list_item,context));
+        goodsList.setAdapter(new ShopShowAdapter(list,R.layout.shop_list_item,context,inflater));
 
 
         search.setOnClickListener(onClickListener);
@@ -64,22 +67,22 @@ public class ShopShowActivity extends Activity {
                 case R.id.all_sort:
                     list=new ArrayList<ShopItem>();
                     getAllData();
-                    goodsList.setAdapter(new ShopShowAdapter(list,R.layout.shop_list_item,context));
+                    goodsList.setAdapter(new ShopShowAdapter(list,R.layout.shop_list_item,context,inflater));
                     break;
                 case R.id.organic_vegetable:
                     List<ShopItem> organic_list=new ArrayList<>();
                     organic_list=list.subList(2,4);
-                    goodsList.setAdapter(new ShopShowAdapter(organic_list,R.layout.shop_list_item,context));
+                    goodsList.setAdapter(new ShopShowAdapter(organic_list,R.layout.shop_list_item,context,inflater));
                     break;
                 case R.id.current_organic_vegetable:
                     List<ShopItem> current_list=new ArrayList<>();
                     current_list=list.subList(3,4);
-                    goodsList.setAdapter(new ShopShowAdapter(current_list,R.layout.shop_list_item,context));
+                    goodsList.setAdapter(new ShopShowAdapter(current_list,R.layout.shop_list_item,context,inflater));
                     break;
                 case R.id.farm_native:
                     List<ShopItem> native_list=new ArrayList<>();
                     native_list=list.subList(0,1);
-                    goodsList.setAdapter(new ShopShowAdapter(native_list,R.layout.shop_list_item,context));
+                    goodsList.setAdapter(new ShopShowAdapter(native_list,R.layout.shop_list_item,context,inflater));
                     break;
                 case R.id.shop_goods_show:
                     break;

@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="false"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name="com.example.zxy.Cooking">
+        <activity android:name=".MyHomePage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +34,7 @@
         <!--zxy-->
         <activity android:name="com.example.zxy.AboutUs" />
         <activity android:name="com.example.zxy.Advice" />
-        <!--<activity android:name="com.example.zxy.Cooking" />-->
+        <activity android:name="com.example.zxy.Cooking" />
         <activity android:name="com.example.zxy.HealthyMenuOne" />
         <activity android:name="com.example.zxy.HealthyMenuThree" />
         <activity android:name="com.example.zxy.HealthyMenuTwo" />

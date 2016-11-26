@@ -77,4 +77,48 @@
     <string name="organic_vegetable">有机蔬菜</string>
     <string name="current_organic_vegetable">有机时蔬</string>
     <string name="farm_native">农家土特产</string>
+
+
+    <!--zxy-->
+    <string-array name="menu_parepre_one">
+      <item>板栗</item>
+      <item>猪大排</item>
+    </string-array>
+    <string-array name="menu_parepre_two">
+        <item>姜</item>
+        <item>食盐</item>
+    </string-array>
+    <string-array name="menu_parepre_three">
+        <item>生抽</item>
+        <item>料酒</item>
+    </string-array>
+    <string-array name="menu_parepre_four">
+        <item>白糖</item>
+        <item>淀粉</item>
+    </string-array>
+    <string-array name="menu_parepre_five">
+        <item>水</item>
+        <item>植物油</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_one">
+        <item>350g</item>
+        <item>400g</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_two">
+        <item>5g</item>
+        <item>5g</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_three">
+        <item>5g</item>
+        <item>5g</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_four">
+        <item>5g</item>
+        <item>5g</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_five">
+        <item>适量</item>
+        <item>1茶匙</item>
+    </string-array>
+    <!--zxy-->
 </resources>

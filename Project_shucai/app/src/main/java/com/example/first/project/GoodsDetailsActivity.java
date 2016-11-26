@@ -6,13 +6,13 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.along.ui1project.MyHomePage;
 import com.example.along.ui1project.R;
+import com.example.along.ui1project.ShopShowActivity;
 import com.example.first.project.fragment.GoodsDetailsEvaluateFragment;
 import com.example.first.project.fragment.GoodsDetailsFragment;
 
@@ -26,6 +26,8 @@ public class GoodsDetailsActivity extends Activity {
     ImageView left; //详情下边的横线
     TextView evaluate; //商品评价
     ImageView right; //评价下边的横线
+    ImageView arow; //返回
+    TextView ser; //客服
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +73,12 @@ public class GoodsDetailsActivity extends Activity {
 
                     break;
                 case R.id.arow:
-                    intent = new Intent(GoodsDetailsActivity.this, MyHomePage.class);
+                    intent = new Intent(GoodsDetailsActivity.this, ShopShowActivity.class); //跳转到铺子
                     startActivity(intent);
                     break;
                 case R.id.service:
-                    intent = new Intent(); //跳转到客服
-                    startActivity(intent);
+                   // intent = new Intent(GoodsDetailsActivity.this,); //跳转到客服
+                   // startActivity(intent);
                     break;
             }
 
@@ -90,5 +92,7 @@ public class GoodsDetailsActivity extends Activity {
         left = (ImageView) findViewById(R.id.left);
         evaluate = (TextView) findViewById(R.id.goods_evaluater);
         right = (ImageView) findViewById(R.id.right);
+        arow = (ImageView) findViewById(R.id.arow);
+        ser = (TextView) findViewById(R.id.service);
     }
 }

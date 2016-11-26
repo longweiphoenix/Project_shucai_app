@@ -137,7 +137,7 @@
                          android:layout_centerHorizontal="true"/>
                  </RelativeLayout>
                  <Button
-                     android:id=""
+                     android:id="@+id/menu_button"
                      android:layout_width="match_parent"
                      android:layout_height="45dp"
                      android:background="@color/fontgreen"

@@ -3,7 +3,6 @@ package com.example.first.project;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,22 +56,35 @@ public class CreateAccountActivity extends Activity {
         }
     };
     PopupWindow popupWindow;
-
     //弹出相机和相册对话框
     public void portrait(){
         //创建视图转换器
         LayoutInflater inflater = LayoutInflater.from(CreateAccountActivity.this);
         View view = inflater.inflate(R.layout.account_head_image,null);
-        //获取屏幕尺寸
+        TextView camera = (TextView) view.findViewById(R.id.camera);
+        TextView photo  = (TextView) view.findViewById(R.id.photo);
+        //点击事件
+        camera.setOnClickListener(new View.OnClickListener() { //点击相机，显示本地相机
+            @Override
+            public void onClick(View v) {//调用相机拍照
+
+            }
+        });
+        photo.setOnClickListener(new View.OnClickListener() { //点击相册，显示本地相册
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        // /获取屏幕尺寸
         DisplayMetrics metric = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metric);
-
-        int x = metric.widthPixels;
-
+        int x = metric.widthPixels; //获取屏幕宽度
         //创建对话框
         popupWindow = new PopupWindow(view,x,500);
-        popupWindow.showAsDropDown(accountHead);
         popupWindow.setOutsideTouchable(true);
+        popupWindow.showAsDropDown(accountHead);
+
     }
 
     //找到控件

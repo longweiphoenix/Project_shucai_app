@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -99,29 +99,16 @@
                 android:layout_height="1dp"
                 android:background="@color/linecolor"
                 android:layout_marginTop="9dp"/>
-            <LinearLayout
-                android:id="@+id/menu_parepre_linearlayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <ListView
+            <ListView
+
                     android:id="@+id/menu_parepre_listview"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                </ListView>
-               </LinearLayout>
-        <LinearLayout
-            android:visibility="gone"
-            android:id="@+id/menu_process_linearlayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+                    android:layout_height="300dp"/>
             <ListView
+                android:visibility="gone"
                 android:id="@+id/menu_process_listview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></ListView>
-            </LinearLayout>
+                android:layout_height="1200dp"/>
         </LinearLayout>
     </ScrollView>
 

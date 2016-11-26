@@ -1,10 +1,18 @@
 package com.example.along.ui1project;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.health.PackageHealthStats;
+import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +21,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import java.io.File;
+import java.security.Permission;
+import java.util.Calendar;
 
 /**
  * Created by Long on 2016/10/20.
@@ -84,7 +96,15 @@ public class PersonalInfo extends Activity {
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String filePath="";
+                if (ContextCompat.checkSelfPermission(PersonalInfo.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(PersonalInfo.this,new String []{Manifest.permission.CAMERA},1);
+                }else {
+                    Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE,null);
+                    filePath=getCacheDir().getPath()+File.separator+String.valueOf(System.currentTimeMillis())+"camera"+".png";
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(filePath)));
+                    startActivity(intent);
+                }
             }
         });
         //设置取消更换头像
@@ -109,6 +129,7 @@ public class PersonalInfo extends Activity {
                 backGroundAlpha((float) 1);
             }
         });
+        cameraDialog.show();
     }
 
     //更换性别

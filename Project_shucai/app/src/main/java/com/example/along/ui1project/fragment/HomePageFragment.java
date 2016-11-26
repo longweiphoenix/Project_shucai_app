@@ -25,8 +25,8 @@ public class HomePageFragment extends Fragment {
         shoppingCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(),);
-                startActivity(intent);
+               // Intent intent=new Intent(getActivity(),);
+               // startActivity(intent);
             }
         });
         return super.onCreateView(inflater, container, savedInstanceState);

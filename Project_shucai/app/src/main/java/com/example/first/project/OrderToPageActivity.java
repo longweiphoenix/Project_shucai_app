@@ -49,5 +49,5 @@ public class OrderToPageActivity extends Activity {
         name = (TextView) findViewById(R.id.name);
         pay = (Button) findViewById(R.id.pay_now);
     }
-    
+
 }

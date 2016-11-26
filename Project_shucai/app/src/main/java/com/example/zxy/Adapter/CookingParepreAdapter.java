@@ -17,14 +17,14 @@ import java.util.List;
  * Created by Administrator on 2016/11/26.
  */
 
-public class CookingAdapter extends BaseAdapter {
+public class CookingParepreAdapter extends BaseAdapter {
     Context context;
     List<HashMap<String,Object>> list;
     LayoutInflater layoutInflater;
     public int getCount() {
         return list.size();
     }
-    public CookingAdapter(Context context, List<HashMap<String,Object>> list){
+    public CookingParepreAdapter(Context context, List<HashMap<String,Object>> list){
         this.list = list;
         this.context=context;
         layoutInflater=LayoutInflater.from(context);

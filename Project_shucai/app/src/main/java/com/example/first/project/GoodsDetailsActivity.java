@@ -41,8 +41,6 @@ public class GoodsDetailsActivity extends Activity {
         evaluate.setOnClickListener(onClickListener);
         arow.setOnClickListener(onClickListener);
 
-
-
     }
 
     GoodsDetailsEvaluateFragment goodsDetailsEvaluateFragment; //评论

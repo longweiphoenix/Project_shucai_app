@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.along.ui1project.MyHomePage;
 import com.example.along.ui1project.R;
+import com.example.first.project.vb.AccessTokenKeeper;
+import com.example.first.project.vb.Constants;
 import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;

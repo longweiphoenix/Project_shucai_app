@@ -1,55 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="60dp">
 
-    <ImageView
-        android:id="@+id/head_image"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:src="@mipmap/avatar1"
-        android:layout_marginLeft="13dp"/>
+   <LinearLayout
+       android:layout_marginTop="5dp"
+       android:layout_width="match_parent"
+       android:layout_height="60dp"
+       android:orientation="horizontal">
+       <ImageView
+           android:id="@+id/head_image"
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:layout_gravity="center"
+           android:src="@mipmap/avatar1"
+           android:layout_marginLeft="13dp"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="13dp"
-        android:orientation="vertical">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_marginLeft="12dp"
+           android:layout_marginRight="13dp"
+           android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/user_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="小黄鸡"
-                android:textColor="#787878"
-                android:textSize="9dp" />
+               <TextView
+                   android:id="@+id/user_name"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="小黄鸡"
+                   android:textColor="#787878"
+                   android:textSize="9dp" />
 
-            <TextView
-                android:id="@+id/comment_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="昨天09:23"
-                android:textColor="#787878"
-                android:textSize="9dp" />
-        </LinearLayout>
+               <TextView
+                   android:id="@+id/comment_time"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="昨天09:23"
+                   android:textColor="#787878"
+                   android:textSize="9dp" />
+           </LinearLayout>
 
-        <TextView
-            android:id="@+id/comment_content"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="鸡蛋昨天才吃，味道确实很不错"
-            android:textColor="#323232"
-            android:textSize="11sp" />
-    </LinearLayout>
+           <TextView
+               android:id="@+id/comment_content"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="10dp"
+               android:text="鸡蛋昨天才吃，味道确实很不错"
+               android:textColor="#323232"
+               android:textSize="11sp" />
+       </LinearLayout>
+
+   </LinearLayout>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.first.project;
+package com.example.first.project.vb;
 
 import android.content.Context;
 import android.content.SharedPreferences;

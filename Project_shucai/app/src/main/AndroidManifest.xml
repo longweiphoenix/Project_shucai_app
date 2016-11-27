@@ -21,7 +21,7 @@
         </activity>
         <!--lijunming-->
         <activity android:name="com.example.first.project.GoodsDetailsActivity"/>
-        <activity android:name="com.example.first.project.LoginPageActivity" />
+        <!--<activity android:name="com.example.first.project.LoginPageActivity" />-->
         <activity android:name="com.example.first.project.OrderToPageActivity" />
         <activity android:name="com.example.first.project.YiHomeActivity" />
         <activity android:name="com.example.first.project.FoodRulesActivity" />

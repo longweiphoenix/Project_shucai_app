@@ -18,11 +18,11 @@ public class ShopShowAdapter extends BaseAdapter {
     int resourceId;
     Context context;
     LayoutInflater inflater;
-    public ShopShowAdapter(List<ShopItem> list,int resourceId, Context context){
+    public ShopShowAdapter(List<ShopItem> list,int resourceId, Context context,LayoutInflater inflater){
         this.list=list;
         this.resourceId=resourceId;
         this.context=context;
-        inflater=LayoutInflater.from(context);
+        this.inflater=inflater;
     }
     @Override
     public int getCount() {

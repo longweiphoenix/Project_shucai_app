@@ -1,53 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/view_margin_line"
-        >
+        android:background="@color/view_margin_line">
+
         <TextView
             android:id="@+id/cancel"
-            android:padding="@dimen/info_margin"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/info_title_text18sp"
-            android:text="@string/cancel"/>
+            android:layout_weight="1"
+            android:padding="@dimen/info_margin"
+            android:text="@string/cancel"
+            android:textSize="@dimen/info_title_text18sp" />
+
         <TextView
             android:id="@+id/confirm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/confirm"
+            android:layout_weight="1"
             android:gravity="right"
-            android:textSize="@dimen/info_title_text18sp"
             android:padding="@dimen/info_margin"
-            android:layout_weight="1"/>
+            android:text="@string/confirm"
+            android:textSize="@dimen/info_title_text18sp" />
     </LinearLayout>
-    <LinearLayout
-        android:orientation="vertical"
+
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
-    <TextView
-        android:textColor="@color/view_margin_line"
-        android:id="@+id/sexual_male"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/info_title_text18sp"
-        android:text="@string/male"
-        android:gravity="center_horizontal"
-        android:padding="@dimen/info_margin"/>
-    <TextView
-        android:id="@+id/sexual_female"
-        android:textColor="@color/title_font_color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/info_title_text18sp"
-        android:text="@string/female"
-        android:gravity="center_horizontal"
-        android:padding="@dimen/info_margin"/>
-    </LinearLayout>
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/sexual_male"
+            android:button="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:background="@drawable/sexual_select_bg"
+            android:padding="@dimen/info_margin"
+            android:text="@string/male"
+            android:textColor="@color/view_margin_line"
+            android:textSize="@dimen/info_title_text18sp" />
+
+        <RadioButton
+            android:button="@null"
+            android:background="@drawable/sexual_select_bg"
+            android:id="@+id/sexual_female"
+            android:checked="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/info_margin"
+            android:text="@string/female"
+            android:textColor="@color/title_font_color"
+            android:textSize="@dimen/info_title_text18sp" />
+    </RadioGroup>
 </LinearLayout>

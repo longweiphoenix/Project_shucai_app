@@ -1,14 +1,26 @@
 package com.example.along.ui1project;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
+import com.example.along.ui1project.fragment.HomePageFragment;
 import com.example.along.ui1project.fragment.MeAdapter;
+import com.example.along.ui1project.fragment.MePageFragment;
+import com.example.along.ui1project.fragment.ShopShowFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,51 +29,117 @@ import java.util.List;
 /**
  * Created by Long on 2016/10/25.
  */
-public class MyHomePage extends Activity {
-    ListView myList;
-    List<HashMap<String, Object>> list;
-    LayoutInflater layoutInflater;
+public class MyHomePage extends Activity implements View.OnTouchListener{
     TextView homePage,
             shop,
             me;
-
+    ViewFlipper flipper;
+    LinearLayout linearLayout;
+    FragmentManager manager;
+    RadioGroup group;
+    HomePageFragment homePageFragment;
+    ShopShowFragment shopShowFragment;
+    MePageFragment mePageFragment;
+    GestureDetector mGestureDetector;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.me_page);
-        myList = (ListView) findViewById(R.id.home_list_view);
-        layoutInflater = LayoutInflater.from(this);
-        myList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-        });
-
-        setListView();
-    }
-    public void getData() {
-        String[] myText = getResources().getStringArray(R.array.myListText);
-        Integer[] img = new Integer[]{R.mipmap.my_order, R.mipmap.food_stamps, R.mipmap.my_collections,
-                R.mipmap.my_collections, R.mipmap.address_manager, R.mipmap.customer_service
-        };
-        for (int i = 0; i < myText.length; i++) {
-            HashMap<String, Object> map = new HashMap<String, Object>();
-            map.put("list_text", myText[i]);
-            map.put("list_img", img[i]);
-            list.add(map);
-        }
-    }
-
-    public void setListView() {
-        list = new ArrayList<>();
-        getData();
-        myList.setAdapter(new MeAdapter(this, list));
-        /*View view = layoutInflater.inflate(R.layout.home_list_view_footer, null);
-        view.setLayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        homePage= (TextView) view.findViewById(R.id.home);
-        shop= (TextView) view.findViewById(R.id.shop);
+        setContentView(R.layout.activity_home_page_ht);
+        flipper= (ViewFlipper) findViewById(R.id.view_flipper);
+        linearLayout= (LinearLayout) findViewById(R.id.container);
+        homePage= (TextView) findViewById(R.id.home);
+        /*二级界面三个页面的显示*/
+        shop= (TextView) findViewById(R.id.shop);
         me= (TextView) findViewById(R.id.user);
-        myList.addFooterView(view);*/
+        group= (RadioGroup) findViewById(R.id.group);
+        shop.setOnClickListener(onClickListener);
+        me.setOnClickListener(onClickListener);
+        homePage.setOnClickListener(onClickListener);
+
+
+        manager=getFragmentManager();
+        homePageFragment=new HomePageFragment();
+        shopShowFragment=new ShopShowFragment();
+        mePageFragment=new MePageFragment();
+       /* manager.putFragment(savedInstanceState,"homepage",homePageFragment);
+        manager.putFragment(savedInstanceState,"shopshow",shopShowFragment);
+        manager.putFragment(savedInstanceState,"mepage",mePageFragment);*/
+
+        manager.beginTransaction().add(R.id.container,shopShowFragment,"homepage").commit();
+        manager.beginTransaction().add(R.id.container,mePageFragment,"homepage").commit();
+        manager.beginTransaction().hide(shopShowFragment).commit();
+        manager.beginTransaction().hide(mePageFragment).commit();
+        manager.beginTransaction().add(R.id.container,homePageFragment,"homepage").commit();
+        mGestureDetector=new GestureDetector(this,gestureDetector);
+    }
+    View.OnClickListener onClickListener=new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.home:
+
+                    manager.beginTransaction().hide(shopShowFragment).commit();
+                    manager.beginTransaction().hide(mePageFragment).commit();
+                    manager.beginTransaction().show(homePageFragment).commit();
+                    break;
+                case R.id.shop:
+                    manager.beginTransaction().hide(homePageFragment).commit();
+                    manager.beginTransaction().hide(mePageFragment).commit();
+                    manager.beginTransaction().show(shopShowFragment).commit();
+                    break;
+                case R.id.user:
+                    manager.beginTransaction().hide(homePageFragment).commit();
+                    manager.beginTransaction().hide(shopShowFragment).commit();
+                    manager.beginTransaction().show(mePageFragment).commit();
+                    break;
+            }
+        }
+    };
+    GestureDetector.OnGestureListener gestureDetector=new GestureDetector.OnGestureListener(){
+
+        @Override
+        public boolean onDown(MotionEvent e) {
+            return false;
+        }
+
+        @Override
+        public void onShowPress(MotionEvent e) {
+
+        }
+
+        @Override
+        public boolean onSingleTapUp(MotionEvent e) {
+            return false;
+        }
+
+        @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+            return false;
+        }
+
+        @Override
+        public void onLongPress(MotionEvent e) {
+
+        }
+
+        @Override
+        public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+            if ((e1.getX() - e2.getX()) > 20 && Math.abs(velocityX) > 0) {
+                manager.beginTransaction().show(mePageFragment).commit();
+            } else if (e2.getX() - e1.getX() > 20 && Math.abs(velocityX) > velocityY) {
+                manager.beginTransaction().show(homePageFragment).commit();
+            }
+            return true;
+        }
+    };
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        return mGestureDetector.onTouchEvent(event);
     }
 }

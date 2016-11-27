@@ -21,10 +21,10 @@ public class MeAdapter extends BaseAdapter {
     List<HashMap<String, Object>> list;
     LayoutInflater layoutInflater;
     //自定义的适配器
-    public MeAdapter(Context context, List<HashMap<String, Object>> list) {
+    public MeAdapter(Context context, List<HashMap<String, Object>> list,LayoutInflater layoutInflater) {
         this.list = list;
         this.context = context;
-        layoutInflater = LayoutInflater.from(context);
+        this.layoutInflater=layoutInflater;
     }
 
     @Override

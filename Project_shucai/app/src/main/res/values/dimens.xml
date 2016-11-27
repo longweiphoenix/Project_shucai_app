@@ -8,11 +8,16 @@
     <dimen name="head_portrait_width">26dp</dimen>
     <dimen name="next_arrow_height">12dp</dimen>
     <dimen name="next_arrow_width">8dp</dimen>
+    <!--文字-->
+    <dimen name="shop_good_font">12sp</dimen>
     <dimen name="content_font_size">15sp</dimen>
+    <dimen name="info_title_text">18sp</dimen>
+
+    <!--文字-->
     <dimen name="home_text_padding">10dp</dimen>
     <dimen name="info_heights">60dp</dimen>
     <dimen name="view_margin_line">0.5dp</dimen>
-    <dimen name="info_title_text">18sp</dimen>
+
     <dimen name="camera_head_padding">21dp</dimen>
     <dimen name="home_setting_width">23.5dp</dimen>
     <dimen name="home_setting_height">22dp</dimen>

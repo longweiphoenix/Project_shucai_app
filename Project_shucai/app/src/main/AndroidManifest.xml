@@ -30,7 +30,7 @@
             <!--lijunming-->
 
         <!--longweifeng-->
-        <activity android:name=".PersonalInfo" />
+     <!--   <activity android:name=".PersonalInfo" />-->
         <activity android:name=".PersonalSetting" />
         <activity android:name=".ShopShowActivity" />
         <!--longweifeng-->

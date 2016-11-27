@@ -68,9 +68,7 @@
     <string name="material">准备食材：板栗50g 排骨500g</string>
     <string name="material2">准备食材：虾仁 鸡蛋 西兰花 圣女果</string>
     <string name="material3">准备食材：白菜 红枣 黄椒 火腿片</string>
-    <string name="home">首页</string>
-    <string name="shop">铺子</string>
-    <string name="me">我</string>
+
 
     <!--商店分类-->
     <string name="all_sort">全部分类</string>
@@ -78,6 +76,10 @@
     <string name="current_organic_vegetable">有机时蔬</string>
     <string name="farm_native">农家土特产</string>
 
+    <!--主页、商铺、我-->
+    <string name="home">首页</string>
+    <string name="shop">铺子</string>
+    <string name="me">我</string>
 
     <!--zxy-->
     <string-array name="menu_parepre_one">

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,8 +27,6 @@ public class MePageFragment extends Fragment {
     ListView myList;
     List<HashMap<String, Object>> list;
     LayoutInflater layoutInflater;
-    TextView shoppingCar,
-             setting;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,22 +37,6 @@ public class MePageFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.me_page, container, false);
-        shoppingCar= (TextView) view.findViewById(R.id.shopping_car);
-        setting= (TextView) view.findViewById(R.id.setting);
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), PersonalInfo.class);
-                startActivity(intent);
-            }
-        });
-        shoppingCar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), ShoppingCarActivity.class);
-                startActivity(intent);
-            }
-        });
         //我的页面列表
         myList = (ListView) view.findViewById(R.id.home_list_view);
         layoutInflater = LayoutInflater.from(getActivity());
@@ -64,6 +47,7 @@ public class MePageFragment extends Fragment {
             }
         });
         setListView();
+        setListViewHeightBasedOnChildren(myList);
         return view;
     }
 
@@ -74,7 +58,7 @@ public class MePageFragment extends Fragment {
         /*View view = layoutInflater.inflate(R.layout.home_list_view_footer, null);
         view.setLayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         homePage= (TextView) view.findViewById(R.id.home);
-        shop= (TextView) view.findViewById(R.id.shop);
+        shop_green= (TextView) view.findViewById(R.id.shop_green);
         me= (TextView) findViewById(R.id.user);
         myList.addFooterView(view);*/
     }
@@ -90,5 +74,22 @@ public class MePageFragment extends Fragment {
             map.put("list_img", img[i]);
             list.add(map);
         }
+    }
+    public void setListViewHeightBasedOnChildren(ListView listView) {
+        if(listView == null) return;
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null) {
+            // pre-condition
+            return;
+        }
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, listView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
     }
 }

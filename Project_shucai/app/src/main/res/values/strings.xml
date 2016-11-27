@@ -144,4 +144,9 @@
         <item>装盘，香甜的板栗烧排骨可以上桌了</item>
     </string-array>
     <!--zxy-->
+
+    <!--下拉刷新控件的字符串-->
+    <string name="pull_to_refresh">下拉刷新</string>
+
+    <!--下拉刷新控件的字符串-->
 </resources>

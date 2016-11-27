@@ -17,7 +17,6 @@ import com.example.along.ui1project.R;
 public class YiHomeActivity extends Activity {
     ImageView back; //返回上级页面
     TextView name; //收货人
-    TextView linkman; //联系人
     Button commit; //提交
 
     @Override
@@ -27,6 +26,7 @@ public class YiHomeActivity extends Activity {
         findView();
 
         back.setOnClickListener(clickListener);
+        commit.setOnClickListener(clickListener);
 
     }
 
@@ -50,7 +50,6 @@ public class YiHomeActivity extends Activity {
     public void findView(){
         back = (ImageView) findViewById(R.id.back);
         name = (TextView) findViewById(R.id.name);
-        linkman = (TextView) findViewById(R.id.linkman);
         commit = (Button) findViewById(R.id.commit);
     }
 }

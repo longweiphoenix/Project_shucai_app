@@ -28,6 +28,7 @@ public class MyFoodActivity extends Activity {
         findView();
 
         rules.setOnClickListener(onClickListener);
+        back.setOnClickListener(onClickListener);
 
     }
     Intent intent;

@@ -23,10 +23,20 @@
         <activity android:name="com.example.first.project.GoodsDetailsActivity"/>
         <activity android:name="com.example.first.project.LoginPageActivity" />
         <activity android:name="com.example.first.project.OrderToPageActivity" />
-        <activity android:name="com.example.first.project.YiHomeActivity" />
+        <!--<activity android:name="com.example.first.project.YiHomeActivity" />-->
         <activity android:name="com.example.first.project.FoodRulesActivity" />
         <activity android:name="com.example.first.project.MyFoodActivity" />
         <activity android:name="com.example.first.project.OrganicLifeActivity" />
+       //微博需要的权限权限
+        <activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false" >
+        </activity>
+        <service android:name="com.sina.weibo.sdk.net.DownloadService"
+            android:exported="false">
+        </service>
+
             <!--lijunming-->
 
         <!--longweifeng-->
@@ -54,4 +64,10 @@
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!--微博权限ljm-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

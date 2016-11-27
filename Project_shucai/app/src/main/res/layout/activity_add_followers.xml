@@ -5,15 +5,15 @@
     android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal">
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center">
         <ImageView
             android:id="@+id/followers_setting_arow"
             android:layout_width="13dp"
             android:layout_height="21dp"
             android:background="@mipmap/arow"
-            android:layout_marginLeft="13dp"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginLeft="12dp"/>
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -21,7 +21,6 @@
             android:text="新增联系人"
             android:textSize="18sp"
             android:textColor="@color/fontblack"
-            android:layout_marginTop="32dp"
             android:gravity="center_horizontal"/>
         <TextView
             android:id="@+id/followers_setting_save"
@@ -30,7 +29,6 @@
             android:text="@string/save"
             android:textColor="@color/fontgreen"
             android:textSize="15sp"
-            android:layout_marginTop="32dp"
             android:paddingRight="12dp"/>
 
     </LinearLayout>
@@ -38,8 +36,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/linecolor"/>
-
-
     <EditText
         android:background="@color/white"
         android:id="@+id/followers_phone_textview"

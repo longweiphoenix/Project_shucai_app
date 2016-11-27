@@ -38,21 +38,24 @@ public class GoodsDetailsActivity extends Activity {
 
         details.setOnClickListener(onClickListener);
         evaluate.setOnClickListener(onClickListener);
-
+        arow.setOnClickListener(onClickListener);
 
     }
-    GoodsDetailsEvaluateFragment goodsDetailsEvaluateFragment;
-    GoodsDetailsFragment goodsDetailsFragment;
+
+    GoodsDetailsEvaluateFragment goodsDetailsEvaluateFragment; //评论
+    GoodsDetailsFragment goodsDetailsFragment; //详情
+
     FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
+
     //创建fragment管理器对象
     public void createFragment(){
         goodsDetailsFragment = new GoodsDetailsFragment();
+        goodsDetailsEvaluateFragment = new GoodsDetailsEvaluateFragment();
         fragmentManager = getFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.add(R.id.linearlayout,goodsDetailsFragment);
-        fragmentTransaction.commit();
+        fragmentManager.beginTransaction().add(R.id.linearlayout,goodsDetailsFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.linearlayout,goodsDetailsEvaluateFragment).commit();
+        fragmentManager.beginTransaction().hide(goodsDetailsEvaluateFragment).commit();
     }
 
     Intent intent;
@@ -64,11 +67,15 @@ public class GoodsDetailsActivity extends Activity {
                     left.setVisibility(View.VISIBLE);
                     right.setVisibility(View.INVISIBLE);
 
+                    fragmentManager.beginTransaction().show(goodsDetailsFragment).commit();
+                    fragmentManager.beginTransaction().hide(goodsDetailsEvaluateFragment).commit();
 
                     break;
                 case R.id.goods_evaluater:
                     left.setVisibility(View.INVISIBLE);
                     right.setVisibility(View.VISIBLE);
+                    fragmentManager.beginTransaction().show(goodsDetailsEvaluateFragment).commit();
+                    fragmentManager.beginTransaction().hide(goodsDetailsFragment).commit();
 
                     break;
                 case R.id.arow:

@@ -162,10 +162,13 @@ public class PersonalInfo extends Activity {
         sexual_male.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    sexual_male.setTextColor(getResources().getColor(R.color.title_font_color));
-                    sexual_female.setTextColor(getResources().getColor(R.color.view_margin_line));
-                }
+
+
+                    if(isChecked){
+                        sexual_male.setTextColor(PersonalInfo.this.getResources().getColor(R.color.title_font_color));
+                        sexual_female.setTextColor(PersonalInfo.this.getResources().getColor(R.color.view_margin_line));
+                    }
+
             }
         });
         sexual_female = (RadioButton) view.findViewById(R.id.sexual_female);
@@ -180,19 +183,20 @@ public class PersonalInfo extends Activity {
         sexualChange.setBackgroundDrawable(new ColorDrawable(0x00000000));
         sexualChange.setOutsideTouchable(true);
         sexualChange.showAsDropDown(personalized_edit_signature);
-        findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sexualChange.dismiss();
             }
         });
 
-        findViewById(R.id.commit).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.confirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String sex=(sexual_female.isChecked())?"女":"男";
                 Toast.makeText(PersonalInfo.this, "您的性别为"+sex, Toast.LENGTH_SHORT).show();
                 //性别设为男或女，上传数据库？
+                sexualChange.dismiss();
             }
         });
 

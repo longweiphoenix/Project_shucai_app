@@ -28,6 +28,7 @@
         android:layout_width="221dp"
         android:layout_height="55dp"
         android:hint="昵称"
+        android:inputType="textCapCharacters"
         android:textSize="15dp"
         android:layout_gravity="center"
         android:background="@null"/>
@@ -41,6 +42,7 @@
         android:layout_width="221dp"
         android:layout_height="55dp"
         android:hint="输入手机号"
+        android:inputType="phone"
         android:textSize="15dp"
         android:layout_gravity="center"
         android:background="@null"/>

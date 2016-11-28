@@ -23,6 +23,8 @@ import com.sina.weibo.sdk.auth.WeiboAuthListener;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.sina.weibo.sdk.exception.WeiboException;
 
+import cn.smssdk.SMSSDK;
+
 /**登录页面
  * Created by Administrator on 2016/11/0008.
  */
@@ -38,11 +40,15 @@ public class LoginPageActivity extends Activity {
 
     AuthInfo authInfo;
     SsoHandler mSsoHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
+
+
         findView();
+
 
         createAccount.setOnClickListener(onClickListener);
         register.setOnClickListener(onClickListener);

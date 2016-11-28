@@ -13,6 +13,15 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.example.along.ui1project.R;
+import com.example.first.project.utils.TimerUtil;
+
+import java.util.HashMap;
+
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+import cn.smssdk.gui.RegisterPage;
+
+import static cn.smssdk.SMSSDK.submitUserInfo;
 
 /**创建账号
  * Created by Administrator on 2016/11/0005.
@@ -29,14 +38,24 @@ public class CreateAccountActivity extends Activity {
     TextView register; //登录
 
     Intent intent;
+
+    //短信验证的key和secret(mob.com)
+    String APPKEY = "1963fd37dd7ed";
+    String APPSECRET = "13c2ec6cf3cbe4906902b5cf00d4f710";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
+        //初始化SDK
+        SMSSDK.initSDK(this,APPKEY,APPSECRET);
+
         findView();
 
         register.setOnClickListener(onClickListener);
         accountHead.setOnClickListener(onClickListener);
+        sendCode.setOnClickListener(onClickListener);
     }
 
     //点击事件
@@ -52,9 +71,44 @@ public class CreateAccountActivity extends Activity {
 
                     portrait();
                     break;
+                case R.id.send_code: //短信验证
+
+                    //注册手机号
+                    RegisterPage register = new RegisterPage();
+                    //注册回调事件
+                    register.setRegisterCallback(new EventHandler(){
+                        //事件完后后回调
+                        @Override
+                        public void afterEvent(int event, int result, Object data) {
+                            //判断结果是否已经完成
+                            if (result == SMSSDK.RESULT_COMPLETE){
+                                //获取数据data(object)类型键值对方式存在
+                                HashMap<String,Object> map = (HashMap<String, Object>) data;
+                                //国家的信息
+                                String country = (String) map.get("country");
+                                //手机号信息
+                                String phone = (String) map.get("phone");
+                                info(country,phoneNumber.toString());
+                            }
+
+                        }
+                    });
+                    register.show(CreateAccountActivity.this);
+                    new TimerUtil(sendCode,1000*60,1000).start();
+                    break;
             }
         }
     };
+
+    //提交用户信息
+    public void info(String country,String phone){
+        String uid = "1";
+        submitUserInfo(uid,nickName.toString(),null,country,phone);
+    }
+
+
+
+
     PopupWindow popupWindow;
     //弹出相机和相册对话框
     public void portrait(){
@@ -97,5 +151,12 @@ public class CreateAccountActivity extends Activity {
         passWord = (EditText) findViewById(R.id.passWord);
         createAccount = (Button) findViewById(R.id.create);
         register = (TextView) findViewById(R.id.register);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //解除注册
+        SMSSDK.unregisterAllEventHandler();
     }
 }

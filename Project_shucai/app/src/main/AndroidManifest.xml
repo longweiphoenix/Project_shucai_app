@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.along.ui1project">
     <!--往SDCard写入数据权限-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--请求访问使用照相设备-->
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <!--微博权限ljm-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--短信验证权限ljm-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="false"
+        tools:replace="android:allowBackup"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MyHomePage">
+        <activity android:name="com.example.first.project.LoginPageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,14 +37,15 @@
             </intent-filter>
         </activity>
         <!--lijunming-->
-        <activity android:name="com.example.first.project.GoodsDetailsActivity"/>
-        <activity android:name="com.example.first.project.LoginPageActivity" />
+        <activity android:name="com.example.first.project.CreateAccountActivity"/>
+        <activity android:name="com.example.first.project.GoodsDetailsActivity" />
+        <!--<activity android:name="com.example.first.project.LoginPageActivity" />-->
         <activity android:name="com.example.first.project.OrderToPageActivity" />
         <activity android:name="com.example.first.project.YiHomeActivity" />
         <activity android:name="com.example.first.project.FoodRulesActivity" />
         <activity android:name="com.example.first.project.MyFoodActivity" />
         <activity android:name="com.example.first.project.OrganicLifeActivity" />
-       //微博需要的权限权限
+        //微博需要的权限权限
         <activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
             android:configChanges="keyboardHidden|orientation"
             android:windowSoftInputMode="adjustResize"
@@ -36,14 +54,21 @@
         <service android:name="com.sina.weibo.sdk.net.DownloadService"
             android:exported="false">
         </service>
+        //短信验证需要的权限
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+        </activity>
 
-            <!--lijunming-->
+        <!--lijunming-->
 
         <!--longweifeng-->
         <activity android:name=".PersonalInfo" />
         <activity android:name=".PersonalSetting" />
-        <activity android:name=".SearchActivity"/>
-        <activity android:name="com.huangtao.ShoppingCarActivity"/>
+        <activity android:name=".SearchActivity" />
+        <activity android:name="com.huangtao.ShoppingCarActivity" />
         <!--longweifeng-->
 
         <!--zxy-->
@@ -61,13 +86,6 @@
         <!--zxy-->
 
     </application>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <!--微博权限ljm-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 </manifest>

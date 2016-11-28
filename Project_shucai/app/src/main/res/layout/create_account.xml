@@ -85,7 +85,7 @@
         android:textSize="15dp"
         android:layout_gravity="center"
         android:background="@null"
-        android:password="true"/>
+        android:inputType="textPassword"/>
     <ImageView
         android:layout_width="221dp"
         android:layout_height="0.5dp"

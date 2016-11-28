@@ -40,9 +40,10 @@
             <!--lijunming-->
 
         <!--longweifeng-->
-     <!--   <activity android:name=".PersonalInfo" />-->
+        <activity android:name=".PersonalInfo" />
         <activity android:name=".PersonalSetting" />
-        <activity android:name=".ShopShowActivity" />
+        <activity android:name=".SearchActivity"/>
+        <activity android:name="com.huangtao.ShoppingCarActivity"/>
         <!--longweifeng-->
 
         <!--zxy-->

@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.example.along.ui1project.MyHomePage;
 import com.example.along.ui1project.R;
-import com.example.along.ui1project.ShopShowActivity;
 import com.example.first.project.fragment.GoodsDetailsEvaluateFragment;
 import com.example.first.project.fragment.GoodsDetailsFragment;
 
@@ -80,7 +79,7 @@ public class GoodsDetailsActivity extends Activity {
 
                     break;
                 case R.id.arow:
-                    intent = new Intent(GoodsDetailsActivity.this, ShopShowActivity.class); //跳转到铺子
+                    intent = new Intent(GoodsDetailsActivity.this, MyHomePage.class); //跳转到铺子
                     startActivity(intent);
                     break;
                 case R.id.service:

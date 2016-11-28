@@ -157,6 +157,7 @@ public class PersonalInfo extends Activity {
     RadioButton sexual_male,sexual_female;
     //更换性别
     public void setChangeSexualWindow() {
+       //将性别选择器转换成view
         View view = layoutInflater.inflate(R.layout.change_sexual_window, null);
         sexual_male = (RadioButton) view.findViewById(R.id.sexual_male);
         sexual_male.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -180,14 +181,14 @@ public class PersonalInfo extends Activity {
         sexualChange.setBackgroundDrawable(new ColorDrawable(0x00000000));
         sexualChange.setOutsideTouchable(true);
         sexualChange.showAsDropDown(personalized_edit_signature);
-        findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sexualChange.dismiss();
             }
         });
 
-        findViewById(R.id.commit).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.commit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String sex=(sexual_female.isChecked())?"女":"男";
@@ -195,7 +196,5 @@ public class PersonalInfo extends Activity {
                 //性别设为男或女，上传数据库？
             }
         });
-
     }
-
 }

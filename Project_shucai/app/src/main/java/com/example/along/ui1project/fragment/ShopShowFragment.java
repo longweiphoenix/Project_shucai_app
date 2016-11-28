@@ -90,6 +90,10 @@ public class ShopShowFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.all_sort:
+                    allSort.setTextColor(getResources().getColor(R.color.selected_text));
+                    organicVegetable.setTextColor(getResources().getColor(R.color.title_font_color));
+                    currentOrganicVegetable.setTextColor(getResources().getColor(R.color.title_font_color));
+                    farmNative.setTextColor(getResources().getColor(R.color.title_font_color));
                     list = new ArrayList<ShopItem>();
                     Log.i("list","clickFragmentlistview");
                     getAllData();
@@ -101,16 +105,28 @@ public class ShopShowFragment extends Fragment {
                     setListViewHeightBasedOnChildren(goodsList);
                     break;
                 case R.id.organic_vegetable:
+                    allSort.setTextColor(getResources().getColor(R.color.title_font_color));
+                    organicVegetable.setTextColor(getResources().getColor(R.color.selected_text));
+                    currentOrganicVegetable.setTextColor(getResources().getColor(R.color.title_font_color));
+                    farmNative.setTextColor(getResources().getColor(R.color.title_font_color));
                     List<ShopItem> organic_list = new ArrayList<>();
                     organic_list = list.subList(2, 4);
                     goodsList.setAdapter(new ShopShowAdapter(organic_list, R.layout.shop_list_item, getActivity(),layoutInflater));
                     break;
                 case R.id.current_organic_vegetable:
+                    allSort.setTextColor(getResources().getColor(R.color.title_font_color));
+                    organicVegetable.setTextColor(getResources().getColor(R.color.title_font_color));
+                    currentOrganicVegetable.setTextColor(getResources().getColor(R.color.selected_text));
+                    farmNative.setTextColor(getResources().getColor(R.color.title_font_color));
                     List<ShopItem> current_list = new ArrayList<>();
                     current_list = list.subList(3, 4);
                     goodsList.setAdapter(new ShopShowAdapter(current_list, R.layout.shop_list_item, getActivity(),layoutInflater));
                     break;
                 case R.id.farm_native:
+                    allSort.setTextColor(getResources().getColor(R.color.title_font_color));
+                    organicVegetable.setTextColor(getResources().getColor(R.color.title_font_color));
+                    currentOrganicVegetable.setTextColor(getResources().getColor(R.color.title_font_color));
+                    farmNative.setTextColor(getResources().getColor(R.color.selected_text));
                     List<ShopItem> native_list = new ArrayList<>();
                     native_list = list.subList(0, 1);
                     goodsList.setAdapter(new ShopShowAdapter(native_list, R.layout.shop_list_item, getActivity(),layoutInflater));

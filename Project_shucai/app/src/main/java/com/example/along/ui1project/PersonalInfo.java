@@ -77,6 +77,7 @@ public class PersonalInfo extends Activity {
         sexual = (LinearLayout) findViewById(R.id.sexual);
         user_sex_next_arrow = (TextView) findViewById(R.id.user_sex_next_arrow);//性别后的箭头
         personalized_edit_signature = (TextView) findViewById(R.id.personalized_edit_signature);//个人签名
+        personalized_edit_signature.setText("新的个性签名，我好洗换！");
         personalized_edit_signature_next_arrow = (TextView) findViewById(R.id.personalized_edit_signature_next_arrow);//个人签名后的箭头
         info_head_portrait = (ImageView) findViewById(R.id.info_head_portrait);//用户头像
         info_head_change = (LinearLayout) findViewById(R.id.info_head_change);//更换用户头像
@@ -162,37 +163,41 @@ public class PersonalInfo extends Activity {
         sexual_male.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    sexual_male.setTextColor(getResources().getColor(R.color.title_font_color));
-                    sexual_female.setTextColor(getResources().getColor(R.color.view_margin_line));
-                }
+
+
+                    if(isChecked){
+                        sexual_male.setTextColor(PersonalInfo.this.getResources().getColor(R.color.title_font_color));
+                        sexual_female.setTextColor(PersonalInfo.this.getResources().getColor(R.color.view_margin_line));
+                    }
+
             }
         });
         sexual_female = (RadioButton) view.findViewById(R.id.sexual_female);
         sexual_female.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                sexual_female.setTextColor(getResources().getColor(R.color.title_font_color));
-                sexual_male.setTextColor(getResources().getColor(R.color.view_margin_line));
+                sexual_female.setTextColor(PersonalInfo.this.getResources().getColor(R.color.title_font_color));
+                sexual_male.setTextColor(PersonalInfo.this.getResources().getColor(R.color.view_margin_line));
             }
         });
         sexualChange = new PopupWindow(view, w, h / 2);
         sexualChange.setBackgroundDrawable(new ColorDrawable(0x00000000));
         sexualChange.setOutsideTouchable(true);
         sexualChange.showAsDropDown(personalized_edit_signature);
-        findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sexualChange.dismiss();
             }
         });
 
-        findViewById(R.id.commit).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.confirm).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String sex=(sexual_female.isChecked())?"女":"男";
                 Toast.makeText(PersonalInfo.this, "您的性别为"+sex, Toast.LENGTH_SHORT).show();
                 //性别设为男或女，上传数据库？
+                sexualChange.dismiss();
             }
         });
 

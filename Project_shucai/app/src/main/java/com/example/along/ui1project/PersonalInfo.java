@@ -169,6 +169,10 @@ public class PersonalInfo extends Activity {
                     if(isChecked){
                         sexual_male.setTextColor(PersonalInfo.this.getResources().getColor(R.color.title_font_color));
                         sexual_female.setTextColor(PersonalInfo.this.getResources().getColor(R.color.view_margin_line));
+                    }else{
+                        sexual_male.setTextColor(PersonalInfo.this.getResources().getColor(R.color.view_margin_line));
+                        sexual_female.setTextColor(PersonalInfo.this.getResources().getColor(R.color.title_font_color));
+
                     }
 
             }
@@ -192,11 +196,9 @@ public class PersonalInfo extends Activity {
             }
         });
 
-<<<<<<< HEAD
-        view.findViewById(R.id.commit).setOnClickListener(new View.OnClickListener() {
-=======
+
+
         view.findViewById(R.id.confirm).setOnClickListener(new View.OnClickListener() {
->>>>>>> 6938d968a482298332597d4d2ac881571b4ebcff
             @Override
             public void onClick(View v) {
                 String sex=(sexual_female.isChecked())?"女":"男";

@@ -1,4 +1,4 @@
-package com.example.zxy;
+package com.huangtao;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,12 +6,12 @@ import android.os.Bundle;
 import com.example.along.ui1project.R;
 
 /**
- * Created by Administrator on 2016/10/30.
+ * Created by Administrator on 2016/11/26.
  */
-public class CookingProcess extends Activity {
+public class ShoppingCarActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cook_process);
+        setContentView(R.layout.activity_shoppingcart_edit_ht);
     }
 }

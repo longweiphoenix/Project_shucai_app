@@ -6,7 +6,6 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,6 +25,8 @@ public class GoodsDetailsActivity extends Activity {
     ImageView left; //详情下边的横线
     TextView evaluate; //商品评价
     ImageView right; //评价下边的横线
+    ImageView arow; //返回
+    TextView ser; //客服
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,21 +38,24 @@ public class GoodsDetailsActivity extends Activity {
 
         details.setOnClickListener(onClickListener);
         evaluate.setOnClickListener(onClickListener);
-
+        arow.setOnClickListener(onClickListener);
 
     }
-    GoodsDetailsEvaluateFragment goodsDetailsEvaluateFragment;
-    GoodsDetailsFragment goodsDetailsFragment;
+
+    GoodsDetailsEvaluateFragment goodsDetailsEvaluateFragment; //评论
+    GoodsDetailsFragment goodsDetailsFragment; //详情
+
     FragmentManager fragmentManager;
-    FragmentTransaction fragmentTransaction;
+
     //创建fragment管理器对象
     public void createFragment(){
         goodsDetailsFragment = new GoodsDetailsFragment();
+        goodsDetailsEvaluateFragment = new GoodsDetailsEvaluateFragment();
         fragmentManager = getFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.add(R.id.linearlayout,goodsDetailsFragment);
-        fragmentTransaction.commit();
+        fragmentManager.beginTransaction().add(R.id.linearlayout,goodsDetailsFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.linearlayout,goodsDetailsEvaluateFragment).commit();
+        fragmentManager.beginTransaction().hide(goodsDetailsEvaluateFragment).commit();
     }
 
     Intent intent;
@@ -63,20 +67,24 @@ public class GoodsDetailsActivity extends Activity {
                     left.setVisibility(View.VISIBLE);
                     right.setVisibility(View.INVISIBLE);
 
+                    fragmentManager.beginTransaction().show(goodsDetailsFragment).commit();
+                    fragmentManager.beginTransaction().hide(goodsDetailsEvaluateFragment).commit();
 
                     break;
                 case R.id.goods_evaluater:
                     left.setVisibility(View.INVISIBLE);
                     right.setVisibility(View.VISIBLE);
+                    fragmentManager.beginTransaction().show(goodsDetailsEvaluateFragment).commit();
+                    fragmentManager.beginTransaction().hide(goodsDetailsFragment).commit();
 
                     break;
                 case R.id.arow:
-                    intent = new Intent(GoodsDetailsActivity.this, MyHomePage.class);
+                    intent = new Intent(GoodsDetailsActivity.this, MyHomePage.class); //跳转到铺子
                     startActivity(intent);
                     break;
                 case R.id.service:
-                    intent = new Intent(); //跳转到客服
-                    startActivity(intent);
+                   // intent = new Intent(GoodsDetailsActivity.this,); //跳转到客服
+                   // startActivity(intent);
                     break;
             }
 
@@ -90,5 +98,7 @@ public class GoodsDetailsActivity extends Activity {
         left = (ImageView) findViewById(R.id.left);
         evaluate = (TextView) findViewById(R.id.goods_evaluater);
         right = (ImageView) findViewById(R.id.right);
+        arow = (ImageView) findViewById(R.id.arow);
+        ser = (TextView) findViewById(R.id.service);
     }
 }

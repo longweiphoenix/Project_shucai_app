@@ -68,19 +68,94 @@
     <string name="material">准备食材：板栗50g 排骨500g</string>
     <string name="material2">准备食材：虾仁 鸡蛋 西兰花 圣女果</string>
     <string name="material3">准备食材：白菜 红枣 黄椒 火腿片</string>
-    <string name="home">首页</string>
-    <string name="shop">铺子</string>
-    <string name="me">我</string>
+
 
     <!--商店分类-->
     <string name="all_sort">全部分类</string>
     <string name="organic_vegetable">有机蔬菜</string>
     <string name="current_organic_vegetable">有机时蔬</string>
     <string name="farm_native">农家土特产</string>
+<<<<<<< HEAD
     <!--购物车-->
     <string name="gewuce">购物车</string>
     <string name="bji">编辑</string>
     <string name="yojiwdo">阿青家有机豌豆</string>
     <string name="yojictr">有机纯天然，不添加任何化学试剂</string>
     <string name="yojihuac">阿青家有机花菜</string>
+=======
+
+    <!--主页、商铺、我-->
+    <string name="home">首页</string>
+    <string name="shop">铺子</string>
+    <string name="me">我</string>
+
+    <!--zxy-->
+    <string-array name="menu_parepre_one">
+      <item>板栗</item>
+      <item>猪大排</item>
+    </string-array>
+    <string-array name="menu_parepre_two">
+        <item>姜</item>
+        <item>食盐</item>
+    </string-array>
+    <string-array name="menu_parepre_three">
+        <item>生抽</item>
+        <item>料酒</item>
+    </string-array>
+    <string-array name="menu_parepre_four">
+        <item>白糖</item>
+        <item>淀粉</item>
+    </string-array>
+    <string-array name="menu_parepre_five">
+        <item>水</item>
+        <item>植物油</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_one">
+        <item>350g</item>
+        <item>400g</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_two">
+        <item>5g</item>
+        <item>5g</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_three">
+        <item>5g</item>
+        <item>5g</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_four">
+        <item>5g</item>
+        <item>5g</item>
+    </string-array>
+    <string-array name="menu_parepre_weight_five">
+        <item>适量</item>
+        <item>1茶匙</item>
+    </string-array>
+    
+    <string-array name="menu_process_number">
+        <item>1.</item>
+        <item>2.</item>
+        <item>3.</item>
+        <item>4.</item>
+        <item>5.</item>
+        <item>6.</item>
+        <item>7.</item>
+        <item>8.</item>
+    </string-array>
+    <string-array name="menu_process">
+        <item>将排骨冷水下锅氽烫，水开后将排骨氽汤至去除杂质和血水</item>
+        <item>生板栗去皮去核备用</item>
+        <item>锅内放油烧热，放入排骨，炒至排骨表面金黄微焦，然后放入香料煸炒至能闻到香料的香味</item>
+        <item>把炒香的香料和排骨捞起，热油继续留在锅内，在热油里放几块冰糖，小火炒至冰糖溶化成焦糖色</item>
+        <item>迅速倒入排骨和香料翻炒，均匀的裹上糖色，加入料酒、生抽、老抽翻炒均匀</item>
+        <item>加入没过排骨的开水，盖上盖子小火煮20分钟左右，20分钟后加入板栗，小火再焖制</item>
+        <item>最后还剩点汁的时候可以试下咸味，不够可再加酱油，这一步汁别收太干，不然板栗吃起来口感会有点干，而且汤汁留着用来拌米饭也是很香的</item>
+        <item>装盘，香甜的板栗烧排骨可以上桌了</item>
+    </string-array>
+    <!--zxy-->
+
+    <!--下拉刷新控件的字符串-->
+    <string name="pull_to_refresh">下拉刷新</string>
+
+    <!--下拉刷新控件的字符串-->
+>>>>>>> 51131cc79a442fd1471ff081122b5df5fe7d2066
 </resources>

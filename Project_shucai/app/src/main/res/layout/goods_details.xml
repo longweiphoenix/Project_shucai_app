@@ -9,6 +9,7 @@
         android:orientation="horizontal"
         android:layout_margin="13dp">
         <ImageView
+            android:id="@+id/arow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/arow"/>
@@ -122,7 +123,8 @@
             <LinearLayout
                 android:id="@+id/linearlayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="vertical">
             </LinearLayout>
 
@@ -139,6 +141,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:background="#f7f8f9">
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"

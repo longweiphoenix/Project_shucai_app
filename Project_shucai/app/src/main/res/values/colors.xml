@@ -23,4 +23,7 @@
     <color name="selected_text">#698d45</color><!--商店字体选中变色-->
     <color name="shop_background">#f7f8f9</color><!--商店背景颜色-->
     <color name="vegetable_subtitle">#7b7b7b</color><!--蔬菜子标题颜色-->
+
+    <!--透明背景颜色-->
+    <color name="touming">#32000000</color>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -13,7 +13,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="65dp">
                 <ImageView
-                    android:id="@+id/followers_setting_arow"
+                    android:id="@+id/menu_arow_imageview"
                     android:layout_width="13dp"
                     android:layout_height="21dp"
                     android:background="@mipmap/arow"
@@ -71,6 +71,7 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="33dp">
                 <TextView
+                    android:id="@+id/parepre_button"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -84,6 +85,7 @@
                     android:layout_gravity="center"
                     android:background="@color/linecolor"/>
                 <TextView
+                    android:id="@+id/process_button"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -97,270 +99,16 @@
                 android:layout_height="1dp"
                 android:background="@color/linecolor"
                 android:layout_marginTop="9dp"/>
-          <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="126dp"
-                    android:src="@mipmap/prepare1"
-                    android:layout_marginTop="7dp" />
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <LinearLayout
+            <ListView
+
+                    android:id="@+id/menu_parepre_listview"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="板栗"
-                        android:layout_marginTop="22dp"
-                        android:textSize="12sp"
-                        android:textColor="@color/fontgreen"
-                        android:layout_marginLeft="12dp"/>
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:text="350g"
-                        android:layout_marginTop="22dp"
-                        android:gravity="right"
-                        android:layout_marginRight="30dp"
-                        android:textSize="12sp"
-                        android:textColor="@color/fontblack1"/>
-                </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="姜"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:textColor="@color/fontgreen"
-                            android:layout_marginLeft="12dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="5g"
-                            android:gravity="right"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:layout_marginRight="30dp"
-                            android:textColor="@color/fontblack1"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="生抽"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:textColor="@color/fontgreen"
-                            android:layout_marginLeft="12dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="5g"
-                            android:gravity="right"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:layout_marginRight="30dp"
-                            android:textColor="@color/fontblack1"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="白糖"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:textColor="@color/fontgreen"
-                            android:layout_marginLeft="12dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="5g"
-                            android:gravity="right"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:layout_marginRight="30dp"
-                            android:textColor="@color/fontblack1"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="水"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:textColor="@color/fontgreen"
-                            android:layout_marginLeft="12dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="适量"
-                            android:textSize="12sp"
-                            android:layout_marginTop="5dp"
-                            android:gravity="right"
-                            android:layout_marginRight="30dp"
-                            android:textColor="@color/fontblack1"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
+                    android:layout_height="300dp"/>
+            <ListView
+                android:visibility="gone"
+                android:id="@+id/menu_process_listview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="126dp"
-                    android:src="@mipmap/prepare2"
-                    android:layout_marginTop="7dp" />
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="猪大排"
-                            android:layout_marginTop="22dp"
-                            android:textSize="12sp"
-                            android:textColor="@color/fontgreen"
-                            android:layout_marginLeft="12dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:textSize="12sp"
-                            android:layout_height="wrap_content"
-                            android:text="400g"
-                            android:layout_marginTop="22dp"
-                            android:gravity="right"
-                            android:layout_marginRight="30dp"
-                            android:textColor="@color/fontblack1"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="食盐"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:textColor="@color/fontgreen"
-                            android:layout_marginLeft="12dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="5g"
-                            android:gravity="right"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:layout_marginRight="30dp"
-                            android:textColor="@color/fontblack1"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="料酒"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:textColor="@color/fontgreen"
-                            android:layout_marginLeft="12dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="5g"
-                            android:gravity="right"
-                            android:textSize="12sp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="30dp"
-                            android:textColor="@color/fontblack1"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="淀粉"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:textColor="@color/fontgreen"
-                            android:layout_marginLeft="12dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="5g"
-                            android:gravity="right"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:layout_marginRight="30dp"
-                            android:textColor="@color/fontblack1"/>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="植物油"
-                            android:layout_marginTop="5dp"
-                            android:textSize="12sp"
-                            android:textColor="@color/fontgreen"
-                            android:layout_marginLeft="12dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:text="1茶匙"
-                            android:textSize="12sp"
-                            android:layout_marginTop="5dp"
-                            android:gravity="right"
-                            android:layout_marginRight="30dp"
-                            android:textColor="@color/fontblack1"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
+                android:layout_height="1200dp"/>
         </LinearLayout>
     </ScrollView>
 

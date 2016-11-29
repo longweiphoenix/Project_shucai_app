@@ -33,4 +33,17 @@
     <dimen name="shop_sort_out80dp">80dp</dimen>
     <dimen name="shop_goods_show_img_width104dp">104dp</dimen>
     <dimen name="shop_goods_show_img_height84dp">84dp</dimen>
+    <!--购物车-->
+    <dimen name="shoppin_gcart">8dp</dimen>
+    <dimen name="gwuc_zti">18sp</dimen>
+    <dimen name="gwuctop">15dp</dimen>
+    <dimen name="gwucBottom">15dp</dimen>
+    <dimen name="bjiRight">12dp</dimen>
+    <dimen name="bjizti">15sp</dimen>
+    <dimen name="ctrzti">12sp</dimen>
+    <dimen name="kojdejuli">12dp</dimen>
+    <dimen name="kojdedax">18dp</dimen>
+    <dimen name="litupdejuli">20dp</dimen>
+    <dimen name="tuptop">18dp</dimen>
+    <dimen name="tupLeft">21dp</dimen>
 </resources>

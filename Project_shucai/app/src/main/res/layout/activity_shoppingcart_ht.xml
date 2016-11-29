@@ -9,36 +9,36 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="@dimen/kojdedax"
+            android:layout_height="@dimen/kojdedax"
             android:src="@mipmap/button"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="12dp"/>
+            android:layout_marginLeft="@dimen/kojdejuli"/>
         <ImageView
-            android:id="@+id/cqutu"
+            android:id="@+id/tup"
             android:layout_width="89dp"
             android:layout_height="89dp"
             android:src="@mipmap/dojiatu"
-            android:layout_marginTop="18dp"
-            android:layout_marginLeft="21dp"/>
+            android:layout_marginTop="@dimen/tuptop"
+            android:layout_marginLeft="@dimen/tupLeft"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="20dp">
+            android:layout_marginLeft="@dimen/litupdejuli">
             <TextView
-                android:id="@+id/cpmz"
+                android:id="@+id/cpmc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="阿青家有机豌豆"
-                android:textSize="15sp"
+                android:text="@string/yojiwdo"
+                android:textSize="@dimen/bjizti"
                 android:layout_marginTop="18dp"
                 android:textColor="#323232" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="有机纯天然，不添加任何化学试剂"
-                android:textSize="12sp"
+                android:text="@string/yojictr"
+                android:textSize="@dimen/ctrzti"
                 android:textColor="#787878"
                 android:layout_marginTop="10dp"/>
             <LinearLayout
@@ -54,15 +54,16 @@
                     android:textColor="#689d45"
                     android:textSize="15sp"/>
                 <TextView
-                    android:id="@+id/cdejiage"
+                    android:id="@+id/jiage"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text="28.80/斤"
                     android:textColor="#689d45"
-                    android:textSize="15sp"
+                    android:textSize="@dimen/bjizti"
                     android:layout_marginLeft="5dp"/>
                 <ImageView
+                    android:id="@+id/jiaqu"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@mipmap/reduce" />
@@ -72,16 +73,12 @@
                     android:text="1"
                     android:layout_marginLeft="12dp"/>
                 <ImageView
+                    android:id="@+id/jias"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@mipmap/plus"
-                    android:layout_marginLeft="12dp"/>
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:src="@mipmap/trash"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="12dp"/>
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="22dp"/>
 
             </LinearLayout>
         </LinearLayout>

@@ -75,10 +75,6 @@
     <string name="organic_vegetable">有机蔬菜</string>
     <string name="current_organic_vegetable">有机时蔬</string>
     <string name="farm_native">农家土特产</string>
-<<<<<<< HEAD
-=======
-
->>>>>>> 551ff9191ef5a9bca9d0d730ff71ff202ba304f9
     <!--购物车-->
     <string name="gewuce">购物车</string>
     <string name="bji">编辑</string>
@@ -159,9 +155,5 @@
     <!--下拉刷新控件的字符串-->
     <string name="pull_to_refresh">下拉刷新</string>
 
-    <!--下拉刷新控件的字符串-->
-<<<<<<< HEAD
-=======
-
->>>>>>> 551ff9191ef5a9bca9d0d730ff71ff202ba304f9
+    <!--下拉刷新控AAAAAAAAAAAAA件的字符串-->
 </resources>

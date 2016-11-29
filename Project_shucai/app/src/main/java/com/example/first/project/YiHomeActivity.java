@@ -18,6 +18,7 @@ public class YiHomeActivity extends Activity {
     ImageView back; //返回上级页面
     TextView name; //收货人
     Button commit; //提交
+    ImageView arowRight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,9 @@ public class YiHomeActivity extends Activity {
                     break;
                 case R.id.commit:
                     intent = new Intent(YiHomeActivity.this,OrderToPageActivity.class);
-                    startActivity(intent);
+                    startActivity(intent); //跳转到订单生成页面
+                    break;
+                case R.id.arow_right:
                     break;
             }
         }
@@ -51,5 +54,6 @@ public class YiHomeActivity extends Activity {
         back = (ImageView) findViewById(R.id.back);
         name = (TextView) findViewById(R.id.name);
         commit = (Button) findViewById(R.id.commit);
+        arowRight = (ImageView) findViewById(R.id.arow_right);
     }
 }

@@ -2,9 +2,7 @@ package com.example.first.project;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -22,8 +20,6 @@ import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.sina.weibo.sdk.exception.WeiboException;
-
-import cn.smssdk.SMSSDK;
 
 /**登录页面
  * Created by Administrator on 2016/11/0008.
@@ -88,7 +84,6 @@ public class LoginPageActivity extends Activity {
     }
     //微博登录
     private class AuthListener implements WeiboAuthListener {
-        @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
         public void onComplete(Bundle values) {
             Toast.makeText(LoginPageActivity.this, "登录成功", Toast.LENGTH_SHORT)

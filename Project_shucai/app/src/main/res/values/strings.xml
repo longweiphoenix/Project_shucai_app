@@ -75,14 +75,14 @@
     <string name="organic_vegetable">有机蔬菜</string>
     <string name="current_organic_vegetable">有机时蔬</string>
     <string name="farm_native">农家土特产</string>
-<<<<<<< HEAD
+
     <!--购物车-->
     <string name="gewuce">购物车</string>
     <string name="bji">编辑</string>
     <string name="yojiwdo">阿青家有机豌豆</string>
     <string name="yojictr">有机纯天然，不添加任何化学试剂</string>
     <string name="yojihuac">阿青家有机花菜</string>
-=======
+
 
     <!--主页、商铺、我-->
     <string name="home">首页</string>
@@ -157,5 +157,5 @@
     <string name="pull_to_refresh">下拉刷新</string>
 
     <!--下拉刷新控件的字符串-->
->>>>>>> 51131cc79a442fd1471ff081122b5df5fe7d2066
+
 </resources>

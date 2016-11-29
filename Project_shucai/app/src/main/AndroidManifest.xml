@@ -85,6 +85,7 @@
         <activity android:name="com.example.zxy.NewFollowers" />
         <!--zxy-->
 
+        <!--<activity android:name="com.example.zxy.NewFollowers" />-->
     </application>
 
 

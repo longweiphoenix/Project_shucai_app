@@ -29,7 +29,7 @@ public class MyShoppingcartchoose extends Activity {
         SimpleAdapter simpleAdapter = new SimpleAdapter(
                 MyShoppingcartchoose.this,
                 list,
-                R.layout.activity_shoppingcart_choose_ht,
+                R.layout.activity_shoppingcart_commit_ht,
                 from,
                 to);
         listView.setAdapter(simpleAdapter);

@@ -29,7 +29,7 @@
         android:supportsRtl="false"
         tools:replace="android:allowBackup"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MyHomePage">
+        <activity android:name="com.example.first.project.CreateAccountActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,9 +37,9 @@
             </intent-filter>
         </activity>
         <!--lijunming-->
-        <activity android:name="com.example.first.project.CreateAccountActivity"/>
+        <!--<activity android:name="com.example.first.project.CreateAccountActivity"/>-->
         <activity android:name="com.example.first.project.GoodsDetailsActivity" />
-        <activity android:name="com.example.first.project.LoginPageActivity" />
+        <!--<activity android:name="com.example.first.project.LoginPageActivity" />-->
         <activity android:name="com.example.first.project.OrderToPageActivity" />
         <activity android:name="com.example.first.project.YiHomeActivity" />
         <activity android:name="com.example.first.project.FoodRulesActivity" />

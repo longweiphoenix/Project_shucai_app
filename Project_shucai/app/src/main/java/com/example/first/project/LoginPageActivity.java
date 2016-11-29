@@ -3,13 +3,11 @@ package com.example.first.project;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.along.ui1project.MyHomePage;
 import com.example.along.ui1project.R;
@@ -42,9 +40,7 @@ public class LoginPageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
 
-
         findView();
-
 
         createAccount.setOnClickListener(onClickListener);
         register.setOnClickListener(onClickListener);
@@ -65,7 +61,7 @@ public class LoginPageActivity extends Activity {
                     startActivity(intent);
                     break;
                 case R.id.vb_register:
-                    authInfo = new AuthInfo(LoginPageActivity.this, Constants.APP_KEY, Constants.REDIRECT_URL, Constants.SCOPE);
+                    authInfo = new AuthInfo(LoginPageActivity.this,Constants.APP_KEY,Constants.REDIRECT_URL,Constants.SCOPE);
                     mSsoHandler = new SsoHandler(LoginPageActivity.this, authInfo);
                     mSsoHandler. authorize(new AuthListener());
                     break;
@@ -83,27 +79,29 @@ public class LoginPageActivity extends Activity {
         vb = (LinearLayout) findViewById(R.id.vb_register);
     }
     //微博登录
-    private class AuthListener implements WeiboAuthListener {
+    class AuthListener  implements WeiboAuthListener {
+
         @Override
         public void onComplete(Bundle values) {
-            Toast.makeText(LoginPageActivity.this, "登录成功", Toast.LENGTH_SHORT)
-                    .show();
-            Oauth2AccessToken accessToken = Oauth2AccessToken
-                    .parseAccessToken(values);
-            AccessTokenKeeper keeper = new AccessTokenKeeper();
-            keeper.writeAccessToken(LoginPageActivity.this,accessToken);
+            // 从 Bundle 中解析 Token
+            Oauth2AccessToken mAccessToken = Oauth2AccessToken.parseAccessToken(values);
+            if (mAccessToken.isSessionValid()) {
+                // 保存 Token 到 SharedPreferences
+                AccessTokenKeeper.writeAccessToken(LoginPageActivity.this, mAccessToken);
 
-            if (accessToken != null && accessToken.isSessionValid()) {
-                Log.i("accessToken==>",""+accessToken);
+            } else {
+                // 当您注册的应用程序签名不正确时，就会收到 Code，请确保签名正确
+                String code = values.getString("code", "");
+
             }
         }
-        @Override
-        public void onWeiboException(WeiboException e) {
-            Toast.makeText(LoginPageActivity.this, "微博异常", Toast.LENGTH_SHORT).show();
-        }
+
         @Override
         public void onCancel() {
-            Toast.makeText(LoginPageActivity.this, "取消授权", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onWeiboException(WeiboException e) {
         }
     }
 

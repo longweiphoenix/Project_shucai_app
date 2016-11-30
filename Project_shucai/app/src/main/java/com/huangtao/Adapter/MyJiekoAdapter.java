@@ -1,4 +1,4 @@
-package com.huangtao;
+package com.huangtao.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,14 +14,14 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/11/28.
  */
-public class MyJieko extends BaseAdapter {
+public class MyJiekoAdapter extends BaseAdapter {
     Context context;
     List<HashMap<String,Object>> list;
     String[] from;
     int[] to;
     int resouceId;
 
-    public MyJieko(Context context,List<HashMap<String,Object>> list){
+    public MyJiekoAdapter(Context context, List<HashMap<String,Object>> list){
         this.context=context;
         this.list=list;
     }

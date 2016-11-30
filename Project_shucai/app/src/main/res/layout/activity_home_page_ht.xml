@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -114,62 +114,65 @@
             android:src="@mipmap/shopping_car_black" />
     </RelativeLayout>
 
-    <RadioGroup
-        android:id="@+id/group"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/foot_bar_drawable"
-        android:orientation="horizontal"
-        android:padding="@dimen/padding_values">
+        android:layout_height="match_parent">
 
-        <RadioButton
-            android:id="@+id/home"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@mipmap/home_page"
-            android:gravity="center_horizontal"
-            android:text="@string/home" />
-
-        <RadioButton
-            android:id="@+id/shop"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@mipmap/shop_black"
-            android:gravity="center_horizontal"
-            android:text="@string/shop" />
-
-        <RadioButton
-            android:id="@+id/user"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@mipmap/me"
-            android:gravity="center_horizontal"
-            android:text="@string/me" />
-    </RadioGroup>
-
-    <LinearLayout
-        android:id="@+id/content_panel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/group"
-        android:layout_below="@id/rel_home"
-        android:orientation="vertical">
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/container"
+        <RadioGroup
+            android:id="@+id/group"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/foot_bar_drawable"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_values">
 
+            <RadioButton
+                android:id="@+id/home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@mipmap/home_page"
+                android:gravity="center_horizontal"
+                android:text="@string/home" />
 
-</RelativeLayout>
+            <RadioButton
+                android:id="@+id/shop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@mipmap/shop_black"
+                android:gravity="center_horizontal"
+                android:text="@string/shop" />
+
+            <RadioButton
+                android:id="@+id/user"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@mipmap/me"
+                android:gravity="center_horizontal"
+                android:text="@string/me" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/content_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/group"
+            android:orientation="vertical">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

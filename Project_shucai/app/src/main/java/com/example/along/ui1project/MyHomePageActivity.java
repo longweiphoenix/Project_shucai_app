@@ -16,12 +16,11 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.along.ui1project.fragment.HomePageFragment;
 import com.example.along.ui1project.fragment.MePageFragment;
 import com.example.along.ui1project.fragment.ShopShowFragment;
-import com.huangtao.ShoppingCarActivity;
+import com.huangtao.MyShoppingcartchoose;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,7 +94,7 @@ public class MyHomePageActivity extends FragmentActivity {
                 animation.setDuration(200);//动画持续时间0.2秒
                /* int i = currIndex + 1;image.startAnimation(animation);//是用ImageView来显示动画的*/
 
-                Toast.makeText(MyHomePageActivity.this, "您选择了第2个页卡", Toast.LENGTH_SHORT).show();
+                /*Toast.makeText(MyHomePageActivity.this, "您选择了第2个页卡", Toast.LENGTH_SHORT).show();*/
             }
         });
       /*  mGestureDetector = new GestureDetector(this, gestureDetector);*/
@@ -150,7 +149,7 @@ public class MyHomePageActivity extends FragmentActivity {
         shoppingCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MyHomePageActivity.this, ShoppingCarActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this, MyShoppingcartchoose.class);
                 startActivity(intent);
             }
         });
@@ -163,7 +162,7 @@ public class MyHomePageActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                //跳转购物车  需要bundle数据？？
-                Intent intent=new Intent(MyHomePageActivity.this,ShoppingCarActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this,MyShoppingcartchoose.class);
                 startActivity(intent);
             }
         });
@@ -191,7 +190,7 @@ public class MyHomePageActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 //跳转购物车  需要bundle数据？？
-                Intent intent=new Intent(MyHomePageActivity.this,ShoppingCarActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this,MyShoppingcartchoose.class);
                 startActivity(intent);
             }
         });

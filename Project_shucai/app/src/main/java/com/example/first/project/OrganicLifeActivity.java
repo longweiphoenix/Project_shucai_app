@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
@@ -34,6 +37,26 @@ public class OrganicLifeActivity extends Activity {
         getData();
         OrganicLifeAdapter organicLifeAdapter = new OrganicLifeAdapter(OrganicLifeActivity.this,lifes);
         organicLife.setAdapter(organicLifeAdapter);
+        //点击加载显示详情页面
+        organicLife.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
+                ImageView imageView = (ImageView) view.findViewById(R.id.image);
+                final TextView textView = (TextView) view.findViewById(R.id.title);
+
+               imageView.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
+                       Intent intent = new Intent(OrganicLifeActivity.this, SubOrganicLifeActivity.class);
+                       Bundle bundle = new Bundle();
+                       bundle.putString("title",textView.getText().toString().trim());
+                       bundle.putString("url","file:///android_asset/Untitled-1.html");
+                       intent.putExtras(bundle);
+                       startActivity(intent);
+                   }
+               });
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +91,7 @@ public class OrganicLifeActivity extends Activity {
         organicLife3.setSeeNumb(166);
         lifes.add(organicLife3);
 
-
     }
+
 
 }

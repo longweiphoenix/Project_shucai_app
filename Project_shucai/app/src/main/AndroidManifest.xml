@@ -46,7 +46,7 @@
         <activity android:name="com.example.first.project.YiHomeActivity" />
         <activity android:name="com.example.first.project.FoodRulesActivity" />
         <activity android:name="com.example.first.project.MyFoodActivity" />
-        <activity android:name="com.example.first.project.OrganicLifeActivity" />
+        <!--<activity android:name="com.example.first.project.OrganicLifeActivity" />-->
         //微博需要的权限权限
         <activity android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
             android:configChanges="keyboardHidden|orientation"
@@ -86,6 +86,7 @@
         <!--zxy-->
 
         <!--<activity android:name="com.example.zxy.NewFollowers" />-->
+        <activity android:name="com.example.first.project.SubOrganicLifeActivity"/>
     </application>
 
 

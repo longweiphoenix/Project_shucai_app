@@ -154,11 +154,29 @@
 
     <!--下拉刷新控件的字符串-->
     <string name="pull_to_refresh">下拉刷新</string>
-
-    <!--下拉刷新控AAAAAAAAAAAAA件的字符串-->
-    <!--下拉刷新控件的字符串-->
-    <!--下拉刷新控件的字符串-->
-
-    <!--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
-    <!--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+  <!-- 结算页面字符串-->
+   <string-array name="product_name">
+       <item>阿青家有机豌豆</item>
+       <item>阿青家有机花菜</item>
+       <item>阿青家有机萝卜</item>
+       <item>阿青家有机萝卜</item>
+       <item>阿青家有机萝卜</item>
+       <item>阿青家有机萝卜</item>
+   </string-array>
+    <string-array name="product_introduce">
+        <item>有机纯天然,不添加任何化学试剂</item>
+        <item>有机纯天然,不添加任何化学试剂</item>
+        <item>有机纯天然,不添加任何化学试剂</item>
+        <item>有机纯天然,不添加任何化学试剂</item>
+        <item>有机纯天然,不添加任何化学试剂</item>
+        <item>有机纯天然,不添加任何化学试剂</item>
+    </string-array>
+    <string-array name="product_price">
+        <item>28.8/斤</item>
+        <item>9.8/斤</item>
+        <item>10.8/斤</item>
+        <item>10.8/斤</item>
+        <item>10.8/斤</item>
+        <item>10.8/斤</item>
+    </string-array>
 </resources>

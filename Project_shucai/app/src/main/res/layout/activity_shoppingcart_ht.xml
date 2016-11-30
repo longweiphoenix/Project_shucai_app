@@ -8,14 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <ImageView
-            android:layout_width="@dimen/kojdedax"
-            android:layout_height="@dimen/kojdedax"
-            android:src="@mipmap/button"
+        <CheckBox
+            android:id="@+id/product_checked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/CustomCheckboxTheme"
+            android:checked="true"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="@dimen/kojdejuli"/>
+            android:layout_marginLeft="10dp"/>
         <ImageView
-            android:id="@+id/tup"
+            android:id="@+id/product_image"
             android:layout_width="89dp"
             android:layout_height="89dp"
             android:src="@mipmap/dojiatu"
@@ -27,7 +29,7 @@
             android:orientation="vertical"
             android:layout_marginLeft="@dimen/litupdejuli">
             <TextView
-                android:id="@+id/cpmc"
+                android:id="@+id/product_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/yojiwdo"
@@ -35,6 +37,7 @@
                 android:layout_marginTop="18dp"
                 android:textColor="#323232" />
             <TextView
+                android:id="@+id/product_introduce"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/yojictr"
@@ -47,14 +50,17 @@
                 android:orientation="horizontal"
                 android:layout_marginTop="39dp"
                 android:layout_marginBottom="18dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="¥"
                     android:textColor="#689d45"
-                    android:textSize="15sp"/>
+                    android:textSize="15sp"
+                    android:id="@+id/textView" />
+
                 <TextView
-                    android:id="@+id/jiage"
+                    android:id="@+id/product_price"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
@@ -63,22 +69,31 @@
                     android:textSize="@dimen/bjizti"
                     android:layout_marginLeft="5dp"/>
                 <ImageView
-                    android:id="@+id/jiaqu"
+                    android:id="@+id/product_sub"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@mipmap/reduce" />
                 <TextView
+                    android:id="@+id/product_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1"
+                    android:textSize="18sp"
                     android:layout_marginLeft="12dp"/>
                 <ImageView
-                    android:id="@+id/jias"
+                    android:id="@+id/product_add"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
                     android:src="@mipmap/plus"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="22dp"/>
+                <ImageView
+                    android:id="@+id/shoppingcart_delete"
+                    android:visibility="gone"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@mipmap/trash"
+                    android:layout_marginRight="15dp"/>
 
             </LinearLayout>
         </LinearLayout>

@@ -27,10 +27,13 @@ public class OrganicLifeActivity extends Activity {
     ListView organicLife;
 
     ArrayList<OrganicLife> lifes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.organic_life);
+
+
 
         back = (ImageView) findViewById(R.id.back);
         organicLife = (ListView) findViewById(R.id.organic_life);
@@ -39,12 +42,19 @@ public class OrganicLifeActivity extends Activity {
         organicLife.setAdapter(organicLifeAdapter);
         //点击加载显示详情页面
         organicLife.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            Integer loveNumb;
+            Integer seeNumb;
+            ImageView love;
+            TextView textView;
             @Override
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
                 ImageView imageView = (ImageView) view.findViewById(R.id.image);
-                final TextView textView = (TextView) view.findViewById(R.id.title);
+                textView = (TextView) view.findViewById(R.id.title);
+                love = (ImageView) view.findViewById(R.id.love);
+                loveNumb = 166;
+                seeNumb = 175;
 
-               imageView.setOnClickListener(new View.OnClickListener() {
+                imageView.setOnClickListener(new View.OnClickListener() {
                    @Override
                    public void onClick(View v) {
                        Intent intent = new Intent(OrganicLifeActivity.this, SubOrganicLifeActivity.class);
@@ -53,8 +63,21 @@ public class OrganicLifeActivity extends Activity {
                        bundle.putString("url","file:///android_asset/Untitled-1.html");
                        intent.putExtras(bundle);
                        startActivity(intent);
+                       seeNumb++;
+                       TextView seeNum = (TextView)view.findViewById(R.id.see_numb);
+                       seeNum.setText(seeNumb.toString().trim());
+
                    }
-               });
+                });
+
+                love.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        TextView loveNum = (TextView) view.findViewById(R.id.love_numb);
+                        loveNumb++;
+                        loveNum.setText(loveNumb.toString().trim());
+                    }
+                });
             }
         });
 
@@ -74,21 +97,21 @@ public class OrganicLifeActivity extends Activity {
         organicLife1.setTitle("冬日上火，三招解决");
         organicLife1.setImage(R.mipmap.organic_life_one);
         organicLife1.setLoveNumb(166);
-        organicLife1.setSeeNumb(166);
+        organicLife1.setSeeNumb(175);
         lifes.add(organicLife1);
 
         OrganicLife organicLife2 = new OrganicLife();
         organicLife2.setTitle("专家告诉你如何合理搭配饮食");
         organicLife2.setImage(R.mipmap.organic_life_two);
         organicLife2.setLoveNumb(166);
-        organicLife2.setSeeNumb(166);
+        organicLife2.setSeeNumb(175);
         lifes.add(organicLife2);
 
         OrganicLife organicLife3 = new OrganicLife();
         organicLife3.setTitle("有机蔬菜与绿色蔬菜、无公害蔬菜的区别");
         organicLife3.setImage(R.mipmap.organic_life_three);
         organicLife3.setLoveNumb(166);
-        organicLife3.setSeeNumb(166);
+        organicLife3.setSeeNumb(175);
         lifes.add(organicLife3);
 
     }

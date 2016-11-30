@@ -4,6 +4,7 @@ import android.os.CountDownTimer;
 import android.widget.Button;
 
 /**
+ * 百度的倒计时工具类
  * Created by Administrator on 2016/11/0028.
  */
 

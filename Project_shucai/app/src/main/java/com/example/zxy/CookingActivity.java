@@ -32,16 +32,20 @@ public class CookingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cook_prepare);
+
         parepre = (TextView) findViewById(R.id.parepre_button);
         process = (TextView) findViewById(R.id.process_button);
         listView= (ListView) findViewById(R.id.menu_parepre_listview);
         newListView= (ListView) findViewById(R.id.menu_process_listview);
+        menuArowImageView = (ImageView) findViewById(R.id.menu_arow_imageview);
+        //使一进去页面在最上面
         newListView.setFocusable(false);
         listView.setFocusable(false);
-        menuArowImageView = (ImageView) findViewById(R.id.menu_arow_imageview);
+
         menuArowImageView.setOnClickListener(listener);
         parepre.setOnClickListener(listener);
         process.setOnClickListener(listener);
+
         layoutInflater=LayoutInflater.from(this);
         list=new ArrayList<>();
         newList=new ArrayList<>();

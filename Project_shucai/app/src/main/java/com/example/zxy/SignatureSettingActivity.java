@@ -8,7 +8,7 @@ import com.example.along.ui1project.R;
 /**
  * Created by Administrator on 2016/10/23.
  */
-public class SignatureSetting extends Activity {
+public class SignatureSettingActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

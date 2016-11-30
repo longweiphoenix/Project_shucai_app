@@ -74,17 +74,15 @@
         <!--longweifeng-->
 
         <!--zxy-->
-        <activity android:name="com.example.zxy.AboutUs" />
-        <activity android:name="com.example.zxy.Advice" />
-        <activity android:name="com.example.zxy.Cooking" />
-        <activity android:name="com.example.zxy.HealthyMenuOne" />
-        <activity android:name="com.example.zxy.HealthyMenuThree" />
-        <activity android:name="com.example.zxy.HealthyMenuTwo" />
-        <activity android:name="com.example.zxy.ImageSetting" />
-        <activity android:name="com.example.zxy.InviteFriend" />
-        <activity android:name="com.example.zxy.NameSetting" />
-        <activity android:name="com.example.zxy.SignatureSetting" />
-        <activity android:name="com.example.zxy.NewFollowers" />
+        <activity android:name="com.example.zxy.AboutUsActivity" />
+        <activity android:name="com.example.zxy.AdviceActivity" />
+        <activity android:name="com.example.zxy.CookingActivity" />
+        <activity android:name="com.example.zxy.HealthyMenuOneActivity" />
+        <activity android:name="com.example.zxy.ImageSettingActivity" />
+        <activity android:name="com.example.zxy.InviteFriendActivity" />
+        <activity android:name="com.example.zxy.NameSettingActivity" />
+        <activity android:name="com.example.zxy.SignatureSettingActivity" />
+        <activity android:name="com.example.zxy.NewFollowersActivity" />
         <!--zxy-->
 
         <!--<activity android:name="com.example.zxy.NewFollowers" />-->

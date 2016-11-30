@@ -12,7 +12,7 @@ import com.example.along.ui1project.R;
 /**
  * Created by Administrator on 2016/10/20.
  */
-public class ImageSetting extends Activity{
+public class ImageSettingActivity extends Activity{
     ImageView imageSettingArowImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class ImageSetting extends Activity{
         imageSettingArowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ImageSetting.this, PersonalSetting.class);
+                Intent intent = new Intent(ImageSettingActivity.this, PersonalSetting.class);
                 startActivity(intent);
             }
         });

@@ -12,7 +12,7 @@ import com.example.along.ui1project.R;
 /**
  * Created by Administrator on 2016/10/20.
  */
-public class AboutUs extends Activity {
+public class AboutUsActivity extends Activity {
     ImageView aboutUsImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class AboutUs extends Activity {
         aboutUsImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AboutUs.this, MyHomePage.class);
+                Intent intent = new Intent(AboutUsActivity.this, MyHomePage.class);
             }
         });
     }

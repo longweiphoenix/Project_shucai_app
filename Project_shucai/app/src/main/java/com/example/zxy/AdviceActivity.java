@@ -6,12 +6,12 @@ import android.os.Bundle;
 import com.example.along.ui1project.R;
 
 /**
- * Created by Administrator on 2016/10/30.
+ * Created by Administrator on 2016/10/23.
  */
-public class HealthyMenuThree extends Activity {
+public class AdviceActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_three);
+        setContentView(R.layout.activity_advice);
     }
 }

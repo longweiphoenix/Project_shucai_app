@@ -1,20 +1,11 @@
 package com.example.along.ui1project;
 
-import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.ContentResolver;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.health.PackageHealthStats;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -28,11 +19,9 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.zxy.NameSetting;
+import com.example.zxy.NameSettingActivity;
 
 import java.io.File;
-import java.security.Permission;
-import java.util.Calendar;
 
 /**
  * Created by Long on 2016/10/20.
@@ -85,7 +74,7 @@ public class PersonalInfo extends Activity {
         name_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PersonalInfo.this, NameSetting.class);
+                Intent intent = new Intent(PersonalInfo.this, NameSettingActivity.class);
                 startActivity(intent);
             }
         });

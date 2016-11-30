@@ -7,11 +7,10 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.along.ui1project.R;
-import com.example.zxy.HealthyMenuOne;
+import com.example.zxy.HealthyMenuOneActivity;
 
 
 /**
@@ -34,7 +33,7 @@ public class HomePageFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             Intent intent;
             public void onClick(View v) {
-                intent=new Intent(getActivity(),HealthyMenuOne.class);
+                intent=new Intent(getActivity(),HealthyMenuOneActivity.class);
                 startActivity(intent);
             }
         });

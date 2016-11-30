@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/10/30.
  */
-public class Cooking extends Activity {
+public class CookingActivity extends Activity {
     ListView listView;//制作准备的listView
     ListView newListView;//制作过程的listView
     List<HashMap<String,Object>> list;
@@ -70,7 +70,7 @@ public class Cooking extends Activity {
                    newListView.setVisibility(View.VISIBLE);
                    break;
                case R.id.menu_arow_imageview:
-                   intent=new Intent(Cooking.this,HealthyMenuOne.class);
+                   intent=new Intent(CookingActivity.this,HealthyMenuOneActivity.class);
                    startActivity(intent);
                    break;
            }

@@ -12,7 +12,7 @@ import com.example.first.project.MyFoodActivity;
 /**
  * Created by Administrator on 2016/10/23.
  */
-public class InviteFriend extends Activity {
+public class InviteFriendActivity extends Activity {
     ImageView inviteArowImageView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +21,7 @@ public class InviteFriend extends Activity {
         inviteArowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InviteFriend.this, MyFoodActivity.class);
+                Intent intent = new Intent(InviteFriendActivity.this, MyFoodActivity.class);
                 startActivity(intent);
             }
         });

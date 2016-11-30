@@ -1,7 +1,6 @@
 package com.example.zxy;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,7 +19,7 @@ import com.example.along.ui1project.R;
 /**
  * Created by Administrator on 2016/10/30.
  */
-public class HealthyMenuOne extends Activity {
+public class HealthyMenuOneActivity extends Activity {
     Button heartOne;//收藏
     boolean isFavorite=true;
     ViewFlipper viewFlipper;
@@ -38,14 +37,14 @@ public class HealthyMenuOne extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(HealthyMenuOne.this,Cooking.class);
+                intent = new Intent(HealthyMenuOneActivity.this,CookingActivity.class);
                 startActivity(intent);
             }
         });
         menuArowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HealthyMenuOne.this, MyHomePage.class);
+                Intent intent = new Intent(HealthyMenuOneActivity.this, MyHomePage.class);
                 startActivity(intent);
             }
         });
@@ -58,11 +57,11 @@ public class HealthyMenuOne extends Activity {
                 if(isFavorite){
                     heartOne.setBackground(getResources().getDrawable(R.mipmap.heart_green));
                     isFavorite=false;
-                    Toast.makeText(HealthyMenuOne.this,"收藏成功！！",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HealthyMenuOneActivity.this,"收藏成功！！",Toast.LENGTH_SHORT).show();
                 }else{
                     heartOne.setBackground(getResources().getDrawable(R.mipmap.heart_white));
                     isFavorite=true;
-                    Toast.makeText(HealthyMenuOne.this,"取消收藏成功！！",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(HealthyMenuOneActivity.this,"取消收藏成功！！",Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -100,16 +99,16 @@ public class HealthyMenuOne extends Activity {
             int i =0;
             //向右滑动
             if(i<e2.getX()-e1.getX()){
-                viewFlipper.setInAnimation(HealthyMenuOne.this,R.anim.in_leftright);
-                viewFlipper.setOutAnimation(HealthyMenuOne.this,R.anim.out_leftright);
+                viewFlipper.setInAnimation(HealthyMenuOneActivity.this,R.anim.in_leftright);
+                viewFlipper.setOutAnimation(HealthyMenuOneActivity.this,R.anim.out_leftright);
                 viewFlipper.stopFlipping();
                 viewFlipper.showPrevious();
                 viewFlipper.startFlipping();
             }
             //向左滑动
             else if(i>e2.getX()-e1.getX()){
-                viewFlipper.setInAnimation(HealthyMenuOne.this,R.anim.in_rightleft);
-                viewFlipper.setOutAnimation(HealthyMenuOne.this,R.anim.out_rightleft);
+                viewFlipper.setInAnimation(HealthyMenuOneActivity.this,R.anim.in_rightleft);
+                viewFlipper.setOutAnimation(HealthyMenuOneActivity.this,R.anim.out_rightleft);
                 viewFlipper.stopFlipping();
                 viewFlipper.showNext();
                 viewFlipper.startFlipping();

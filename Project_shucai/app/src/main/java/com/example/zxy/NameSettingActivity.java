@@ -14,7 +14,7 @@ import com.example.along.ui1project.R;
 /**
  * Created by Administrator on 2016/10/23.
  */
-public class NameSetting extends Activity {
+public class NameSettingActivity extends Activity {
     ImageView nameSettingArowImageView;//返回
     TextView nameCommit;
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +25,14 @@ public class NameSetting extends Activity {
         nameSettingArowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NameSetting.this, PersonalInfo.class);
+                Intent intent = new Intent(NameSettingActivity.this, PersonalInfo.class);
                 startActivity(intent);
             }
         });
         nameCommit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(NameSetting.this,"修改成功！",Toast.LENGTH_LONG).show();
+                Toast.makeText(NameSettingActivity.this,"修改成功！",Toast.LENGTH_LONG).show();
             }
         });
     }

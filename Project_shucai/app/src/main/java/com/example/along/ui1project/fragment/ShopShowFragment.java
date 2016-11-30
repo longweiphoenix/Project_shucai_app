@@ -1,6 +1,5 @@
 package com.example.along.ui1project.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -14,8 +13,8 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.example.along.ui1project.R;
-import com.example.along.ui1project.objects.ShopItem;
 import com.example.along.ui1project.adpaters.ShopShowAdapter;
+import com.example.along.ui1project.objects.ShopItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +22,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/11/26.
  */
-public class ShopShowFragment extends Fragment {
+public class ShopShowFragment extends android.support.v4.app.Fragment {
 
     RadioButton allSort, organicVegetable, currentOrganicVegetable, farmNative;
     ListView goodsList;

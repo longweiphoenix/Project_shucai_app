@@ -1,64 +1,143 @@
 package com.example.along.ui1project;
 
-import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.along.ui1project.fragment.HomePageFragment;
 import com.example.along.ui1project.fragment.MePageFragment;
 import com.example.along.ui1project.fragment.ShopShowFragment;
 import com.huangtao.ShoppingCarActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Long on 2016/10/25.
  */
-public class MyHomePageActivity extends Activity implements View.OnTouchListener {
-    TextView homePage,//底部的三个按钮
+public class MyHomePageActivity extends FragmentActivity {
+    RadioButton homePage,//底部的三个按钮
             shop,
-            me,
-            search,shoppingCar,//首页顶部按钮
+            me;
+     ImageView       search,shoppingCar,//首页顶部按钮
             setting_me,shopping_car_me,//我的页面的顶部
             shopping_car_shop,search_goods_shop;//商铺页面的按钮
+    /*ImageView imageviewOvertab;*/
     RelativeLayout relHome,relShop,relMe;
-    LinearLayout linearLayout;
-    FragmentManager manager;
+    ViewPager viewPager;
     RadioGroup group;
     HomePageFragment homePageFragment;
     ShopShowFragment shopShowFragment;
     MePageFragment mePageFragment;
     GestureDetector mGestureDetector;
+    List<Fragment> fragmentList;
+    int screenWidth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page_ht);
-        linearLayout = (LinearLayout) findViewById(R.id.container);
-        homePage = (TextView) findViewById(R.id.home);
+
+
+        fragmentList=new ArrayList<Fragment>();
+        screenWidth=getResources().getDisplayMetrics().widthPixels;
+        viewPager= (ViewPager) findViewById(R.id.container);
+
+        homePageFragment = new HomePageFragment();
+        shopShowFragment = new ShopShowFragment();
+        mePageFragment = new MePageFragment();
+        fragmentList.add(homePageFragment);
+        fragmentList.add(shopShowFragment);
+        fragmentList.add(mePageFragment);
+        //viewpager 设置适配器
+        viewPager.setAdapter(new HomePagerAdapter(getSupportFragmentManager()));
+        //显示当前视图为第一个fragment
+        viewPager.setCurrentItem(0);
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case 0:
+                        homePage.setChecked(true);
+                        break;
+                    case 1:
+                        shop.setChecked(true);
+                        break;
+                    case 2:
+                        me.setChecked(true);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                Animation animation = new TranslateAnimation(0,0,0,0);//平移动画
+                animation.setFillAfter(true);//动画终止时停留在最后一帧，不然会回到没有执行前的状态
+                animation.setDuration(200);//动画持续时间0.2秒
+               /* int i = currIndex + 1;image.startAnimation(animation);//是用ImageView来显示动画的*/
+
+                Toast.makeText(MyHomePageActivity.this, "您选择了第2个页卡", Toast.LENGTH_SHORT).show();
+            }
+        });
+      /*  mGestureDetector = new GestureDetector(this, gestureDetector);*/
+
+
+        homePage = (RadioButton) findViewById(R.id.home);
         /*二级界面三个页面的显示*/
-        shop = (TextView) findViewById(R.id.shop);
-        me = (TextView) findViewById(R.id.user);
+        shop = (RadioButton) findViewById(R.id.shop);
+        me = (RadioButton) findViewById(R.id.user);
         group = (RadioGroup) findViewById(R.id.group);
-        /*二级界面的三个页面点击事件*/
-        shop.setOnClickListener(onClickListener);
-        me.setOnClickListener(onClickListener);
-        homePage.setOnClickListener(onClickListener);
+        group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.home:
+                        relHome.setVisibility(View.VISIBLE);
+                        relShop.setVisibility(View.GONE);
+                        relMe.setVisibility(View.GONE);
+                        changeView(0);
+                        break;
+                    case R.id.shop:
+                        relHome.setVisibility(View.GONE);
+                        relShop.setVisibility(View.VISIBLE);
+                        relMe.setVisibility(View.GONE);
+                        changeView(1);
+                        break;
+                    case R.id.user:
+                        relHome.setVisibility(View.GONE);
+                        relShop.setVisibility(View.GONE);
+                        relMe.setVisibility(View.VISIBLE);
+                        changeView(2);
+                        break;
+                }
+            }
+        });
         //三个顶部布局
         relHome= (RelativeLayout) findViewById(R.id.rel_home);
         relShop= (RelativeLayout) findViewById(R.id.rel_shop);
         relMe= (RelativeLayout) findViewById(R.id.rel_me);
         //home顶部
-        search= (TextView) findViewById(R.id.search_home);
-        shoppingCar= (TextView) findViewById(R.id.shopping_car_home);
+        search= (ImageView) findViewById(R.id.search_home);
+        shoppingCar= (ImageView) findViewById(R.id.shopping_car_home);
         //搜索跳转
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,8 +157,8 @@ public class MyHomePageActivity extends Activity implements View.OnTouchListener
 
 
         //shop顶部
-        shopping_car_shop= (TextView) findViewById(R.id.shopping_car_shop);
-        search_goods_shop= (TextView) findViewById(R.id.search_goods_shop);
+        shopping_car_shop= (ImageView) findViewById(R.id.shopping_car_shop);
+        search_goods_shop= (ImageView) findViewById(R.id.search_goods_shop);
         shopping_car_shop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,8 +177,8 @@ public class MyHomePageActivity extends Activity implements View.OnTouchListener
         });
 
         //我的顶部
-        setting_me= (TextView) findViewById(R.id.setting_me);
-        shopping_car_me= (TextView) findViewById(R.id.shopping_car_me);
+        setting_me= (ImageView) findViewById(R.id.setting_me);
+        shopping_car_me= (ImageView) findViewById(R.id.shopping_car_me);
         setting_me.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,51 +196,9 @@ public class MyHomePageActivity extends Activity implements View.OnTouchListener
             }
         });
 
-
-        manager = getFragmentManager();
-        homePageFragment = new HomePageFragment();
-        shopShowFragment = new ShopShowFragment();
-        mePageFragment = new MePageFragment();
-        manager.beginTransaction().add(R.id.container, shopShowFragment, "homepage").commit();
-        manager.beginTransaction().add(R.id.container, mePageFragment, "homepage").commit();
-        manager.beginTransaction().hide(shopShowFragment).commit();
-        manager.beginTransaction().hide(mePageFragment).commit();
-        manager.beginTransaction().add(R.id.container, homePageFragment, "homepage").commit();
-        mGestureDetector = new GestureDetector(this, gestureDetector);
     }
 
-    View.OnClickListener onClickListener = new View.OnClickListener() {
-        @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.home:
-                    relHome.setVisibility(View.VISIBLE);
-                    relShop.setVisibility(View.GONE);
-                    relMe.setVisibility(View.GONE);
-                    manager.beginTransaction().hide(shopShowFragment).commit();
-                    manager.beginTransaction().hide(mePageFragment).commit();
-                    manager.beginTransaction().show(homePageFragment).commit();
-                    break;
-                case R.id.shop:
-                    relHome.setVisibility(View.GONE);
-                    relShop.setVisibility(View.VISIBLE);
-                    relMe.setVisibility(View.GONE);
-                    manager.beginTransaction().hide(homePageFragment).commit();
-                    manager.beginTransaction().hide(mePageFragment).commit();
-                    manager.beginTransaction().show(shopShowFragment).commit();
-                    break;
-                case R.id.user:
-                    relHome.setVisibility(View.GONE);
-                    relShop.setVisibility(View.GONE);
-                    relMe.setVisibility(View.VISIBLE);
-                    manager.beginTransaction().hide(homePageFragment).commit();
-                    manager.beginTransaction().hide(shopShowFragment).commit();
-                    manager.beginTransaction().show(mePageFragment).commit();
-                    break;
-            }
-        }
-    };
+
     GestureDetector.OnGestureListener gestureDetector = new GestureDetector.OnGestureListener() {
 
         @Override
@@ -192,15 +229,15 @@ public class MyHomePageActivity extends Activity implements View.OnTouchListener
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             if ((e1.getX() - e2.getX()) > 20 && Math.abs(velocityX) > 0) {
-                manager.beginTransaction().show(mePageFragment).commit();
+                viewPager.setCurrentItem(0);
             } else if (e2.getX() - e1.getX() > 20 && Math.abs(velocityX) > velocityY) {
-                manager.beginTransaction().show(homePageFragment).commit();
+
             }
             return false;
         }
     };
 
-    @Override
+   /* @Override
     public boolean onTouchEvent(MotionEvent event) {
         return super.onTouchEvent(event);
     }
@@ -208,5 +245,58 @@ public class MyHomePageActivity extends Activity implements View.OnTouchListener
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         return mGestureDetector.onTouchEvent(event);
+    }*/
+    int currentTab=-1;
+   class HomePagerAdapter extends FragmentStatePagerAdapter {
+
+
+        public HomePagerAdapter(android.support.v4.app.FragmentManager fm) {
+            super(fm);
+        }
+
+       @Override
+       public void notifyDataSetChanged() {
+           super.notifyDataSetChanged();
+       }
+
+       @Override
+        public int getCount() {
+            return fragmentList.size();
+        }
+
+        @Override
+        public void finishUpdate(ViewGroup container) {
+            super.finishUpdate(container);//这句话要放在最前面，否则会报错
+            //获取当前的视图是位于ViewGroup的第几个位置，用来更新对应的覆盖层所在的位置
+            int currentItem=viewPager.getCurrentItem();
+            if(currentItem==currentTab){
+                return;
+            }
+            moveFragment(viewPager.getCurrentItem());
+            currentTab=viewPager.getCurrentItem();
+
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fragmentList.get(position);
+        }
     }
+    private void moveFragment(int moveToTab){
+        int startPosition=0;
+        int moveToPosition=0;
+        startPosition=currentTab*(screenWidth/4);
+        moveToPosition=moveToTab*(screenWidth/4);
+        TranslateAnimation ta=new TranslateAnimation(startPosition,moveToPosition,0,0);
+        ta.setFillAfter(true);
+        ta.setDuration(200);
+        /*imageviewOvertab.startAnimation(ta);*/
+    }
+    /**
+     * 手动设置viewpager想要显示的视图
+     * */
+    private void changeView(int desTab){
+        viewPager.setCurrentItem(desTab,true);
+    }
+
 }

@@ -1,6 +1,5 @@
 package com.example.along.ui1project.fragment;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -20,7 +19,7 @@ import java.util.List;
 /**
  * Created by Long on 2016/11/10.
  */
-public class MePageFragment extends Fragment {
+public class MePageFragment extends android.support.v4.app.Fragment {
     ListView myList;
     List<HashMap<String, Object>> list;
     LayoutInflater layoutInflater;

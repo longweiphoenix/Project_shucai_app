@@ -119,6 +119,7 @@
                     android:textSize="15dp"
                     android:textColor="#787878"/>
                 <ImageView
+                    android:id="@+id/shop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@mipmap/arow_right"

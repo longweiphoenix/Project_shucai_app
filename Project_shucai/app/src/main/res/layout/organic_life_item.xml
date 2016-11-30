@@ -44,8 +44,7 @@
             android:layout_height="15dp"
             android:src="@mipmap/love"
             android:layout_marginLeft="13dp"
-            android:layout_gravity="center"
-            android:onClick="loveOnClick"/>
+            android:layout_gravity="center"/>
         <TextView
             android:id="@+id/love_numb"
             android:layout_width="wrap_content"
@@ -62,7 +61,7 @@
             android:src="@mipmap/eyes"
             android:layout_marginLeft="40dp"
             android:layout_gravity="center"
-            android:onClick="seeOnClick"/>
+            android:clickable="false"/>
         <TextView
             android:id="@+id/see_numb"
             android:layout_width="wrap_content"

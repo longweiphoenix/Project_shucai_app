@@ -11,12 +11,11 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.along.ui1project.R;
-import com.example.along.ui1project.ShopItem;
-import com.example.along.ui1project.ShopShowAdapter;
+import com.example.along.ui1project.objects.ShopItem;
+import com.example.along.ui1project.adpaters.ShopShowAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

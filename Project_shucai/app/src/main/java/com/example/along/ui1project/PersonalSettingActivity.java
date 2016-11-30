@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.widget.ListView;
 
-import com.example.along.ui1project.fragment.MeAdapter;
+import com.example.along.ui1project.adpaters.MeAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Long on 2016/10/25.
  */
-public class PersonalSetting extends Activity {
+public class PersonalSettingActivity extends Activity {
     ListView personalSettingListView;
     List<HashMap<String,Object>> list;
     LayoutInflater inflater;
@@ -26,7 +26,7 @@ public class PersonalSetting extends Activity {
         personalSettingListView= (ListView) findViewById(R.id.personal_setting_list_view);//个人设置
         list=new ArrayList<HashMap<String, Object>>();
         getItemData();
-        personalSettingListView.setAdapter(new MeAdapter(PersonalSetting.this,list,inflater));
+        personalSettingListView.setAdapter(new MeAdapter(PersonalSettingActivity.this,list,inflater));
     }
 
     public void getItemData(){

@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.along.ui1project.MyHomePage;
+import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 
 /**
@@ -41,7 +41,7 @@ public class MyFoodActivity extends Activity {
                     startActivity(intent);
                     break;
                 case R.id.arow:
-                    intent = new Intent(MyFoodActivity.this, MyHomePage.class);
+                    intent = new Intent(MyFoodActivity.this, MyHomePageActivity.class);
                     startActivity(intent);
                     break;
             }

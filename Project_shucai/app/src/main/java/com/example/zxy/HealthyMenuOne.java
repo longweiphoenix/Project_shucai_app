@@ -1,7 +1,6 @@
 package com.example.zxy;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.example.along.ui1project.MyHomePage;
+import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 
 /**
@@ -45,7 +44,7 @@ public class HealthyMenuOne extends Activity {
         menuArowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HealthyMenuOne.this, MyHomePage.class);
+                Intent intent = new Intent(HealthyMenuOne.this, MyHomePageActivity.class);
                 startActivity(intent);
             }
         });

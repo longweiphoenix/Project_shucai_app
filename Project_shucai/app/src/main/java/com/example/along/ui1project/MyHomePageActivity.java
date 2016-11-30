@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.GestureDetector;
@@ -13,7 +12,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.along.ui1project.fragment.HomePageFragment;
@@ -24,7 +22,7 @@ import com.huangtao.ShoppingCarActivity;
 /**
  * Created by Long on 2016/10/25.
  */
-public class MyHomePage extends Activity implements View.OnTouchListener {
+public class MyHomePageActivity extends Activity implements View.OnTouchListener {
     TextView homePage,//底部的三个按钮
             shop,
             me,
@@ -65,7 +63,7 @@ public class MyHomePage extends Activity implements View.OnTouchListener {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MyHomePage.this,SearchActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this,SearchActivity.class);
                 startActivity(intent);
             }
         });
@@ -73,7 +71,7 @@ public class MyHomePage extends Activity implements View.OnTouchListener {
         shoppingCar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MyHomePage.this, ShoppingCarActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this, ShoppingCarActivity.class);
                 startActivity(intent);
             }
         });
@@ -86,7 +84,7 @@ public class MyHomePage extends Activity implements View.OnTouchListener {
             @Override
             public void onClick(View v) {
                //跳转购物车  需要bundle数据？？
-                Intent intent=new Intent(MyHomePage.this,ShoppingCarActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this,ShoppingCarActivity.class);
                 startActivity(intent);
             }
         });
@@ -94,7 +92,7 @@ public class MyHomePage extends Activity implements View.OnTouchListener {
             @Override
             public void onClick(View v) {
                 //跳转到搜索界面 需要bundle数据？？
-                Intent intent=new Intent(MyHomePage.this,SearchActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this,SearchActivity.class);
                 startActivity(intent);
             }
         });
@@ -106,7 +104,7 @@ public class MyHomePage extends Activity implements View.OnTouchListener {
             @Override
             public void onClick(View v) {
                 //跳转到个人设置界面 需要bundle数据？？
-                Intent intent=new Intent(MyHomePage.this,PersonalInfo.class);
+                Intent intent=new Intent(MyHomePageActivity.this,PersonalInfoActivity.class);
                 startActivity(intent);
             }
         });
@@ -114,7 +112,7 @@ public class MyHomePage extends Activity implements View.OnTouchListener {
             @Override
             public void onClick(View v) {
                 //跳转购物车  需要bundle数据？？
-                Intent intent=new Intent(MyHomePage.this,ShoppingCarActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this,ShoppingCarActivity.class);
                 startActivity(intent);
             }
         });

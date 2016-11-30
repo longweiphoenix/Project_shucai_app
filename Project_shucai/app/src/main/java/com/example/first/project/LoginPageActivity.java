@@ -13,6 +13,7 @@ import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.vb.AccessTokenKeeper;
 import com.example.first.project.vb.Constants;
+import com.example.first.project.vb.VBRegister;
 import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
@@ -32,9 +33,6 @@ public class LoginPageActivity extends Activity {
     LinearLayout vx; //微信登录
     LinearLayout vb; //微博登录
 
-    AuthInfo authInfo;
-    SsoHandler mSsoHandler;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +45,8 @@ public class LoginPageActivity extends Activity {
         vb.setOnClickListener(onClickListener);
 
     }
+
+    VBRegister vbRegister;
     //点击事件
     View.OnClickListener onClickListener =  new View.OnClickListener() {
         @Override
@@ -61,9 +61,7 @@ public class LoginPageActivity extends Activity {
                     startActivity(intent);
                     break;
                 case R.id.vb_register:
-                    authInfo = new AuthInfo(LoginPageActivity.this,Constants.APP_KEY,Constants.REDIRECT_URL,Constants.SCOPE);
-                    mSsoHandler = new SsoHandler(LoginPageActivity.this, authInfo);
-                    mSsoHandler. authorize(new AuthListener());
+                    vbRegister = new VBRegister(LoginPageActivity.this);
                     break;
 
             }
@@ -78,38 +76,10 @@ public class LoginPageActivity extends Activity {
         vx = (LinearLayout) findViewById(R.id.vx_register);
         vb = (LinearLayout) findViewById(R.id.vb_register);
     }
-    //微博登录
-    class AuthListener  implements WeiboAuthListener {
-
-        @Override
-        public void onComplete(Bundle values) {
-            // 从 Bundle 中解析 Token
-            Oauth2AccessToken mAccessToken = Oauth2AccessToken.parseAccessToken(values);
-            if (mAccessToken.isSessionValid()) {
-                // 保存 Token 到 SharedPreferences
-                AccessTokenKeeper.writeAccessToken(LoginPageActivity.this, mAccessToken);
-
-            } else {
-                // 当您注册的应用程序签名不正确时，就会收到 Code，请确保签名正确
-                String code = values.getString("code", "");
-
-            }
-        }
-
-        @Override
-        public void onCancel() {
-        }
-
-        @Override
-        public void onWeiboException(WeiboException e) {
-        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (mSsoHandler != null){
-            mSsoHandler.authorizeCallBack(requestCode,resultCode,data);
-        }
+        vbRegister.callBack(requestCode,resultCode,data);
     }
 }

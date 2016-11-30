@@ -1,4 +1,4 @@
-package com.example.along.ui1project;
+package com.example.along.ui1project.objects;
 
 /**
  * Created by Long on 2016/11/10.

@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.along.ui1project.PersonalInfo;
+import com.example.along.ui1project.PersonalInfoActivity;
 import com.example.along.ui1project.R;
 
 /**
@@ -25,7 +25,7 @@ public class NameSettingActivity extends Activity {
         nameSettingArowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(NameSettingActivity.this, PersonalInfo.class);
+                Intent intent = new Intent(NameSettingActivity.this, PersonalInfoActivity.class);
                 startActivity(intent);
             }
         });

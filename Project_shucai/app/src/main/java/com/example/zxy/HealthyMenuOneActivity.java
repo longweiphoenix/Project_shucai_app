@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import com.example.along.ui1project.MyHomePage;
+import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 
 /**
@@ -44,7 +44,7 @@ public class HealthyMenuOneActivity extends Activity {
         menuArowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HealthyMenuOneActivity.this, MyHomePage.class);
+                Intent intent = new Intent(HealthyMenuOneActivity.this, MyHomePageActivity.class);
                 startActivity(intent);
             }
         });

@@ -26,7 +26,7 @@ import java.io.File;
 /**
  * Created by Long on 2016/10/20.
  */
-public class PersonalInfo extends Activity {
+public class PersonalInfoActivity extends Activity {
     TextView info_back_arrow,//个人信息返回箭头
             user_nick_name,//用户昵称
             head_portrait_next_arrow,//头像箭头
@@ -74,7 +74,7 @@ public class PersonalInfo extends Activity {
         name_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PersonalInfo.this, NameSettingActivity.class);
+                Intent intent = new Intent(PersonalInfoActivity.this, NameSettingActivity.class);
                 startActivity(intent);
             }
         });
@@ -156,11 +156,11 @@ public class PersonalInfo extends Activity {
 
 
                     if(isChecked){
-                        sexual_male.setTextColor(PersonalInfo.this.getResources().getColor(R.color.title_font_color));
-                        sexual_female.setTextColor(PersonalInfo.this.getResources().getColor(R.color.view_margin_line));
+                        sexual_male.setTextColor(PersonalInfoActivity.this.getResources().getColor(R.color.title_font_color));
+                        sexual_female.setTextColor(PersonalInfoActivity.this.getResources().getColor(R.color.view_margin_line));
                     }else{
-                        sexual_male.setTextColor(PersonalInfo.this.getResources().getColor(R.color.view_margin_line));
-                        sexual_female.setTextColor(PersonalInfo.this.getResources().getColor(R.color.title_font_color));
+                        sexual_male.setTextColor(PersonalInfoActivity.this.getResources().getColor(R.color.view_margin_line));
+                        sexual_female.setTextColor(PersonalInfoActivity.this.getResources().getColor(R.color.title_font_color));
 
                     }
 
@@ -170,8 +170,8 @@ public class PersonalInfo extends Activity {
         sexual_female.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                sexual_female.setTextColor(PersonalInfo.this.getResources().getColor(R.color.title_font_color));
-                sexual_male.setTextColor(PersonalInfo.this.getResources().getColor(R.color.view_margin_line));
+                sexual_female.setTextColor(PersonalInfoActivity.this.getResources().getColor(R.color.title_font_color));
+                sexual_male.setTextColor(PersonalInfoActivity.this.getResources().getColor(R.color.view_margin_line));
             }
         });
         sexualChange = new PopupWindow(view, w, h / 2);
@@ -191,7 +191,7 @@ public class PersonalInfo extends Activity {
             @Override
             public void onClick(View v) {
                 String sex=(sexual_female.isChecked())?"女":"男";
-                Toast.makeText(PersonalInfo.this, "您的性别为"+sex, Toast.LENGTH_SHORT).show();
+                Toast.makeText(PersonalInfoActivity.this, "您的性别为"+sex, Toast.LENGTH_SHORT).show();
                 //性别设为男或女，上传数据库？
                 sexualChange.dismiss();
             }

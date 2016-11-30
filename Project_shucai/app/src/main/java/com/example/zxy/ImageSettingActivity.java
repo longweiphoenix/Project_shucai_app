@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.along.ui1project.PersonalSetting;
+import com.example.along.ui1project.PersonalSettingActivity;
 import com.example.along.ui1project.R;
 
 /**
@@ -22,7 +22,7 @@ public class ImageSettingActivity extends Activity{
         imageSettingArowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ImageSettingActivity.this, PersonalSetting.class);
+                Intent intent = new Intent(ImageSettingActivity.this, PersonalSettingActivity.class);
                 startActivity(intent);
             }
         });

@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.along.ui1project.MyHomePage;
+import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.vb.AccessTokenKeeper;
 import com.example.first.project.vb.Constants;
@@ -57,7 +57,7 @@ public class LoginPageActivity extends Activity {
                     startActivity(intent); //跳转到创建账号页面
                     break;
                 case R.id.register:
-                    intent = new Intent(LoginPageActivity.this, MyHomePage.class);
+                    intent = new Intent(LoginPageActivity.this, MyHomePageActivity.class);
                     startActivity(intent);
                     break;
                 case R.id.vb_register:

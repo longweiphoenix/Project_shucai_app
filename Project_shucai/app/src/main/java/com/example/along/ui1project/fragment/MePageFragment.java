@@ -1,7 +1,6 @@
 package com.example.along.ui1project.fragment;
 
 import android.app.Fragment;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -10,11 +9,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
-import com.example.along.ui1project.PersonalInfo;
 import com.example.along.ui1project.R;
-import com.huangtao.ShoppingCarActivity;
+import com.example.along.ui1project.adpaters.MeAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;

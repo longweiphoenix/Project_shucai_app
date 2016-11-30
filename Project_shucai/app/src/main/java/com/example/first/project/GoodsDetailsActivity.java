@@ -2,7 +2,6 @@ package com.example.first.project;
 
 import android.app.Activity;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.along.ui1project.MyHomePage;
+import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.fragment.GoodsDetailsEvaluateFragment;
 import com.example.first.project.fragment.GoodsDetailsFragment;
@@ -79,7 +78,7 @@ public class GoodsDetailsActivity extends Activity {
 
                     break;
                 case R.id.arow:
-                    intent = new Intent(GoodsDetailsActivity.this, MyHomePage.class); //跳转到铺子
+                    intent = new Intent(GoodsDetailsActivity.this, MyHomePageActivity.class); //跳转到铺子
                     startActivity(intent);
                     break;
                 case R.id.service:

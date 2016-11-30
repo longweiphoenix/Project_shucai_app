@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.along.ui1project.MyHomePage;
+import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.adapter.OrganicLifeAdapter;
 import com.example.first.project.needdata.OrganicLife;
@@ -61,7 +61,7 @@ public class OrganicLifeActivity extends Activity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OrganicLifeActivity.this, MyHomePage.class);
+                Intent intent = new Intent(OrganicLifeActivity.this, MyHomePageActivity.class);
                 startActivity(intent);
             }
         });

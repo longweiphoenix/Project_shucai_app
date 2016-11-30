@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.along.ui1project.MyHomePage;
+import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 
 /**
@@ -22,7 +22,7 @@ public class AboutUs extends Activity {
         aboutUsImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AboutUs.this, MyHomePage.class);
+                Intent intent = new Intent(AboutUs.this, MyHomePageActivity.class);
             }
         });
     }

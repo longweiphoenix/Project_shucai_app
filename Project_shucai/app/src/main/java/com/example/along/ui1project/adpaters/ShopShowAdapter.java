@@ -1,4 +1,4 @@
-package com.example.along.ui1project;
+package com.example.along.ui1project.adpaters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.along.ui1project.R;
+import com.example.along.ui1project.objects.ShopItem;
 
 import java.util.List;
 

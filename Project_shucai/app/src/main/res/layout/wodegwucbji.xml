@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
+        android:id="@+id/shoppingcart_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:id="@+id/activity_shoppingcart_payment_return"
+            android:id="@+id/shoppingcart_return_arow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -26,7 +27,7 @@
             android:textSize="@dimen/gwuc_zti"
             android:textColor="#323232"/>
         <TextView
-            android:id="@+id/activity_shoppingcart_payment_edit"
+            android:id="@+id/shoppingcart_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -36,35 +37,9 @@
             android:textSize="@dimen/bjizti"
             android:textColor="#698D45"/>
     </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#cdcdcd"/>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#cdcdcd"
-        android:layout_marginTop="8dp"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#cdcdcd"/>
-
-    <ListView
-        android:id="@+id/activity_shoppingcart_payment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="251dp">
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#cdcdcd"/>
-    <LinearLayout
+        android:id="@+id/shoppingcart_bottom"
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -109,5 +84,21 @@
             android:textSize="15sp"
             android:gravity="center"/>
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/shoppingcart_bottom"
+        android:layout_below="@id/shoppingcart_top">
+        <ListView
+            android:id="@+id/shoppingcart_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cdcdcd"/>
+
+
+</RelativeLayout>

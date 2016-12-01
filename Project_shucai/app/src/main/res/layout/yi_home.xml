@@ -311,7 +311,7 @@
                 android:text="提交"
                 android:layout_gravity="center"
                 android:textSize="18sp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/create_account"
                 android:textColor="#fffefe"
                 android:layout_marginBottom="20dp"/>

@@ -59,6 +59,7 @@ public class LoginPageActivity extends Activity {
                 case R.id.register:
                     intent = new Intent(LoginPageActivity.this, MyHomePageActivity.class);
                     startActivity(intent);
+                    finish();
                     break;
                 case R.id.vb_register:
                     vbRegister = new VBRegister(LoginPageActivity.this);

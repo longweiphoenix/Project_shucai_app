@@ -20,6 +20,8 @@
     <dimen name="info_heights">60dp</dimen>
     <dimen name="view_margin_line">0.5dp</dimen>
 
+    <!--listView divider-->
+    <dimen name="margin_little">2dp</dimen>
     <dimen name="camera_head_padding">21dp</dimen>
     <dimen name="home_setting_width">23.5dp</dimen>
     <dimen name="home_setting_height">22dp</dimen>

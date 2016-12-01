@@ -1,89 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/view_margin_line" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="@color/shop_background"
+        android:orientation="horizontal">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/view_margin_line" />
+        <RadioGroup
+            android:id="@+id/shop_group"
+            android:layout_width="@dimen/shop_sort_out80dp"
+            android:layout_height="wrap_content">
 
-        <LinearLayout
+            <RadioButton
+                android:id="@+id/all_sort"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/large_head_margin40dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/all_sort"
+                android:textColor="@color/selected_text"
+                android:textSize="@dimen/shop_good_font" />
+
+            <RadioButton
+                android:id="@+id/organic_vegetable"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/large_head_margin40dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/organic_vegetable"
+                android:textColor="@color/title_font_color"
+                android:textSize="@dimen/shop_good_font" />
+
+            <RadioButton
+                android:id="@+id/current_organic_vegetable"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/large_head_margin40dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/current_organic_vegetable"
+                android:textColor="@color/title_font_color"
+                android:textSize="@dimen/shop_good_font" />
+
+            <RadioButton
+                android:id="@+id/farm_native"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/large_head_margin40dp"
+                android:layout_marginBottom="2dp"
+                android:background="@color/white"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/farm_native"
+                android:textColor="@color/title_font_color"
+                android:textSize="@dimen/shop_good_font" />
+        </RadioGroup>
+
+        <ListView
+            android:id="@+id/shop_goods_show"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/shop_background"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:id="@+id/shop_group"
-                android:layout_width="@dimen/shop_sort_out80dp"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:id="@+id/all_sort"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/large_head_margin40dp"
-                    android:layout_marginBottom="2dp"
-                    android:background="@color/white"
-                    android:button="@null"
-                    android:checked="true"
-                    android:gravity="center"
-                    android:text="@string/all_sort"
-                    android:textColor="@color/selected_text"
-                    android:textSize="@dimen/shop_good_font" />
-
-                <RadioButton
-                    android:id="@+id/organic_vegetable"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/large_head_margin40dp"
-                    android:layout_marginBottom="2dp"
-                    android:background="@color/white"
-                    android:button="@null"
-                    android:gravity="center"
-                    android:text="@string/organic_vegetable"
-                    android:textColor="@color/title_font_color"
-                    android:textSize="@dimen/shop_good_font" />
-
-                <RadioButton
-                    android:id="@+id/current_organic_vegetable"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/large_head_margin40dp"
-                    android:layout_marginBottom="2dp"
-                    android:background="@color/white"
-                    android:button="@null"
-                    android:checked="true"
-                    android:gravity="center"
-                    android:text="@string/current_organic_vegetable"
-                    android:textColor="@color/title_font_color"
-                    android:textSize="@dimen/shop_good_font" />
-
-                <RadioButton
-                    android:id="@+id/farm_native"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/large_head_margin40dp"
-                    android:layout_marginBottom="2dp"
-                    android:background="@color/white"
-                    android:button="@null"
-                    android:checked="true"
-                    android:gravity="center"
-                    android:text="@string/farm_native"
-                    android:textColor="@color/title_font_color"
-                    android:textSize="@dimen/shop_good_font" />
-            </RadioGroup>
-
-            <ListView
-                android:id="@+id/shop_goods_show"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/shop_background"
-                android:dividerHeight="@dimen/next_arrow_width"
-                android:fillViewport="true" />
-        </LinearLayout>
+            android:dividerHeight="@dimen/margin_little"
+            android:fillViewport="true" />
     </LinearLayout>
-</ScrollView>
+
+</LinearLayout>

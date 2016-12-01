@@ -40,9 +40,8 @@ public class MyFoodActivity extends Activity {
                     intent = new Intent(MyFoodActivity.this,FoodRulesActivity.class);
                     startActivity(intent);
                     break;
-                case R.id.arow:
-                    intent = new Intent(MyFoodActivity.this, MyHomePageActivity.class);
-                    startActivity(intent);
+                case R.id.back:
+                    finish();
                     break;
             }
         }
@@ -50,7 +49,7 @@ public class MyFoodActivity extends Activity {
 
 
     public void findView(){
-        back = (ImageView) findViewById(R.id.arow);
+        back = (ImageView) findViewById(R.id.back);
         rules = (TextView) findViewById(R.id.rules);
         getFood = (ImageView) findViewById(R.id.get_food);
         favorable = (EditText) findViewById(R.id.favorable);

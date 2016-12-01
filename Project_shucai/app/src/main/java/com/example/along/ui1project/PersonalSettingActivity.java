@@ -1,11 +1,19 @@
 package com.example.along.ui1project;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.along.ui1project.adpaters.MeAdapter;
+import com.example.first.project.FoodRulesActivity;
+import com.example.first.project.MyFoodActivity;
+import com.example.first.project.OrderToPageActivity;
+import com.example.first.project.YiHomeActivity;
+import com.huangtao.CustomerServiceActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,6 +35,12 @@ public class PersonalSettingActivity extends Activity {
         list=new ArrayList<HashMap<String, Object>>();
         getItemData();
         personalSettingListView.setAdapter(new MeAdapter(PersonalSettingActivity.this,list,inflater));
+        personalSettingListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
     }
 
     public void getItemData(){

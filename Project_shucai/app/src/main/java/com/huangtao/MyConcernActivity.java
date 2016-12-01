@@ -6,12 +6,12 @@ import android.os.Bundle;
 import com.example.along.ui1project.R;
 
 /**
- * Created by Administrator on 2016/11/28.
+ * Created by Long on 2016/11/30.
  */
-public class MyFans extends Activity {
+public class MyConcernActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_fans_ht);
+        setContentView(R.layout.activity_my_concern_ht);
     }
 }

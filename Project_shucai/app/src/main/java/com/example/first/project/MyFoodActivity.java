@@ -43,6 +43,7 @@ public class MyFoodActivity extends Activity {
                     startActivity(intent);
                     break;
                 case R.id.back:
+                    intent = new Intent(MyFoodActivity.this, MyHomePageActivity.class);
                     finish();
                     break;
                 case R.id.get_food:

@@ -1,6 +1,7 @@
 package com.example.along.ui1project;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -21,6 +22,10 @@ import com.example.along.ui1project.fragment.HomePageFragment;
 import com.example.along.ui1project.fragment.MePageFragment;
 import com.example.along.ui1project.fragment.ShopShowFragment;
 import com.huangtao.MyShoppingcartchoose;
+
+
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,9 +98,7 @@ public class MyHomePageActivity extends FragmentActivity {
                 animation.setFillAfter(true);//动画终止时停留在最后一帧，不然会回到没有执行前的状态
                 animation.setDuration(200);//动画持续时间0.2秒
                /* int i = currIndex + 1;image.startAnimation(animation);//是用ImageView来显示动画的*/
-
                 /*Toast.makeText(MyHomePageActivity.this, "您选择了第2个页卡", Toast.LENGTH_SHORT).show();*/
-
             }
         });
       /*  mGestureDetector = new GestureDetector(this, gestureDetector);*/
@@ -115,17 +118,26 @@ public class MyHomePageActivity extends FragmentActivity {
                         relShop.setVisibility(View.GONE);
                         relMe.setVisibility(View.GONE);
                         changeView(0);
+                        homePage.setTextColor(getResources().getColor(R.color.fontgreen));
+                        shop.setTextColor(getResources().getColor(R.color.fontblack));
+                        me.setTextColor(getResources().getColor(R.color.fontblack));
                         break;
                     case R.id.shop:
                         relHome.setVisibility(View.GONE);
                         relShop.setVisibility(View.VISIBLE);
                         relMe.setVisibility(View.GONE);
                         changeView(1);
+                        homePage.setTextColor(getResources().getColor(R.color.fontblack));
+                        shop.setTextColor(getResources().getColor(R.color.fontgreen));
+                        me.setTextColor(getResources().getColor(R.color.fontblack));
                         break;
                     case R.id.user:
                         relHome.setVisibility(View.GONE);
                         relShop.setVisibility(View.GONE);
                         relMe.setVisibility(View.VISIBLE);
+                        homePage.setTextColor(getResources().getColor(R.color.fontblack));
+                        shop.setTextColor(getResources().getColor(R.color.fontblack));
+                        me.setTextColor(getResources().getColor(R.color.fontgreen));
                         changeView(2);
                         break;
                 }

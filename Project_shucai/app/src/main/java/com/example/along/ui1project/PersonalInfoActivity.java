@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zxy.NameSettingActivity;
+import com.example.zxy.SignatureSettingActivity;
 
 import java.io.File;
 
@@ -43,7 +44,7 @@ public class PersonalInfoActivity extends Activity {
     LayoutInflater layoutInflater;//转换器
     PopupWindow cameraWindow, sexualChange;//更换头像弹
     //更换用户头像
-    LinearLayout info_head_change, parent_panel, name_setting,
+    LinearLayout info_head_change, parent_panel, name_setting,setting_signature,
             sexual;
 
 
@@ -58,6 +59,12 @@ public class PersonalInfoActivity extends Activity {
         h = metrics.heightPixels;
         layoutInflater = LayoutInflater.from(this);//视图转换器
         info_back_arrow = (TextView) findViewById(R.id.info_back_arrow);//个人信息返回箭头
+        info_back_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         user_nick_name = (TextView) findViewById(R.id.user_nick_name);//用户昵称
         //user_nick_name.setText();
         head_portrait_next_arrow = (TextView) findViewById(R.id.head_portrait_next_arrow);//头像箭头
@@ -68,6 +75,13 @@ public class PersonalInfoActivity extends Activity {
         personalized_edit_signature = (TextView) findViewById(R.id.personalized_edit_signature);//个人签名
         personalized_edit_signature.setText("新的个性签名，我好洗换！");
         personalized_edit_signature_next_arrow = (TextView) findViewById(R.id.personalized_edit_signature_next_arrow);//个人签名后的箭头
+        findViewById(R.id.setting_signature).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(PersonalInfoActivity.this, SignatureSettingActivity.class);
+                startActivity(intent);
+            }
+        });
         info_head_portrait = (ImageView) findViewById(R.id.info_head_portrait);//用户头像
         info_head_change = (LinearLayout) findViewById(R.id.info_head_change);//更换用户头像
         name_setting = (LinearLayout) findViewById(R.id.name_setting);

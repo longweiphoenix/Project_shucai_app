@@ -3,25 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
         <ImageView
             android:id="@+id/signture_setting_arow"
             android:layout_width="13dp"
             android:layout_height="21dp"
+            android:layout_centerVertical="true"
             android:background="@mipmap/arow"
             android:layout_marginLeft="13dp"
             android:layout_marginTop="32dp"/>
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="个性签名"
             android:textSize="18sp"
+            android:layout_centerInParent="true"
             android:textColor="@color/fontblack"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:gravity="center_horizontal"/>
         <TextView
             android:id="@+id/signature_setting_tijiao"
@@ -30,10 +32,11 @@
             android:text="@string/tijiao"
             android:textColor="@color/fontgreen"
             android:textSize="15sp"
-            android:layout_marginTop="32dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
             android:paddingRight="12dp"/>
 
-    </LinearLayout>
+    </RelativeLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -51,7 +54,7 @@
         android:id="@+id/signature_setting_textview"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="@string/person_signature"
+        android:hint="@string/person_signature"
         android:textSize="15sp"
         android:textColor="@color/fontblack1"
         android:gravity="center_vertical"

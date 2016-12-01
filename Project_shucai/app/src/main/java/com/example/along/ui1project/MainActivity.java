@@ -1,13 +1,13 @@
 package com.example.along.ui1project;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.order_to_page);
+        setContentView(R.layout.pull_torefresh_test);
     }
 }

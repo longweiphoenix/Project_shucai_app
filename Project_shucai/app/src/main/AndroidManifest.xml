@@ -31,8 +31,8 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
 
-        <activity android:name=".MyHomePageActivity"
-            android:launchMode="singleInstance">
+        <activity android:name="com.example.first.project.LoginPageActivity"
+            android:launchMode="singleTask">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,13 +40,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MyHomePageActivity"/>
 
         <!--lijunming-->
         <activity android:name="com.example.first.project.CreateAccountActivity"
-            android:launchMode="singleInstance"/>
+            android:launchMode="singleTask"/>
         <activity android:name="com.example.first.project.GoodsDetailsActivity" />
-        <!--<activity android:name="com.example.first.project.LoginPageActivity"-->
-            <!--android:launchMode="singleTask"/>-->
         <activity android:name="com.example.first.project.OrderToPageActivity" />
         <activity android:name="com.example.first.project.YiHomeActivity" />
         <activity android:name="com.example.first.project.FoodRulesActivity" />
@@ -75,6 +74,10 @@
         <activity android:name=".PersonalInfoActivity" />
         <activity android:name=".PersonalSettingActivity" />
         <activity android:name=".SearchActivity" />
+        <activity android:name=".MyTopicksActivity"/>
+        <activity android:name=".MyFavoriteManageActivity"/>
+        <activity android:name="com.huangtao.MyShoppingcartchoose"/>
+        <activity android:name="com.huangtao.CustomerServiceActivity"/>
         <!--longweifeng-->
 
         <!--zxy-->

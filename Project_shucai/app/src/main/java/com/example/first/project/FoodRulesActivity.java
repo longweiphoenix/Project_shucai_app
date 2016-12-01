@@ -24,8 +24,7 @@ public class FoodRulesActivity extends Activity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(FoodRulesActivity.this,MyFoodActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

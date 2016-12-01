@@ -16,7 +16,7 @@ public class CaptchaUtils {
     //短信验证的key和secret(mob.com)
     private static final String APPKEY = "1963fd37dd7ed";
     private static final String APPSECRET = "13c2ec6cf3cbe4906902b5cf00d4f710";
-    private static final String COUNTRY = "86";
+    private static final String COUNTRY = "+86";
     Context context;
     String phoneNumb;
     public CaptchaUtils(Context context){

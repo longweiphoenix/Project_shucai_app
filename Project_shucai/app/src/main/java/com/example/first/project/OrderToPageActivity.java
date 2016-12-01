@@ -28,14 +28,13 @@ public class OrderToPageActivity extends Activity {
 
     }
 
-    Intent intent;
+
     View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.back:
-                    intent = new Intent(OrderToPageActivity.this,YiHomeActivity.class);
-                    startActivity(intent);
+                    finish();
                     break;
                 case R.id.cancel:
                     break;

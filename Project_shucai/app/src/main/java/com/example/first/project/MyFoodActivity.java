@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
+import com.example.zxy.InviteFriendActivity;
 
 /**
  * Created by Administrator on 2016/11/0010.
@@ -29,6 +30,7 @@ public class MyFoodActivity extends Activity {
 
         rules.setOnClickListener(onClickListener);
         back.setOnClickListener(onClickListener);
+        getFood.setOnClickListener(onClickListener);
 
     }
     Intent intent;
@@ -42,6 +44,10 @@ public class MyFoodActivity extends Activity {
                     break;
                 case R.id.back:
                     intent = new Intent(MyFoodActivity.this, MyHomePageActivity.class);
+                    finish();
+                    break;
+                case R.id.get_food:
+                    intent = new Intent(MyFoodActivity.this, InviteFriendActivity.class);
                     startActivity(intent);
                     break;
             }
@@ -50,7 +56,7 @@ public class MyFoodActivity extends Activity {
 
 
     public void findView(){
-        back = (ImageView) findViewById(R.id.arow);
+        back = (ImageView) findViewById(R.id.back);
         rules = (TextView) findViewById(R.id.rules);
         getFood = (ImageView) findViewById(R.id.get_food);
         favorable = (EditText) findViewById(R.id.favorable);

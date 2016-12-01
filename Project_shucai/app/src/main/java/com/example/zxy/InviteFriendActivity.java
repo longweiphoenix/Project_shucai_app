@@ -21,8 +21,7 @@ public class InviteFriendActivity extends Activity {
         inviteArowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InviteFriendActivity.this, MyFoodActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

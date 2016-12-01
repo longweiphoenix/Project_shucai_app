@@ -40,7 +40,7 @@ public class MyFoodActivity extends Activity {
                     intent = new Intent(MyFoodActivity.this,FoodRulesActivity.class);
                     startActivity(intent);
                     break;
-                case R.id.arow:
+                case R.id.back:
                     intent = new Intent(MyFoodActivity.this, MyHomePageActivity.class);
                     startActivity(intent);
                     break;

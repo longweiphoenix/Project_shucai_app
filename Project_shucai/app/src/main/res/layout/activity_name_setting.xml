@@ -3,26 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/name_setting_arow"
             android:layout_width="13dp"
             android:layout_height="21dp"
+            android:layout_centerVertical="true"
             android:background="@mipmap/arow"
-            android:layout_marginLeft="13dp"
-            android:layout_marginTop="32dp"/>
+            android:layout_margin="@dimen/shoppin_gcart"/>
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="昵称"
+            android:layout_centerInParent="true"
             android:textSize="18sp"
             android:textColor="@color/fontblack"
-            android:layout_marginTop="32dp"
-            android:gravity="center_horizontal"/>
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp" />
         <TextView
             android:id="@+id/name_setting_commit"
             android:layout_width="wrap_content"
@@ -30,10 +29,11 @@
             android:text="@string/tijiao"
             android:textColor="@color/fontgreen"
             android:textSize="15sp"
-            android:layout_marginTop="32dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
             android:paddingRight="12dp"/>
 
-    </LinearLayout>
+    </RelativeLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -50,7 +50,7 @@
         android:id="@+id/name_setting_textview"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="@string/person_name"
+        android:hint="@string/person_name"
         android:textSize="15sp"
         android:textColor="@color/fontblack1"
         android:gravity="center_vertical"

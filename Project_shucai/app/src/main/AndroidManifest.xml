@@ -77,7 +77,7 @@
         <activity android:name=".MyTopicksActivity"/>
         <activity android:name=".MyFavoriteManageActivity"/>
         <activity android:name="com.huangtao.MyShoppingcartchoose"/>
-        <activity android:name="com.huangtao.CustomerServiceActivity"/>
+        <activity android:name="com.example.first.project.CustomerServiceActivity"/>
         <!--longweifeng-->
 
         <!--zxy-->

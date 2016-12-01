@@ -77,6 +77,7 @@ public class CreateAccountActivity extends Activity {
                 case R.id.register: //登录
                     intent = new Intent(CreateAccountActivity.this,LoginPageActivity.class);
                     startActivity(intent);//跳转到登录页面
+                    finish();
                     break;
                 case R.id.account_head: //改变头像
                     setHeadPortraitWindow();

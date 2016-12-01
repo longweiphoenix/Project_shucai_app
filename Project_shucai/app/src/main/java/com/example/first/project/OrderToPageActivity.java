@@ -36,7 +36,9 @@ public class OrderToPageActivity extends Activity {
                 case R.id.back:
                     finish();
                     break;
-                case R.id.cancel:
+                case R.id.cancel: //取消订单
+                    Intent intent = new Intent(OrderToPageActivity.this,YiHomeActivity.class);
+                    startActivity(intent);
                     break;
             }
         }

@@ -40,8 +40,7 @@ public class YiHomeActivity extends Activity {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.back:
-                    intent = new Intent();
-                    startActivity(intent);
+                    finish();
                     break;
                 case R.id.commit:
                     intent = new Intent(YiHomeActivity.this,OrderToPageActivity.class);

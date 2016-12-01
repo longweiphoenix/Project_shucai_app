@@ -17,7 +17,7 @@ import com.example.along.ui1project.R;
 import com.example.along.ui1project.adpaters.MeAdapter;
 import com.example.first.project.MyFoodActivity;
 import com.example.first.project.YiHomeActivity;
-import com.huangtao.CustomerServiceActivity;
+import com.example.first.project.CustomerServiceActivity;
 import com.huangtao.MyConcernActivity;
 import com.huangtao.MyFansManagementActivity;
 

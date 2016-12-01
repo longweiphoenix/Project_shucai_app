@@ -55,6 +55,7 @@ public class LoginPageActivity extends Activity {
                 case R.id.create_account:
                     intent = new Intent(LoginPageActivity.this,CreateAccountActivity.class);
                     startActivity(intent); //跳转到创建账号页面
+                    finish();
                     break;
                 case R.id.register:
                     intent = new Intent(LoginPageActivity.this, MyHomePageActivity.class);

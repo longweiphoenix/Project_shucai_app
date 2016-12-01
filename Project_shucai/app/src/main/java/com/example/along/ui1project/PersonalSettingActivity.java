@@ -1,7 +1,6 @@
 package com.example.along.ui1project;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +8,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.along.ui1project.adpaters.MeAdapter;
-import com.example.first.project.FoodRulesActivity;
-import com.example.first.project.MyFoodActivity;
-import com.example.first.project.OrderToPageActivity;
-import com.example.first.project.YiHomeActivity;
-import com.huangtao.CustomerServiceActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

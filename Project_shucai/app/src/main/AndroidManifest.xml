@@ -30,7 +30,7 @@
         tools:replace="android:allowBackup"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name="com.example.first.project.LoginPageActivity">
+        <activity android:name=".MyHomePageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

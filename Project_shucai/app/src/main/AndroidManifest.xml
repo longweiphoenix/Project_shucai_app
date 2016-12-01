@@ -30,8 +30,10 @@
         tools:replace="android:allowBackup"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
+
         <activity android:name=".MyHomePageActivity"
             android:launchMode="singleInstance">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,8 +33,11 @@ public class HomePageFragment extends Fragment {
         View view = inflater.inflate(R.layout.activity_home_page2_ht, null);
         //跳转到购物车
         organicLifeInner= (TextView) view.findViewById(R.id.organic_life_inner);
+        organicLifeInner.setOnClickListener(onClickListener);
         natives= (TextView) view.findViewById(R.id.farm_native);
+        natives.setOnClickListener(onClickListener);
         healthMenu = (TextView) view.findViewById(R.id.healthy_menu);
+        healthMenu.setOnClickListener(onClickListener);
         fatherView = (LinearLayout) view.findViewById(R.id.father_view);
         fatherViewLife = (LinearLayout) view.findViewById(R.id.father_view_life);
         for (int i = 0; i < 5; i++) {
@@ -51,12 +55,14 @@ public class HomePageFragment extends Fragment {
         }
         return view;
     }
+    Intent intent;
     View.OnClickListener onClickListener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.farm_native:
-                    Intent intent;
+                    FragmentManager manager=getActivity().getSupportFragmentManager();
+                    manager.
                     break;
                 case R.id.organic_life_inner:
                     intent=new Intent(getActivity(), OrganicLifeActivity.class);

@@ -75,6 +75,10 @@
         <activity android:name=".PersonalInfoActivity" />
         <activity android:name=".PersonalSettingActivity" />
         <activity android:name=".SearchActivity" />
+        <activity android:name=".MyTopicksActivity"/>
+        <activity android:name=".MyFavoriteManageActivity"/>
+        <activity android:name="com.huangtao.MyShoppingcartchoose"/>
+        <activity android:name="com.huangtao.CustomerServiceActivity"/>
         <!--longweifeng-->
 
         <!--zxy-->

@@ -77,6 +77,7 @@
             android:textSize="15sp"
             android:textColor="#698d45"/>
         <TextView
+            android:id="@+id/shopping_pay"
             android:layout_width="120dp"
             android:layout_height="55dp"
             android:background="@drawable/jiesk"

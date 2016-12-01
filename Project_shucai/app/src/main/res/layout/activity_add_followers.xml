@@ -3,23 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/followers_setting_arow"
             android:layout_width="13dp"
             android:layout_height="21dp"
+            android:layout_centerVertical="true"
             android:background="@mipmap/arow"
             android:layout_marginLeft="12dp"/>
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="新增联系人"
             android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_centerInParent="true"
             android:textColor="@color/fontblack"
             android:gravity="center_horizontal"/>
         <TextView
@@ -27,11 +28,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
             android:textColor="@color/fontgreen"
             android:textSize="15sp"
             android:paddingRight="12dp"/>
 
-    </LinearLayout>
+    </RelativeLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"

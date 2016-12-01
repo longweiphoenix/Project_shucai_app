@@ -30,7 +30,10 @@
         tools:replace="android:allowBackup"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <activity android:name=".MyHomePageActivity">
+
+        <activity android:name=".MyHomePageActivity"
+            android:launchMode="singleInstance">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -72,7 +75,6 @@
         <activity android:name=".PersonalInfoActivity" />
         <activity android:name=".PersonalSettingActivity" />
         <activity android:name=".SearchActivity" />
-        <activity android:name="com.huangtao.ShoppingCarActivity" />
         <!--longweifeng-->
 
         <!--zxy-->

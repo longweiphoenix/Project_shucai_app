@@ -16,13 +16,15 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.example.along.ui1project.fragment.HomePageFragment;
 import com.example.along.ui1project.fragment.MePageFragment;
 import com.example.along.ui1project.fragment.ShopShowFragment;
 import com.huangtao.MyShoppingcartchoose;
+<<<<<<< HEAD
 import com.huangtao.ShoppingCarActivity;
+=======
+>>>>>>> 93b2b6f05c2e4e1217692262eebf2048e58d998d
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,6 +97,11 @@ public class MyHomePageActivity extends FragmentActivity {
                 animation.setFillAfter(true);//动画终止时停留在最后一帧，不然会回到没有执行前的状态
                 animation.setDuration(200);//动画持续时间0.2秒
                /* int i = currIndex + 1;image.startAnimation(animation);//是用ImageView来显示动画的*/
+<<<<<<< HEAD
+=======
+
+                /*Toast.makeText(MyHomePageActivity.this, "您选择了第2个页卡", Toast.LENGTH_SHORT).show();*/
+>>>>>>> 93b2b6f05c2e4e1217692262eebf2048e58d998d
             }
         });
       /*  mGestureDetector = new GestureDetector(this, gestureDetector);*/
@@ -162,7 +169,7 @@ public class MyHomePageActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                //跳转购物车  需要bundle数据？？
-                Intent intent=new Intent(MyHomePageActivity.this,ShoppingCarActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this,MyShoppingcartchoose.class);
                 startActivity(intent);
             }
         });
@@ -190,7 +197,7 @@ public class MyHomePageActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 //跳转购物车  需要bundle数据？？
-                Intent intent=new Intent(MyHomePageActivity.this,ShoppingCarActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this,MyShoppingcartchoose.class);
                 startActivity(intent);
             }
         });

@@ -1,10 +1,8 @@
-/*
 package com.example.along.ui1project.fragment;
 
-*/
 /**
  * Created by Administrator on 2016/11/27.
- *//*
+ */
 
 import java.lang.reflect.Field;
 import java.util.Timer;
@@ -19,6 +17,7 @@ import android.graphics.RectF;
 import android.graphics.Shader.TileMode;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -32,12 +31,14 @@ import android.widget.AbsListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-*/
+import com.example.along.ui1project.R;
+
+
 /**
  * 整个下拉刷新就这一个布局，用来管理两个子控件，其中一个是下拉头，另一个是包含内容的contentView（可以是AbsListView的任何子类）
  *
  * @author 陈靖
- *//*
+ */
 
 public class PullToRefreshLayout extends RelativeLayout implements OnTouchListener
 {
@@ -53,7 +54,7 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
     // 当前状态
     private int state = PULL_TO_REFRESH;
     // 刷新回调接口
-    private OnRefreshListener mListener;
+    private SwipeRefreshLayout.OnRefreshListener mListener;
     // 刷新成功
     public static final int REFRESH_SUCCEED = 0;
     // 刷新失败
@@ -92,10 +93,10 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
     private View stateImageView;
     // 刷新结果：成功或失败
     private TextView stateTextView;
-    */
+
 /**
      * 执行自动回滚的handler
-     *//*
+     */
 
     Handler updateHandler = new Handler()
     {
@@ -129,7 +130,7 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
 
     };
 
-    public void setOnRefreshListener(OnRefreshListener listener)
+    public void setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener listener)
     {
         mListener = listener;
     }
@@ -156,8 +157,8 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
     {
         timer = new Timer();
         mTask = new MyTimerTask(updateHandler);
-        rotateAnimation = (RotateAnimation) AnimationUtils.loadAnimation(context, R.anim.reverse_anim);
-        refreshingAnimation = (RotateAnimation) AnimationUtils.loadAnimation(context, R.anim.rotating);
+        rotateAnimation = (RotateAnimation) AnimationUtils.loadAnimation(context, R.anim.reverser_anim);
+        refreshingAnimation = (RotateAnimation) AnimationUtils.loadAnimation(context, R.anim.ratating);
         // 添加匀速转动动画
         LinearInterpolator lir = new LinearInterpolator();
         rotateAnimation.setInterpolator(lir);
@@ -175,10 +176,9 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
         timer.schedule(mTask, 0, 5);
     }
 
-    */
 /**
      * 完成刷新操作，显示刷新结果
-     *//*
+     */
 
     public void refreshFinish(int refreshResult)
     {
@@ -189,14 +189,14 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
             case REFRESH_SUCCEED:
                 // 刷新成功
                 stateImageView.setVisibility(View.VISIBLE);
-                stateTextView.setText(R.string.refresh_succeed);
-                stateImageView.setBackgroundResource(R.drawable.refresh_succeed);
+                stateTextView.setText("刷新成功");
+                stateImageView.setBackgroundResource(R.mipmap.arow);
                 break;
             case REFRESH_FAIL:
                 // 刷新失败
                 stateImageView.setVisibility(View.VISIBLE);
-                stateTextView.setText(R.string.refresh_fail);
-                stateImageView.setBackgroundResource(R.drawable.refresh_failed);
+                stateTextView.setText("刷新失败");
+                stateImageView.setBackgroundResource(R.mipmap.logo);
                 break;
             default:
                 break;
@@ -227,7 +227,7 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
                 break;
             case RELEASE_TO_REFRESH:
                 // 释放刷新
-                stateTextView.setText(R.string.release_to_refresh);
+                stateTextView.setText("释放刷新");
                 pullView.startAnimation(rotateAnimation);
                 break;
             case REFRESHING:
@@ -236,19 +236,19 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
                 refreshingView.setVisibility(View.VISIBLE);
                 pullView.setVisibility(View.INVISIBLE);
                 refreshingView.startAnimation(refreshingAnimation);
-                stateTextView.setText(R.string.refreshing);
+                stateTextView.setText("刷新");
                 break;
             default:
                 break;
         }
     }
 
-    */
+
 /*
      * （非 Javadoc）由父控件决定是否分发事件，防止事件冲突
      *
      * @see android.view.ViewGroup#dispatchTouchEvent(android.view.MotionEvent)
-     *//*
+     */
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev)
@@ -262,11 +262,11 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
                 {
                     mTask.cancel();
                 }
-            */
+
 /*
              * 触碰的地方位于下拉头布局，由于我们没有对下拉头做事件响应，这时候它会给咱返回一个false导致接下来的事件不再分发进来。
              * 所以我们不能交给父类分发，直接返回true
-             *//*
+             */
 
                 if (ev.getY() < moveDeltaY)
                     return true;
@@ -333,10 +333,9 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
         return super.dispatchTouchEvent(ev);
     }
 
-    */
 /**
      * 通过反射修改字段去掉长按事件和点击事件
-     *//*
+     */
 
     private void clearContentViewEvents()
     {
@@ -364,12 +363,12 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
         }
     }
 
-    */
+
 /*
      * （非 Javadoc）绘制阴影效果，颜色值可以修改
      *
      * @see android.view.ViewGroup#dispatchDraw(android.graphics.Canvas)
-     *//*
+     */
 
     @Override
     protected void dispatchDraw(Canvas canvas)
@@ -461,4 +460,4 @@ public class PullToRefreshLayout extends RelativeLayout implements OnTouchListen
         return false;
     }
 }
-*/
+

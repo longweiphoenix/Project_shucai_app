@@ -1,5 +1,6 @@
 package com.example.along.ui1project.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.example.along.ui1project.R;
 import com.example.along.ui1project.adpaters.ShopShowAdapter;
 import com.example.along.ui1project.objects.ShopItem;
+import com.example.first.project.GoodsDetailsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,10 +54,11 @@ public class ShopShowFragment extends android.support.v4.app.Fragment {
         goodsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity(), "现在点击的是" + position + " 即将跳转 做好准备", Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getActivity(), GoodsDetailsActivity.class);
+                startActivity(intent);
             }
         });
-        setListViewHeightBasedOnChildren(goodsList);
+        /*setListViewHeightBasedOnChildren(goodsList);*/
         return view;
     }
 
@@ -93,14 +96,12 @@ public class ShopShowFragment extends android.support.v4.app.Fragment {
                     currentOrganicVegetable.setTextColor(getResources().getColor(R.color.title_font_color));
                     farmNative.setTextColor(getResources().getColor(R.color.title_font_color));
                     list = new ArrayList<ShopItem>();
-                    Log.i("list","clickFragmentlistview");
                     getAllData();
                     for(int i=0;i<list.size();i++){
                         String str=list.get(i).getTitle();
                         Log.i("list",str);
                     }
                     goodsList.setAdapter(new ShopShowAdapter(list, R.layout.shop_list_item, getActivity(),layoutInflater));
-                    setListViewHeightBasedOnChildren(goodsList);
                     break;
                 case R.id.organic_vegetable:
                     allSort.setTextColor(getResources().getColor(R.color.title_font_color));
@@ -136,7 +137,7 @@ public class ShopShowFragment extends android.support.v4.app.Fragment {
 
 
     };
-    public void setListViewHeightBasedOnChildren(ListView listView) {
+    /*public void setListViewHeightBasedOnChildren(ListView listView) {
         if(listView == null) return;
         ListAdapter listAdapter = listView.getAdapter();
         if (listAdapter == null) {
@@ -152,5 +153,5 @@ public class ShopShowFragment extends android.support.v4.app.Fragment {
         ViewGroup.LayoutParams params = listView.getLayoutParams();
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
-    }
+    }*/
 }

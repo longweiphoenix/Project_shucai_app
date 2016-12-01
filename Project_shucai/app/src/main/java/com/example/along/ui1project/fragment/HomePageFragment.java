@@ -56,8 +56,7 @@ public class HomePageFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.farm_native:
-                    Intent intent=new Intent(getActivity(), MyHomePageActivity.class);
-                    startActivity(intent);
+                    Intent intent;
                     break;
                 case R.id.organic_life_inner:
                     intent=new Intent(getActivity(), OrganicLifeActivity.class);

@@ -1,6 +1,7 @@
 package com.example.along.ui1project;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -115,17 +116,26 @@ public class MyHomePageActivity extends FragmentActivity {
                         relShop.setVisibility(View.GONE);
                         relMe.setVisibility(View.GONE);
                         changeView(0);
+                        homePage.setTextColor(getResources().getColor(R.color.fontgreen));
+                        shop.setTextColor(getResources().getColor(R.color.fontblack));
+                        me.setTextColor(getResources().getColor(R.color.fontblack));
                         break;
                     case R.id.shop:
                         relHome.setVisibility(View.GONE);
                         relShop.setVisibility(View.VISIBLE);
                         relMe.setVisibility(View.GONE);
                         changeView(1);
+                        homePage.setTextColor(getResources().getColor(R.color.fontblack));
+                        shop.setTextColor(getResources().getColor(R.color.fontgreen));
+                        me.setTextColor(getResources().getColor(R.color.fontblack));
                         break;
                     case R.id.user:
                         relHome.setVisibility(View.GONE);
                         relShop.setVisibility(View.GONE);
                         relMe.setVisibility(View.VISIBLE);
+                        homePage.setTextColor(getResources().getColor(R.color.fontblack));
+                        shop.setTextColor(getResources().getColor(R.color.fontblack));
+                        me.setTextColor(getResources().getColor(R.color.fontgreen));
                         changeView(2);
                         break;
                 }

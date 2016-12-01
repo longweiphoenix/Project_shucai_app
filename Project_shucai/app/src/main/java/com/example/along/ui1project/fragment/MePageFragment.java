@@ -106,7 +106,7 @@ public class MePageFragment extends android.support.v4.app.Fragment {
         myList.setAdapter(new MeAdapter(getActivity(), list,layoutInflater));
         /*View view = layoutInflater.inflate(R.layout.home_list_view_footer, null);
         view.setLayoutParams(new WindowManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        homePage= (TextView) view.findViewById(R.id.home);
+        homePage= (TextView) view.findViewById(R.id.home_black);
         shop_green= (TextView) view.findViewById(R.id.shop_green);
         me= (TextView) findViewById(R.id.user);
         myList.addFooterView(view);*/

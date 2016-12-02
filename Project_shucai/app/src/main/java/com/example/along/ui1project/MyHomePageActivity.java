@@ -1,12 +1,17 @@
 package com.example.along.ui1project;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,23 +22,29 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
+import com.example.along.ui1project.callback.TransmitFragmentData;
 import com.example.along.ui1project.fragment.HomePageFragment;
 import com.example.along.ui1project.fragment.MePageFragment;
 import com.example.along.ui1project.fragment.ShopShowFragment;
 import com.huangtao.MyShoppingcartchoose;
 
 
-
-
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by Long on 2016/10/25.
  */
-public class MyHomePageActivity extends FragmentActivity {
+public class MyHomePageActivity extends FragmentActivity implements TransmitFragmentData {
     RadioButton homePage,//底部的三个按钮
             shop,
             me;
@@ -50,6 +61,9 @@ public class MyHomePageActivity extends FragmentActivity {
     GestureDetector mGestureDetector;
     List<Fragment> fragmentList;
     int screenWidth;
+    List<HashMap<String, Object>> datas;
+    List<String> imgs;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -259,6 +273,10 @@ public class MyHomePageActivity extends FragmentActivity {
         return mGestureDetector.onTouchEvent(event);
     }*/
     int currentTab=-1;
+
+
+
+    //二级主界面的适配器
    class HomePagerAdapter extends FragmentStatePagerAdapter {
 
 
@@ -309,6 +327,65 @@ public class MyHomePageActivity extends FragmentActivity {
      * */
     private void changeView(int desTab){
         viewPager.setCurrentItem(desTab,true);
+    }
+
+    //获取图片json
+    public void getImageGallery(String httpUrl, String httpArg) {
+        Message message = new Message();
+        imgs = new ArrayList<>();
+        BufferedReader reader = null;
+        String result = null;
+        StringBuilder stringBuilder = new StringBuilder();
+        httpUrl = httpUrl + "?" + httpArg;
+        try {
+            URL url = new URL(httpUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("get");
+            connection.setRequestProperty("apikey", "7982f2f2086663ad0392d5b6398ec112");
+            Log.i("connection", "connectionning");
+            connection.connect();
+            if (connection.getResponseCode() == 200) {
+                Log.i("connection", "connect_success");
+                InputStream is = connection.getInputStream();
+                reader = new BufferedReader(new InputStreamReader(is, "utf-8"));
+                String strReader = null;
+                while ((strReader = reader.readLine()) != null) {
+                    stringBuilder.append(strReader);
+                    stringBuilder.append("\r\n");
+                }
+                reader.close();
+                is.close();
+            }else{
+                Log.i("connection", "connection_failed");
+            }
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+        result = stringBuilder.toString();
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        map.put("img", result);
+        datas.add(map);
+        mHandler.sendMessage(message);
+    }
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
+
+    //实现接口回调
+    @Override
+    public void transimitData(String url) {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                getImageGallery("http://apis.baidu.com/tngou/cook/name", "name=宫爆鸡丁");
+            }
+        };
+
     }
 
 }

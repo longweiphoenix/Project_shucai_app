@@ -31,6 +31,10 @@ import com.example.along.ui1project.fragment.ShopShowFragment;
 import com.huangtao.MyShoppingcartchoose;
 
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,7 +48,7 @@ import java.util.List;
 /**
  * Created by Long on 2016/10/25.
  */
-public class MyHomePageActivity extends FragmentActivity implements TransmitFragmentData {
+public class MyHomePageActivity extends FragmentActivity{
     RadioButton homePage,//底部的三个按钮
             shop,
             me;
@@ -61,9 +65,7 @@ public class MyHomePageActivity extends FragmentActivity implements TransmitFrag
     GestureDetector mGestureDetector;
     List<Fragment> fragmentList;
     int screenWidth;
-    List<HashMap<String, Object>> datas;
-    List<String> imgs;
-
+    List<Bitmap> imgs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +78,15 @@ public class MyHomePageActivity extends FragmentActivity implements TransmitFrag
         viewPager= (ViewPager) findViewById(R.id.container);
 
         homePageFragment = new HomePageFragment();
+
+        new Thread(){
+            @Override
+            public void run() {
+                setImageGallery("http://apis.baidu.com/tngou/cook/name", "name=宫保鸡丁");
+                homePageFragment.transimitData(imgs);
+            }
+        }.start();
+
         shopShowFragment = new ShopShowFragment();
         mePageFragment = new MePageFragment();
         fragmentList.add(homePageFragment);
@@ -224,7 +235,6 @@ public class MyHomePageActivity extends FragmentActivity implements TransmitFrag
 
     }
 
-
     GestureDetector.OnGestureListener gestureDetector = new GestureDetector.OnGestureListener() {
 
         @Override
@@ -273,6 +283,7 @@ public class MyHomePageActivity extends FragmentActivity implements TransmitFrag
         return mGestureDetector.onTouchEvent(event);
     }*/
     int currentTab=-1;
+
 
 
 
@@ -330,17 +341,17 @@ public class MyHomePageActivity extends FragmentActivity implements TransmitFrag
     }
 
     //获取图片json
-    public void getImageGallery(String httpUrl, String httpArg) {
-        Message message = new Message();
-        imgs = new ArrayList<>();
+    public void setImageGallery(String httpUrl, String httpArg) {
+        imgs= new ArrayList<>();
         BufferedReader reader = null;
         String result = null;
         StringBuilder stringBuilder = new StringBuilder();
-        httpUrl = httpUrl + "?" + httpArg;
+        String str = httpUrl + "?" + httpArg;
         try {
-            URL url = new URL(httpUrl);
+            URL url = new URL(str);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("get");
+            connection.setConnectTimeout(5000);
             connection.setRequestProperty("apikey", "7982f2f2086663ad0392d5b6398ec112");
             Log.i("connection", "connectionning");
             connection.connect();
@@ -353,20 +364,27 @@ public class MyHomePageActivity extends FragmentActivity implements TransmitFrag
                     stringBuilder.append(strReader);
                     stringBuilder.append("\r\n");
                 }
+                result = stringBuilder.toString();
+                JSONArray array=new JSONArray(result);
+                JSONObject object=array.getJSONObject(0);
+                String str1=object.getString("img");
+                BitmapFactory.Options options=new BitmapFactory.Options();
+                options.inJustDecodeBounds=true;
+                options.outHeight=options.outHeight*200/options.outWidth;
+                options.outWidth=200;
+                Bitmap bitmap=BitmapFactory.decodeFile("http://tnfs.tngou.net/img"+str,options);
+                imgs.add(bitmap);
                 reader.close();
                 is.close();
             }else{
                 Log.i("connection", "connection_failed");
             }
-        } catch (IOException e) {
 
+        }catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        result = stringBuilder.toString();
-        HashMap<String, Object> map = new HashMap<String, Object>();
-        map.put("img", result);
-        datas.add(map);
-        mHandler.sendMessage(message);
     }
     Handler mHandler = new Handler() {
         @Override
@@ -375,17 +393,5 @@ public class MyHomePageActivity extends FragmentActivity implements TransmitFrag
         }
     };
 
-    //实现接口回调
-    @Override
-    public void transimitData(String url) {
-        new Thread(){
-            @Override
-            public void run() {
-                super.run();
-                getImageGallery("http://apis.baidu.com/tngou/cook/name", "name=宫爆鸡丁");
-            }
-        };
-
-    }
 
 }

@@ -41,19 +41,17 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/11/25.
  */
-public class HomePageFragment extends Fragment {
+public class HomePageFragment extends Fragment implements TransmitFragmentData {
     TextView healthMenu, organicLifeInner, natives;
     LinearLayout fatherView, fatherViewLife;
     LayoutInflater layoutInflater;
     List<HashMap<String, Object>> datas;
-    List<String> imgs;
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         datas = new ArrayList<>();
     }
-
+    List<Bitmap> bitmaps;
 
     @Nullable
     @Override
@@ -69,25 +67,21 @@ public class HomePageFragment extends Fragment {
         fatherView = (LinearLayout) view.findViewById(R.id.father_view);
         fatherViewLife = (LinearLayout) view.findViewById(R.id.father_view_life);
         layoutInflater = inflater;
+        if(bitmaps!=null){
+            for (int i = 0; i < bitmaps.size(); i++) {
+                View childview = layoutInflater.inflate(R.layout.gallery_item, null);
+                View lifeChild = layoutInflater.inflate(R.layout.gallery_item, null);
+                ImageView ofChildView = (ImageView) lifeChild.findViewById(R.id.gallery_item);
 
-        for (int i = 0; i < imgs.size(); i++) {
-            View childview = inflater.inflate(R.layout.gallery_item, null);
-            View lifeChild = inflater.inflate(R.layout.gallery_item, null);
-            ImageView ofChildView = (ImageView) lifeChild.findViewById(R.id.gallery_item);
-            BitmapFactory.Options options=new BitmapFactory.Options();
-            options.inJustDecodeBounds=true;
-            options.outHeight=options.outHeight*200/options.outWidth;
-            options.outWidth=200;
-            Bitmap bitmap=BitmapFactory.decodeFile("http://tnfs.tngou.net/img"+imgs.get(i),options);
-            ofChildView.setImageBitmap(bitmap);
-            ofChildView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getActivity(), "btn", Toast.LENGTH_SHORT).show();
-                }
-            });
-            fatherView.addView(childview);
-            fatherViewLife.addView(lifeChild);
+                ofChildView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getActivity(), "btn", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                fatherView.addView(childview);
+                fatherViewLife.addView(lifeChild);
+            }
         }
         return view;
     }
@@ -141,12 +135,10 @@ public class HomePageFragment extends Fragment {
     public void setOnButtonClick() {
 
     }*/
-    public void getData(TransmitFragmentData data){
-        data.transimitData("url");
+
+
+    @Override
+    public void transimitData(List<Bitmap> bitmaps) {
+        this.bitmaps=bitmaps;
     }
-
-
-
-
-
 }

@@ -127,7 +127,7 @@ public class CreateAccountActivity extends Activity {
         try {
             createAccentHttp = new CreateAccentHttp(nickName.getText().toString().trim(),
                     passWord.getText().toString().trim(), phoneNumber.getText().toString().trim());
-            String data = createAccentHttp.getStringBuilder().toString();
+            String data = createAccentHttp.getStringBuilder().toString().trim();
             try {
                 JSONObject jsonObject = new JSONObject(data);
                 int status = jsonObject.getInt("status");

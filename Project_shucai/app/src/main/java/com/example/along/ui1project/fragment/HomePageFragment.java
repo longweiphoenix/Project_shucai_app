@@ -62,7 +62,6 @@ public class HomePageFragment extends Fragment {
             switch (v.getId()){
                 case R.id.farm_native:
                     FragmentManager manager=getActivity().getSupportFragmentManager();
-                    manager.
                     break;
                 case R.id.organic_life_inner:
                     intent=new Intent(getActivity(), OrganicLifeActivity.class);

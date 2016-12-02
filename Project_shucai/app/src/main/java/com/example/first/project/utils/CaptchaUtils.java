@@ -2,6 +2,7 @@ package com.example.first.project.utils;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import cn.smssdk.EventHandler;
 import cn.smssdk.OnSendMessageHandler;
@@ -24,24 +25,47 @@ public class CaptchaUtils {
         init();
     }
 
+    public boolean bool;
+
     public void init(){
         SMSSDK.initSDK(context,APPKEY,APPSECRET);
         EventHandler eh=new EventHandler(){
             @Override
             public void afterEvent(int event, int result, Object data) {
-                if (result == SMSSDK.RESULT_COMPLETE) {
-                    //回调完成
-                    if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
-                        //提交验证码成功
-                        Log.i("验证码正确","回调成功");
-                    }else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE){
-                        //获取验证码成功
-                    }else if (event ==SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES){
-                        //返回支持发送验证码的国家列表
-                    }
-                }else{
-                    ((Throwable)data).printStackTrace();
+
+                switch (event) {
+                    case SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE:
+                        if (result == SMSSDK.RESULT_COMPLETE) {
+                           Log.i("验证码===>","验证成功");
+                            bool = true;
+                        } else {
+                            Log.i("验证码===>","验证失败");
+                            bool = false;
+                        }
+                        break;
+                    case SMSSDK.EVENT_GET_VERIFICATION_CODE:
+                        if (result == SMSSDK.RESULT_COMPLETE) {
+                            Log.i("验证码===>","获取验证码成功");
+                        } else {
+                            Log.i("验证码===>","获取验证码失败");
+                        }
+                        break;
                 }
+
+
+//                if (result == SMSSDK.RESULT_COMPLETE) {
+//                    //回调完成
+//                    if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+//                        //提交验证码成功
+//                        Log.i("验证码正确","回调成功");
+//                    }else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE){
+//                        //获取验证码成功
+//                    }else if (event ==SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES){
+//                        //返回支持发送验证码的国家列表
+//                    }
+//                }else{
+//                    ((Throwable)data).printStackTrace();
+//                }
             }
         };
         SMSSDK.registerEventHandler(eh); //注册短信回调
@@ -56,7 +80,7 @@ public class CaptchaUtils {
         });
 
     }
-    public void commint( String code){//从用户手机中上传验证码到服务器
+    public void commint(String code){//从用户手机中上传验证码到服务器
         SMSSDK.submitVerificationCode(COUNTRY,phoneNumb,code);
     }
 

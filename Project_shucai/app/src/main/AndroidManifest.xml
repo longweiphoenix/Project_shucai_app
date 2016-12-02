@@ -80,7 +80,7 @@
 
         <activity android:name="com.example.first.project.CustomerServiceActivity"/>
 
-   
+
         <activity android:name="com.huangtao.MyConcernActivity"/>
         <activity android:name="com.huangtao.MyFansManagementActivity"/>
 

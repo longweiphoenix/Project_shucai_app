@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -18,12 +20,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
+import com.example.first.project.http.CreateAccentHttp;
 import com.example.first.project.utils.CaptchaUtils;
 import com.example.first.project.utils.TimerUtil;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
+import java.net.MalformedURLException;
 
 import cn.smssdk.SMSSDK;
 
@@ -44,6 +53,7 @@ public class CreateAccountActivity extends Activity {
 
     Intent intent;
     LayoutInflater layoutInflater;//转换器
+
 
 
     WindowManager manager;
@@ -69,6 +79,8 @@ public class CreateAccountActivity extends Activity {
     }
 
     CaptchaUtils captcha;
+    CreateAccentHttp createAccentHttp;
+
     //点击事件
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
@@ -82,17 +94,91 @@ public class CreateAccountActivity extends Activity {
                 case R.id.account_head: //改变头像
                     setHeadPortraitWindow();
                     break;
-                case R.id.send_code: //短信验证
-                    new TimerUtil(sendCode,1000*60,1000).start();
+                case R.id.send_code: //发送短信验证码
+                    new TimerUtil(sendCode,1000*60,1000).start(); //倒计时
 
                     captcha.sendCaptcha(phoneNumber.getText().toString().trim());
 
                     break;
                 case R.id.create:
                     captcha.commint(verificationCode.getText().toString().trim());
-                    Log.i("验证码",verificationCode.getText().toString().trim());
+                    Log.i("验证码", verificationCode.getText().toString().trim());
+//                    if (captcha.bool){
+                        new Thread(){
+                            @Override
+                            public void run() {
+                                data();
+                            }
+                        }.start();
+//                    } else {
+//                        Toast.makeText(CreateAccountActivity.this,"验证码错误",Toast.LENGTH_LONG).show();
+//                        sendCode.setText("重新获取验证码");
+//                    }
                     captcha.cancellation();
                     break;
+            }
+        }
+    };
+
+    //访问接口
+    public void data() {
+        //注册
+        Message message = new Message();
+        try {
+            createAccentHttp = new CreateAccentHttp(nickName.getText().toString().trim(),
+                    passWord.getText().toString().trim(), phoneNumber.getText().toString().trim());
+            String data = createAccentHttp.getStringBuilder().toString();
+            try {
+                JSONObject jsonObject = new JSONObject(data);
+                int status = jsonObject.getInt("status");
+                if (status == 5 || status == 6) {  //注册成功
+                    message.arg1 = 5;
+                    handler.sendMessage(message);
+                    intent = new Intent(CreateAccountActivity.this, MyHomePageActivity.class);
+                    startActivity(intent);
+                } else if (status == 1) { //用户已存在
+                    message.arg1 = 1;
+                    handler.sendMessage(message);
+                } else if (status == 3) {  //密码不能为空
+                    message.arg1 = 3;
+                    handler.sendMessage(message);
+                } else if (status == 0) {  // 手机号不能为空
+                    message.arg1 = 0;
+                    handler.sendMessage(message);
+                } else if (status == 10){ //手机号已经被注册
+                    message.arg1 = 10;
+                    handler.sendMessage(message);
+                } else if (status == -1){ //用户名不能为空
+                    message.arg1 = -1;
+                    handler.sendMessage(message);
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        captcha.cancellation();
+    }
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.arg1 == 5) {
+                Toast.makeText(CreateAccountActivity.this, "注册成功", Toast.LENGTH_LONG).show();
+            } else if (msg.arg1 == 1) {
+                Toast.makeText(CreateAccountActivity.this, "用户已存在", Toast.LENGTH_LONG).show();
+            } else if (msg.arg1 == 3) {
+                Toast.makeText(CreateAccountActivity.this, "密码不能为空", Toast.LENGTH_LONG).show();
+            } else if (msg.arg1 == 0) {
+                Toast.makeText(CreateAccountActivity.this, "手机号不能为空", Toast.LENGTH_LONG).show();
+            } else if (msg.arg1 == 10) {
+                Toast.makeText(CreateAccountActivity.this, "手机号已经备注册", Toast.LENGTH_LONG).show();
+            } else if (msg.arg1 == -1) {
+                Toast.makeText(CreateAccountActivity.this, "用户名不能为空", Toast.LENGTH_LONG).show();
             }
         }
     };
@@ -163,7 +249,5 @@ public class CreateAccountActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //解除注册
-        SMSSDK.unregisterAllEventHandler();
     }
 }

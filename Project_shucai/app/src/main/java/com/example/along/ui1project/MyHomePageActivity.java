@@ -1,12 +1,16 @@
 package com.example.along.ui1project;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,22 +22,29 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import com.example.along.ui1project.callback.TransmitFragmentData;
 import com.example.along.ui1project.fragment.HomePageFragment;
 import com.example.along.ui1project.fragment.MePageFragment;
 import com.example.along.ui1project.fragment.ShopShowFragment;
 import com.huangtao.MyShoppingcartchoose;
 
-
-
-
-
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
  * Created by Long on 2016/10/25.
  */
-public class MyHomePageActivity extends FragmentActivity {
+public class MyHomePageActivity extends FragmentActivity{
     RadioButton homePage,//底部的三个按钮
             shop,
             me;
@@ -50,6 +61,7 @@ public class MyHomePageActivity extends FragmentActivity {
     GestureDetector mGestureDetector;
     List<Fragment> fragmentList;
     int screenWidth;
+    List<Bitmap> imgs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +74,15 @@ public class MyHomePageActivity extends FragmentActivity {
         viewPager= (ViewPager) findViewById(R.id.container);
 
         homePageFragment = new HomePageFragment();
+
+        new Thread(){
+            @Override
+            public void run() {
+                setImageGallery("http://apis.baidu.com/tngou/cook/name", "name=宫保鸡丁");
+                homePageFragment.transimitData(imgs);
+            }
+        }.start();
+
         shopShowFragment = new ShopShowFragment();
         mePageFragment = new MePageFragment();
         fragmentList.add(homePageFragment);
@@ -210,7 +231,6 @@ public class MyHomePageActivity extends FragmentActivity {
 
     }
 
-
     GestureDetector.OnGestureListener gestureDetector = new GestureDetector.OnGestureListener() {
 
         @Override
@@ -259,6 +279,11 @@ public class MyHomePageActivity extends FragmentActivity {
         return mGestureDetector.onTouchE    vent(event);
     }*/
     int currentTab=-1;
+
+
+
+
+    //二级主界面的适配器
    class HomePagerAdapter extends FragmentStatePagerAdapter {
 
 
@@ -310,5 +335,59 @@ public class MyHomePageActivity extends FragmentActivity {
     private void changeView(int desTab){
         viewPager.setCurrentItem(desTab,true);
     }
+
+    //获取图片json
+    public void setImageGallery(String httpUrl, String httpArg) {
+        imgs= new ArrayList<>();
+        BufferedReader reader = null;
+        String result = null;
+        StringBuilder stringBuilder = new StringBuilder();
+        String str = httpUrl + "?" + httpArg;
+        try {
+            URL url = new URL(str);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("get");
+            connection.setConnectTimeout(5000);
+            connection.setRequestProperty("apikey", "7982f2f2086663ad0392d5b6398ec112");
+            Log.i("connection", "connectionning");
+            connection.connect();
+            if (connection.getResponseCode() == 200) {
+                Log.i("connection", "connect_success");
+                InputStream is = connection.getInputStream();
+                reader = new BufferedReader(new InputStreamReader(is, "utf-8"));
+                String strReader = null;
+                while ((strReader = reader.readLine()) != null) {
+                    stringBuilder.append(strReader);
+                    stringBuilder.append("\r\n");
+                }
+                result = stringBuilder.toString();
+                JSONArray array=new JSONArray(result);
+                JSONObject object=array.getJSONObject(0);
+                String str1=object.getString("img");
+                BitmapFactory.Options options=new BitmapFactory.Options();
+                options.inJustDecodeBounds=true;
+                options.outHeight=options.outHeight*200/options.outWidth;
+                options.outWidth=200;
+                Bitmap bitmap=BitmapFactory.decodeFile("http://tnfs.tngou.net/img"+str,options);
+                imgs.add(bitmap);
+                reader.close();
+                is.close();
+            }else{
+                Log.i("connection", "connection_failed");
+            }
+
+        }catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
+
 
 }

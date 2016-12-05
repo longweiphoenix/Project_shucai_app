@@ -6,6 +6,7 @@
         android:id="@+id/gallery_item"
         android:scaleType="centerInside"
         android:src="@mipmap/jiakshuo"
+        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="138dp" />
 </LinearLayout>

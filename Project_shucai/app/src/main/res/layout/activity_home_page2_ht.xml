@@ -76,7 +76,7 @@
         <HorizontalScrollView
             android:id="@+id/racipe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/shop_sort_out80dp"
             android:layout_gravity="center_vertical"
             android:background="#32323232"
             android:scrollbars="none">
@@ -117,7 +117,7 @@
         <HorizontalScrollView
             android:id="@+id/organic_life"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/shop_sort_out80dp"
             android:layout_gravity="center_vertical"
             android:background="#32323232"
             android:scrollbars="none">

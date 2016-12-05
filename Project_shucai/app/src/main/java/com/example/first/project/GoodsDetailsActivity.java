@@ -48,26 +48,26 @@ public class GoodsDetailsActivity extends Activity {
 
     //创建fragment管理器对象
     public void createFragment(){
-        goodsDetailsFragment = new GoodsDetailsFragment();
-        goodsDetailsEvaluateFragment = new GoodsDetailsEvaluateFragment();
-        fragmentManager = getFragmentManager();
+                    goodsDetailsFragment = new GoodsDetailsFragment();
+                    goodsDetailsEvaluateFragment = new GoodsDetailsEvaluateFragment();
+                    fragmentManager = getFragmentManager();
 
-        fragmentManager.beginTransaction().add(R.id.linearlayout,goodsDetailsFragment).commit();
-        fragmentManager.beginTransaction().add(R.id.linearlayout,goodsDetailsEvaluateFragment).commit();
-        fragmentManager.beginTransaction().hide(goodsDetailsEvaluateFragment).commit();
-    }
-
-    Intent intent;
-    View.OnClickListener onClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()){
-                case R.id.goods_details:
-                    left.setVisibility(View.VISIBLE);
-                    right.setVisibility(View.INVISIBLE);
-
-                    fragmentManager.beginTransaction().show(goodsDetailsFragment).commit();
+                    fragmentManager.beginTransaction().add(R.id.linearlayout,goodsDetailsFragment).commit();
+                    fragmentManager.beginTransaction().add(R.id.linearlayout,goodsDetailsEvaluateFragment).commit();
                     fragmentManager.beginTransaction().hide(goodsDetailsEvaluateFragment).commit();
+                }
+
+                Intent intent;
+                View.OnClickListener onClickListener = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        switch (v.getId()){
+                            case R.id.goods_details:
+                                left.setVisibility(View.VISIBLE);
+                                right.setVisibility(View.INVISIBLE);
+
+                                fragmentManager.beginTransaction().show(goodsDetailsFragment).commit();
+                                fragmentManager.beginTransaction().hide(goodsDetailsEvaluateFragment).commit();
 
                     break;
                 case R.id.goods_evaluater:

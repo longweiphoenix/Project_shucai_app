@@ -2,14 +2,10 @@ package com.example.along.ui1project.fragment;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,16 +19,6 @@ import com.example.along.ui1project.callback.TransmitFragmentData;
 import com.example.first.project.OrganicLifeActivity;
 import com.example.zxy.HealthyMenuOneActivity;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -92,11 +78,9 @@ public class HomePageFragment extends Fragment implements TransmitFragmentData {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.farm_native:
-<<<<<<< HEAD
                     FragmentManager manager=getActivity().getSupportFragmentManager();
-=======
-                    FragmentManager manager = getActivity().getSupportFragmentManager();
->>>>>>> b8d078bfb32b1237213128e12f9022f255a3bd6c
+
+
                     break;
                 case R.id.organic_life_inner:
                     intent = new Intent(getActivity(), OrganicLifeActivity.class);

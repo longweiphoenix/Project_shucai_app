@@ -256,7 +256,7 @@ public class MyHomePageActivity extends FragmentActivity {
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        return mGestureDetector.onTouchEvent(event);
+        return mGestureDetector.onTouchE    vent(event);
     }*/
     int currentTab=-1;
    class HomePagerAdapter extends FragmentStatePagerAdapter {

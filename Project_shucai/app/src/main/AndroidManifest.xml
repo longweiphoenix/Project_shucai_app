@@ -31,7 +31,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
 
-        <activity android:name="com.example.first.project.LoginPageActivity"
+        <activity android:name=".MyHomePageActivity"
             android:launchMode="singleTask">
 
             <intent-filter>
@@ -40,7 +40,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyHomePageActivity"/>
+        <!--<activity android:name=".MyHomePageActivity"/>-->
 
         <!--lijunming-->
         <activity android:name="com.example.first.project.CreateAccountActivity"

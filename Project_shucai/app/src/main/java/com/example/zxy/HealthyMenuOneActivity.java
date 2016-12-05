@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.view.GestureDetector;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +27,7 @@ public class HealthyMenuOneActivity extends Activity {
     Button menuButton;
     ImageView menuArowImageView;
     GestureDetector gestureDetector;
+    LayoutInflater layoutInflater;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_one);
@@ -48,6 +50,7 @@ public class HealthyMenuOneActivity extends Activity {
                 startActivity(intent);
             }
         });
+        layoutInflater=LayoutInflater.from(HealthyMenuOneActivity.this);
         viewFlipper.setFlipInterval(10000000);
         viewFlipper.startFlipping();
         gestureDetector=new GestureDetector(this,gestureListener);

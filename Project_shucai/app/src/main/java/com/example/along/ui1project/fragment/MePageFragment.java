@@ -15,11 +15,11 @@ import com.example.along.ui1project.MyFavoriteManageActivity;
 import com.example.along.ui1project.MyTopicksActivity;
 import com.example.along.ui1project.R;
 import com.example.along.ui1project.adpaters.MeAdapter;
+import com.example.first.project.CustomerServiceActivity;
 import com.example.first.project.MyFoodActivity;
 import com.example.first.project.YiHomeActivity;
-import com.example.first.project.CustomerServiceActivity;
-import com.huangtao.MyConcernActivity;
 import com.huangtao.MyFansManagementActivity;
+import com.huangtao.MyWodegzu;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,7 +50,7 @@ public class MePageFragment extends android.support.v4.app.Fragment {
         watch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(), MyConcernActivity.class);
+                Intent intent=new Intent(getActivity(), MyWodegzu.class);
                 startActivity(intent);
             }
         });

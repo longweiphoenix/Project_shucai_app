@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
+import com.example.first.project.application.Data;
 import com.example.first.project.http.LoginAccount;
 import com.example.first.project.vb.VBRegister;
 
@@ -103,6 +104,11 @@ public class LoginPageActivity extends Activity {
             String data = loginAccount.getStringBuilder().toString().trim();
 
             JSONObject object = new JSONObject(data);
+            //获取当前用户的id
+            JSONObject userId = object.getJSONObject("id");
+            Data id  = (Data) getApplication();
+            id.setId(userId.getInt("id"));
+
             Message message = new Message();
             int status = object.getInt("status");
             if ((isPhone(info.getText().toString().trim())) && (info.getText() != null)){

@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ import com.huangtao.Adapter.MyLocFragmentList;
  * Created by Administrator on 2016/12/1.
  */
 public class MyWodegzu extends Activity {
+    ImageButton back; //返回上级页面
     TextView textView;
     TextView getTextView;
     TextView getGetTextView;
@@ -28,6 +30,7 @@ public class MyWodegzu extends Activity {
         setContentView(R.layout.wodegzu_text_layout);
         createFragment();
 
+        back = (ImageButton) findViewById(R.id.back);
         textView = (TextView) findViewById(R.id.textview_dare);
         getTextView = (TextView) findViewById(R.id.hayo);
         getGetTextView = (TextView) findViewById(R.id.loc);
@@ -36,6 +39,7 @@ public class MyWodegzu extends Activity {
         textView.setOnClickListener(onClickListener);
         getTextView.setOnClickListener(onClickListener);
         getGetTextView.setOnClickListener(onClickListener);
+        back.setOnClickListener(onClickListener);
     }
 
     MyDarFragmentList fragmentList;
@@ -86,6 +90,9 @@ public class MyWodegzu extends Activity {
                     fragmentManager.beginTransaction().show(myLocFragmentList).commit();
                     fragmentManager.beginTransaction().hide(fragmentList).commit();
                     fragmentManager.beginTransaction().hide(myHayoFragmentList).commit();
+                    break;
+                case R.id.back:
+                    finish();
                     break;
             }
         }

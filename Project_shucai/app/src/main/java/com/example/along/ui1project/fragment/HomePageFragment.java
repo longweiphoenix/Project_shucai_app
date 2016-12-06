@@ -92,11 +92,7 @@ public class HomePageFragment extends Fragment implements TransmitFragmentData {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.farm_native:
-<<<<<<< HEAD
                     FragmentManager manager=getActivity().getSupportFragmentManager();
-=======
-                    FragmentManager manager = getActivity().getSupportFragmentManager();
->>>>>>> b8d078bfb32b1237213128e12f9022f255a3bd6c
                     break;
                 case R.id.organic_life_inner:
                     intent = new Intent(getActivity(), OrganicLifeActivity.class);

@@ -167,7 +167,7 @@ public class CreateAccountActivity extends Activity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if (msg.arg1 == 5) {
+            if (msg.arg1 == 5) {     
                 Toast.makeText(CreateAccountActivity.this, "注册成功", Toast.LENGTH_LONG).show();
             } else if (msg.arg1 == 1) {
                 Toast.makeText(CreateAccountActivity.this, "用户已存在", Toast.LENGTH_LONG).show();

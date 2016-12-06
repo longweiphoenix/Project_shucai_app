@@ -40,11 +40,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <!--<activity android:name=".MyHomePageActivity"/>-->
-=======
-       <!-- <activity android:name=".MyHomePageActivity"/>-->
->>>>>>> febe4808c61736a68c0f200dfedcf5ea2f985009
+
 
         <!--lijunming-->
         <activity android:name="com.example.first.project.CreateAccountActivity"

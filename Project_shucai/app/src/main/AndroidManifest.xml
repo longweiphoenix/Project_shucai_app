@@ -42,6 +42,8 @@
         </activity>
 
 
+
+
         <!--lijunming-->
         <activity android:name="com.example.first.project.CreateAccountActivity"
             android:launchMode="singleTask"/>
@@ -81,7 +83,6 @@
         <activity android:name="com.example.first.project.CustomerServiceActivity"/>
 
 
-        <activity android:name="com.huangtao.MyConcernActivity"/>
         <activity android:name="com.huangtao.MyFansManagementActivity"/>
 
         <!--longweifeng-->
@@ -100,6 +101,8 @@
 
         <!--<activity android:name="com.example.zxy.NewFollowers" />-->
         <activity android:name="com.example.first.project.SubOrganicLifeActivity"/>
+        <!--ht-->
+        <activity android:name="com.huangtao.MyWodegzu"/>
     </application>
 
 

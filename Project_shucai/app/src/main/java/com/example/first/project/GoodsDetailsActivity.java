@@ -75,7 +75,6 @@ public class GoodsDetailsActivity extends Activity {
                     right.setVisibility(View.VISIBLE);
                     fragmentManager.beginTransaction().show(goodsDetailsEvaluateFragment).commit();
                     fragmentManager.beginTransaction().hide(goodsDetailsFragment).commit();
-
                     break;
                 case R.id.arow:
                     intent = new Intent(GoodsDetailsActivity.this, MyHomePageActivity.class); //跳转到铺子

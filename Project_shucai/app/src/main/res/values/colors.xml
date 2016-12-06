@@ -26,4 +26,8 @@
 
     <!--透明背景颜色-->
     <color name="touming">#32000000</color>
+
+    <!--我的关注字体颜色-->
+    <color name="black">#0a0909</color>
+    <color name="green">#698D45</color>
 </resources>

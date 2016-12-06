@@ -38,6 +38,7 @@ public class GoodsDetailsActivity extends Activity {
         details.setOnClickListener(onClickListener);
         evaluate.setOnClickListener(onClickListener);
         arow.setOnClickListener(onClickListener);
+        ser.setOnClickListener(onClickListener);
 
     }
 
@@ -78,12 +79,11 @@ public class GoodsDetailsActivity extends Activity {
 
                     break;
                 case R.id.arow:
-                    intent = new Intent(GoodsDetailsActivity.this, MyHomePageActivity.class); //跳转到铺子
-                    startActivity(intent);
+                    finish();
                     break;
                 case R.id.service:
-                   // intent = new Intent(GoodsDetailsActivity.this,); //跳转到客服
-                   // startActivity(intent);
+                    intent = new Intent(GoodsDetailsActivity.this,CustomerServiceActivity.class); //跳转到客服
+                    startActivity(intent);
                     break;
             }
 

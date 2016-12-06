@@ -3,12 +3,14 @@ package com.example.first.project;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.along.ui1project.R;
+import com.example.first.project.utils.TimerUtil;
 
 /**订单生成界面
  * Created by Administrator on 2016/11/0008.
@@ -24,7 +26,11 @@ public class OrderToPageActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_to_page);
         findView();
-        back.setOnClickListener(clickListener);
+        View view = LayoutInflater.from(OrderToPageActivity.this).inflate(R.layout.order_to_page,null);
+//        Button button = (Button) view.findViewById(R.id.time);
+//        new TimerUtil(button,1000*60*30,1000*60).start(); //倒计时
+//        back.setOnClickListener(clickListener);
+        cancel.setOnClickListener(clickListener);
 
     }
 

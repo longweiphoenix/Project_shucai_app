@@ -70,25 +70,25 @@ public class HomePageFragment extends Fragment {
         fatherViewLife = (LinearLayout) view.findViewById(R.id.father_view_life);
         layoutInflater = inflater;
 
-        for (int i = 0; i < imgs.size(); i++) {
-            View childview = inflater.inflate(R.layout.gallery_item, null);
-            View lifeChild = inflater.inflate(R.layout.gallery_item, null);
-            ImageView ofChildView = (ImageView) lifeChild.findViewById(R.id.gallery_item);
-            BitmapFactory.Options options=new BitmapFactory.Options();
-            options.inJustDecodeBounds=true;
-            options.outHeight=options.outHeight*200/options.outWidth;
-            options.outWidth=200;
-            Bitmap bitmap=BitmapFactory.decodeFile("http://tnfs.tngou.net/img"+imgs.get(i),options);
-            ofChildView.setImageBitmap(bitmap);
-            ofChildView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getActivity(), "btn", Toast.LENGTH_SHORT).show();
-                }
-            });
-            fatherView.addView(childview);
-            fatherViewLife.addView(lifeChild);
-        }
+//        for (int i = 0; i < imgs.size(); i++) {
+//            View childview = inflater.inflate(R.layout.gallery_item, null);
+//            View lifeChild = inflater.inflate(R.layout.gallery_item, null);
+//            ImageView ofChildView = (ImageView) lifeChild.findViewById(R.id.gallery_item);
+//            BitmapFactory.Options options=new BitmapFactory.Options();
+//            options.inJustDecodeBounds=true;
+//            options.outHeight=options.outHeight*200/options.outWidth;
+//            options.outWidth=200;
+//            Bitmap bitmap=BitmapFactory.decodeFile("http://tnfs.tngou.net/img"+imgs.get(i),options);
+//            ofChildView.setImageBitmap(bitmap);
+//            ofChildView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(getActivity(), "btn", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//            fatherView.addView(childview);
+//            fatherViewLife.addView(lifeChild);
+//        }
         return view;
     }
 
@@ -98,11 +98,9 @@ public class HomePageFragment extends Fragment {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.farm_native:
-<<<<<<< HEAD
+
                     FragmentManager manager=getActivity().getSupportFragmentManager();
-=======
-                    FragmentManager manager = getActivity().getSupportFragmentManager();
->>>>>>> b8d078bfb32b1237213128e12f9022f255a3bd6c
+
                     break;
                 case R.id.organic_life_inner:
                     intent = new Intent(getActivity(), OrganicLifeActivity.class);

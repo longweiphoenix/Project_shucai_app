@@ -3,12 +3,14 @@ package com.example.first.project;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.along.ui1project.R;
+import com.example.first.project.utils.TimerUtil;
 import com.huangtao.MyShoppingcartchoose;
 
 /**订单详情
@@ -45,6 +47,7 @@ public class YiHomeActivity extends Activity {
                 case R.id.commit:
                     intent = new Intent(YiHomeActivity.this,OrderToPageActivity.class);
                     startActivity(intent); //跳转到订单生成页面
+
                     break;
                 case R.id.arow_right:
 

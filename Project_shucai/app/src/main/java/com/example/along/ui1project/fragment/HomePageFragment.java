@@ -53,6 +53,28 @@ public class HomePageFragment extends Fragment implements TransmitFragmentData {
         fatherView = (LinearLayout) view.findViewById(R.id.father_view);
         fatherViewLife = (LinearLayout) view.findViewById(R.id.father_view_life);
         layoutInflater = inflater;
+
+
+//        for (int i = 0; i < imgs.size(); i++) {
+//            View childview = inflater.inflate(R.layout.gallery_item, null);
+//            View lifeChild = inflater.inflate(R.layout.gallery_item, null);
+//            ImageView ofChildView = (ImageView) lifeChild.findViewById(R.id.gallery_item);
+//            BitmapFactory.Options options=new BitmapFactory.Options();
+//            options.inJustDecodeBounds=true;
+//            options.outHeight=options.outHeight*200/options.outWidth;
+//            options.outWidth=200;
+//            Bitmap bitmap=BitmapFactory.decodeFile("http://tnfs.tngou.net/img"+imgs.get(i),options);
+//            ofChildView.setImageBitmap(bitmap);
+//            ofChildView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(getActivity(), "btn", Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//            fatherView.addView(childview);
+//            fatherViewLife.addView(lifeChild);
+//        }
+
         if(bitmaps!=null){
             for (int i = 0; i < bitmaps.size(); i++) {
                 View childview = layoutInflater.inflate(R.layout.gallery_item, null);

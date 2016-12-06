@@ -9,8 +9,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by Administrator on 2016/12/0002.
@@ -25,12 +23,12 @@ public class LoginAccount {
     URL url;
     public LoginAccount(String info,String passWord) throws MalformedURLException {
         this.passWord = passWord;
-        if (isMobile(info)){
+        if (isPhone(info)){
             this.username = info;
-            url = new URL(STR_URL+"username="+info+"&password="+passWord);
+            url = new URL(STR_URL+"phonenum="+info+"&password="+passWord);
         } else {
             this.phonenum = info;
-            url = new URL(STR_URL+"phonenum="+info+"&password="+passWord);
+            url = new URL(STR_URL+"username="+info+"&password="+passWord);
         }
         stringBuilder = new StringBuilder();
         login();
@@ -38,10 +36,16 @@ public class LoginAccount {
 
 
     //判断字符串是不是电话号码
-    public boolean isMobile(String info) {
-        Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\\\D])|(18[0,5-9]))\\\\d{8}$");
-        Matcher m = p.matcher(info);
-        return m.matches();
+    public boolean isPhone(String info){
+        if (info.length() != 11 ){
+            return false;
+        }
+        for (int i = 0; i < info.length();i++){
+            if (info.charAt(i) < '0' || info.charAt(i)>'9'){
+                return false;
+            }
+        }
+        return true;
     }
 
     private StringBuilder stringBuilder; //用于缓存
@@ -67,6 +71,7 @@ public class LoginAccount {
                     stringBuilder.append(s);
                 }
                 Log.i("stringBuilder===>",stringBuilder.toString().trim());
+                Log.i("URL===>",url.toString().trim());
             }
 
 

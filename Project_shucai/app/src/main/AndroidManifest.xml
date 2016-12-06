@@ -42,6 +42,9 @@
             </intent-filter>
         </activity>
 
+
+
+
         <!--lijunming-->
         <activity android:name="com.example.first.project.CreateAccountActivity"
             android:launchMode="singleTask"/>

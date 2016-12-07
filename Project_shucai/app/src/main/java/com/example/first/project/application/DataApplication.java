@@ -9,6 +9,16 @@ import android.app.Application;
 public class DataApplication extends Application {
     private int id;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private String name;
+
     public int getId() {
         return id;
     }

@@ -41,11 +41,7 @@ public class LoginPageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
-
         findView();
-
-
-
         createAccount.setOnClickListener(onClickListener);
         register.setOnClickListener(onClickListener);
         vb.setOnClickListener(onClickListener);

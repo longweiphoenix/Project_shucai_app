@@ -32,7 +32,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
 
-        <activity android:name=".MyHomePageActivity"
+        <activity android:name="com.example.first.project.LoginPageActivity"
             android:launchMode="singleTask">
 
             <intent-filter>
@@ -80,7 +80,7 @@
         <activity android:name=".MyTopicksActivity"/>
         <activity android:name=".MyFavoriteManageActivity"/>
         <activity android:name="com.huangtao.MyShoppingcartchoose"/>
-
+        <activity android:name=".MyHomePageActivity"/>
         <activity android:name="com.example.first.project.CustomerServiceActivity"/>
 
 
@@ -95,7 +95,8 @@
         <activity android:name="com.example.zxy.HealthyMenuOneActivity" />
         <activity android:name="com.example.zxy.ImageSettingActivity" />
         <activity android:name="com.example.zxy.InviteFriendActivity" />
-        <activity android:name="com.example.zxy.NameSettingActivity" />
+        <activity android:name="com.example.zxy.NameSettingActivity"
+            android:launchMode="singleTask"/>
         <activity android:name="com.example.zxy.SignatureSettingActivity" />
         <activity android:name="com.example.zxy.NewFollowersActivity" />
         <!--zxy-->

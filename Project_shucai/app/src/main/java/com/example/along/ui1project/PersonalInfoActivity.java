@@ -20,7 +20,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.first.project.application.Data;
+import com.example.first.project.application.DataApplication;
+import com.example.first.project.application.DataApplication;
 import com.example.zxy.NameSettingActivity;
 import com.example.zxy.SignatureSettingActivity;
 
@@ -76,17 +77,19 @@ public class PersonalInfoActivity extends Activity {
         sexual = (LinearLayout) findViewById(R.id.sexual);
         user_sex_next_arrow = (TextView) findViewById(R.id.user_sex_next_arrow);//性别后的箭头
         personalized_edit_signature = (TextView) findViewById(R.id.personalized_edit_signature);//个人签名
-        personalized_edit_signature.setText("新的个性签名，我好洗换！");
         personalized_edit_signature_next_arrow = (TextView) findViewById(R.id.personalized_edit_signature_next_arrow);//个人签名后的箭头
-        findViewById(R.id.setting_signature).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.setting_signature).setOnClickListener(
+                new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(PersonalInfoActivity.this, SignatureSettingActivity.class);
                 startActivity(intent);
             }
         });
-        Data application= (Data) getApplication();
-        user_nick_name.setText(application.getName());
+        DataApplication application= (DataApplication) getApplication();
+        user_nick_name.setText(application.getName());//更改昵称
+
+        personalized_edit_signature.setText(application.getSignature());//更改个性签名
         info_head_portrait = (ImageView) findViewById(R.id.info_head_portrait);//用户头像
         info_head_change = (LinearLayout) findViewById(R.id.info_head_change);//更换用户头像
         name_setting = (LinearLayout) findViewById(R.id.name_setting);

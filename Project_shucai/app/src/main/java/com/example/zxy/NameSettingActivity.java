@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.along.ui1project.PersonalInfoActivity;
 import com.example.along.ui1project.R;
-import com.example.first.project.application.Data;
+import com.example.first.project.application.DataApplication;
 import com.example.zxy.http.NameAccount;
 
 import org.json.JSONException;
@@ -56,15 +56,17 @@ public class NameSettingActivity extends Activity {
         });
     }
     public void commit(){
-        Data application= (Data) getApplication();//获得Application对象
+        DataApplication application= (DataApplication) getApplication();//获得Application对象
         int userId=application.getId();
         try {
            NameAccount nameAccount=new NameAccount(name.getText().toString().trim(),userId);
+            //获取网络请求返回的JSon数据
            String stringBuilder=nameAccount.getStringBuilder().toString().trim();
+            //将name设为全局
             application.setName(name.getText().toString().trim());
             Log.i("name===========",application.getName());
 
-            JSONObject jsonObject = new JSONObject(stringBuilder);
+            JSONObject jsonObject=new JSONObject(stringBuilder);
             int status=jsonObject.getInt("status");
             Message message=new Message();
             if(status==1){

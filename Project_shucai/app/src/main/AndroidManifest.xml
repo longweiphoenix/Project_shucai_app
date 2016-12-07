@@ -23,6 +23,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name="com.example.first.project.application.DataApplication"
         android:allowBackup="false"
         android:icon="@mipmap/logo_me"
         android:label="@string/app_name"
@@ -31,7 +32,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
 
-        <activity android:name=".MyHomePageActivity"
+        <activity android:name="com.example.first.project.LoginPageActivity"
             android:launchMode="singleTask">
 
             <intent-filter>
@@ -40,6 +41,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MyHomePageActivity"/>
+
+
 
         <!--lijunming-->
         <activity android:name="com.example.first.project.CreateAccountActivity"
@@ -76,7 +80,7 @@
         <activity android:name=".MyTopicksActivity"/>
         <activity android:name=".MyFavoriteManageActivity"/>
         <activity android:name="com.huangtao.MyShoppingcartchoose"/>
-
+        <activity android:name=".MyHomePageActivity"/>
         <activity android:name="com.example.first.project.CustomerServiceActivity"/>
 
 
@@ -91,7 +95,8 @@
         <activity android:name="com.example.zxy.HealthyMenuOneActivity" />
         <activity android:name="com.example.zxy.ImageSettingActivity" />
         <activity android:name="com.example.zxy.InviteFriendActivity" />
-        <activity android:name="com.example.zxy.NameSettingActivity" />
+        <activity android:name="com.example.zxy.NameSettingActivity"
+            android:launchMode="singleTask"/>
         <activity android:name="com.example.zxy.SignatureSettingActivity" />
         <activity android:name="com.example.zxy.NewFollowersActivity" />
         <!--zxy-->

@@ -158,11 +158,13 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <TextView
+                    <Button
+                        android:id="@+id/time"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="29.55"
+                        android:background="@drawable/order_time"
                         android:textColor="#698d45"
                         android:textSize="18dp" />
 

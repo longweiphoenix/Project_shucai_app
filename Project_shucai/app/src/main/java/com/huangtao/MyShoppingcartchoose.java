@@ -78,6 +78,7 @@ public class MyShoppingcartchoose extends Activity {
             TextView productNumber;
             public void onItemClick(AdapterView<?> parent, final View view, final int position, long id) {
                 productNumber= (TextView) view.findViewById(R.id.product_number);
+
                 shoppingcartDelete= (ImageView) view.findViewById(R.id.shoppingcart_delete);
                 productAdd= (ImageView) view.findViewById(R.id.product_add);
                 productSub= (ImageView) view.findViewById(R.id.product_sub);

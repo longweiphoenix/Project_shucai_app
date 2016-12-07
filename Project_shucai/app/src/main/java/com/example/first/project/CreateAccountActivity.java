@@ -103,17 +103,17 @@ public class CreateAccountActivity extends Activity {
                 case R.id.create:
                     captcha.commint(verificationCode.getText().toString().trim());
                     Log.i("验证码", verificationCode.getText().toString().trim());
-//                    if (captcha.bool){
+                    if (captcha.bool){
                         new Thread(){
                             @Override
                             public void run() {
                                 data();
                             }
                         }.start();
-//                    } else {
-//                        Toast.makeText(CreateAccountActivity.this,"验证码错误",Toast.LENGTH_LONG).show();
-//                        sendCode.setText("重新获取验证码");
-//                    }
+                    } else {
+                        Toast.makeText(CreateAccountActivity.this,"验证码错误",Toast.LENGTH_LONG).show();
+                        sendCode.setText("重新获取验证码");
+                    }
                     captcha.cancellation();
                     break;
             }
@@ -167,7 +167,7 @@ public class CreateAccountActivity extends Activity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if (msg.arg1 == 5) {
+            if (msg.arg1 == 5) {     
                 Toast.makeText(CreateAccountActivity.this, "注册成功", Toast.LENGTH_LONG).show();
             } else if (msg.arg1 == 1) {
                 Toast.makeText(CreateAccountActivity.this, "用户已存在", Toast.LENGTH_LONG).show();
@@ -228,9 +228,6 @@ public class CreateAccountActivity extends Activity {
         });
         cameraWindow.showAtLocation(parent_panel, Gravity.CENTER, 0, 0);
     }
-
-
-
 
 
     //找到控件

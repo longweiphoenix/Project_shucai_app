@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
+import com.example.first.project.application.DataApplication;
 import com.example.first.project.http.LoginAccount;
 import com.example.first.project.vb.VBRegister;
 
@@ -21,8 +23,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.MalformedURLException;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**登录页面
  * Created by Administrator on 2016/11/0008.
@@ -41,11 +41,7 @@ public class LoginPageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
-
         findView();
-
-
-
         createAccount.setOnClickListener(onClickListener);
         register.setOnClickListener(onClickListener);
         vb.setOnClickListener(onClickListener);
@@ -64,15 +60,12 @@ public class LoginPageActivity extends Activity {
                     finish();
                     break;
                 case R.id.register: //登录
-//                    new Thread(){
-//                        @Override
-//                        public void run() {
-//                            login();
-//                        }
-//                    };
-                    intent = new Intent(LoginPageActivity.this, MyHomePageActivity.class);
-                    startActivity(intent);
-                    finish();
+                    new Thread(){
+                        @Override
+                        public void run() {
+                            login();
+                        }
+                    }.start();
                     break;
                 case R.id.vb_register:
                     vbRegister = new VBRegister(LoginPageActivity.this);
@@ -85,10 +78,17 @@ public class LoginPageActivity extends Activity {
     LoginAccount loginAccount;
 
     //判断字符串是不是电话号码
-    public boolean isMobile(String info) {
-        Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\\\D])|(18[0,5-9]))\\\\d{8}$");
-        Matcher m = p.matcher(info);
-        return m.matches();
+    public boolean isPhone(String info){
+        if (info.length() != 11 ){
+            return false;
+        }
+        for (int i = 0; i < info.length();i++){
+            //ASCII '0'  '9'(字符) 如果不在这个范围内，则不是数字
+            if (info.charAt(i) < '0' || info.charAt(i)>'9'){
+                return false;
+            }
+        }
+        return true;
     }
     //登录
     public void login(){
@@ -100,9 +100,14 @@ public class LoginPageActivity extends Activity {
             String data = loginAccount.getStringBuilder().toString().trim();
 
             JSONObject object = new JSONObject(data);
+            //获取当前用户的id
+            JSONObject userId = object.getJSONObject("id");
+            DataApplication id  = (DataApplication) getApplication();
+            id.setId(userId.getInt("id"));
+
             Message message = new Message();
             int status = object.getInt("status");
-            if (isMobile(info.getText().toString().trim())){
+            if ((isPhone(info.getText().toString().trim())) && (info.getText() != null)){
                if (status == 0){
                    message.arg1 = 0;
                    handler.sendMessage(message);
@@ -112,7 +117,7 @@ public class LoginPageActivity extends Activity {
                    message.arg1 = -1;
                    handler.sendMessage(message);
                }
-            }else if (!isMobile(info.getText().toString().trim())){
+            }else if (!isPhone(info.getText().toString().trim()) && (info.getText() != null)){
                 if (status == 0){  //登录成功
                     message.arg1 = 0;
                     handler.sendMessage(message);
@@ -123,8 +128,10 @@ public class LoginPageActivity extends Activity {
                     handler.sendMessage(message);
                 }
             }else {
-                message.arg1 = -2;
-                handler.sendMessage(message);
+                if (status == -2){
+                    message.arg1 = -2;
+                    handler.sendMessage(message);
+                }
             }
 
         } catch (JSONException e) {
@@ -138,9 +145,11 @@ public class LoginPageActivity extends Activity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+
             if (msg.arg1 == 0){
                 Toast.makeText(LoginPageActivity.this,"登陆成功",Toast.LENGTH_LONG).show();
             }else if (msg.arg1 == -1){
+                Log.i(info.getText().toString().trim()+"=====>",passWord.getText().toString().trim());
                 Toast.makeText(LoginPageActivity.this,"密码为空或密码错误",Toast.LENGTH_LONG).show();
             }else if (msg.arg1 == -2){
                 Toast.makeText(LoginPageActivity.this,"用户名或手机号不能为空",Toast.LENGTH_LONG).show();

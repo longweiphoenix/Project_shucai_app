@@ -1,6 +1,8 @@
 package com.example.along.ui1project.fragment;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RadioButton;
@@ -33,7 +36,7 @@ public class ShopShowFragment extends android.support.v4.app.Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.i("onCreateView","onCreateView");
         layoutInflater=inflater;
         View view = inflater.inflate(R.layout.all_shop_layout, null);
@@ -54,7 +57,11 @@ public class ShopShowFragment extends android.support.v4.app.Fragment {
         goodsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               //activity间的进行图片传值
+                ShopItem item = (ShopItem) parent.getItemAtPosition(position);
+
                 Intent intent=new Intent(getActivity(), GoodsDetailsActivity.class);
+                intent.putExtra("item", item);
                 startActivity(intent);
             }
         });

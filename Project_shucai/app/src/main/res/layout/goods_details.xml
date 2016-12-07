@@ -38,6 +38,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <ImageView
+               android:id="@+id/title_image"
                 android:layout_width="215dp"
                 android:layout_height="182dp"
                 android:src="@mipmap/egg"

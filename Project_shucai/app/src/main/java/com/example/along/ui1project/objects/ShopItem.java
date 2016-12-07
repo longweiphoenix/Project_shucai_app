@@ -1,9 +1,11 @@
 package com.example.along.ui1project.objects;
 
+import java.io.Serializable;
+
 /**
  * Created by Long on 2016/11/10.
  */
-public class ShopItem {
+public class ShopItem implements Serializable{
    private int img;
    private String title,subTitle,unit,price;
 

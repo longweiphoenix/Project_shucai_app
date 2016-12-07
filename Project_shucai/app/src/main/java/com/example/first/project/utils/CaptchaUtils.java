@@ -22,6 +22,7 @@ public class CaptchaUtils {
     String phoneNumb;
     public CaptchaUtils(Context context){
         this.context = context;
+        bool = false;
         init();
     }
 

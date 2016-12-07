@@ -70,7 +70,6 @@ public class LoginAccount {
                 while ( (s = bufferedReader.readLine()) != null){
                     stringBuilder.append(s);
                 }
-               15809439371  158094
                 Log.i("URL===>",url.toString().trim());
             }
 

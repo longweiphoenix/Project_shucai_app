@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
+import com.example.along.ui1project.objects.ShopItem;
 import com.example.first.project.fragment.GoodsDetailsEvaluateFragment;
 import com.example.first.project.fragment.GoodsDetailsFragment;
 
@@ -26,13 +27,22 @@ public class GoodsDetailsActivity extends Activity {
     ImageView right; //评价下边的横线
     ImageView arow; //返回
     TextView ser; //客服
+    ShopItem item;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.goods_details);
 
+        if(getIntent().hasExtra("item")) {
+            item = (ShopItem) getIntent().getSerializableExtra("item");
+        }
+
+        //item.getImg();
+
         findView();
+        imageView.setImageResource(item.getImg());
         createFragment();
 
         details.setOnClickListener(onClickListener);
@@ -98,5 +108,6 @@ public class GoodsDetailsActivity extends Activity {
         right = (ImageView) findViewById(R.id.right);
         arow = (ImageView) findViewById(R.id.arow);
         ser = (TextView) findViewById(R.id.service);
+        imageView = (ImageView) findViewById(R.id.title_image);
     }
 }

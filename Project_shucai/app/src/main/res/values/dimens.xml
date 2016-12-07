@@ -50,4 +50,25 @@
     <dimen name="litupdejuli">20dp</dimen>
     <dimen name="tuptop">18dp</dimen>
     <dimen name="tupLeft">21dp</dimen>
+    <!--收货人信息-->
+    <dimen name="imagebutton">8dp</dimen>
+    <dimen name="textviewtop">15dp</dimen>
+    <dimen name="textviewbottom">15dp</dimen>
+    <dimen name="textviewright">12dp</dimen>
+    <dimen name="shuorzti">18sp</dimen>
+    <dimen name="textviewtextsize">15sp</dimen>
+    <dimen name="edittexttextsize">15sp</dimen>
+    <dimen name="edittextleft">12dp</dimen>
+    <dimen name="edittextheight">50dp</dimen>
+    <dimen name="view">1dp</dimen>
+    <!--阿青家客服-->
+    <dimen name="kehubottom">12dp</dimen>
+    <dimen name="kehuleft">13dp</dimen>
+    <dimen name="kehutop">12dp</dimen>
+    <dimen name="kehutextviewbottom">15dp</dimen>
+    <dimen name="kehutextviewtop">15dp</dimen>
+    <dimen name="kehutextviewsize">18sp</dimen>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="edittextsize">15sp</dimen>
+
 </resources>

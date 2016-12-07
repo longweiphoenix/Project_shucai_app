@@ -100,6 +100,7 @@
         <activity android:name="com.example.first.project.SubOrganicLifeActivity"/>
         <!--ht-->
         <activity android:name="com.huangtao.MyWodegzu"/>
+        <activity android:name="com.huangtao.MyPersonaLsettings"/>
     </application>
 
 

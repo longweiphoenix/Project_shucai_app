@@ -27,7 +27,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="20dp"
                 android:drawableTop="@mipmap/loca"
-                android:text="农家特产" />
+                android:text="@string/lojiatec" />
 
             <TextView
                 android:id="@+id/organic_life_inner"
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:drawableTop="@mipmap/yojishuo"
-                android:text="有机生活" />
+                android:text="@string/yojishuo" />
 
             <TextView
                 android:id="@+id/healthy_menu"
@@ -45,7 +45,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="12dp"
                 android:drawableTop="@mipmap/jiaksequ"
-                android:text="健康菜谱" />
+                android:text="@string/jiaksqu" />
         </RelativeLayout>
 
         <View
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="健康菜谱"
+                android:text="@string/jiaksqu"
                 android:textColor="#698d45"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="有机生活"
+                android:text="@string/yojishuo"
                 android:textColor="#698d45"
                 android:textSize="14sp" />
         </LinearLayout>

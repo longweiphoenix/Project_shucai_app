@@ -87,6 +87,23 @@
     <string name="home">首页</string>
     <string name="shop">铺子</string>
     <string name="me">我</string>
+    <string name="lojiatec">农家特产</string>
+    <string name="yojishuo">有机生活</string>
+    <string name="jiaksqu">健康菜谱</string>
+
+    <!--收货人信息-->
+    <string name="sohuorexxi">收货人信息</string>
+    <string name="bacue">保存</string>
+    <string name="sohuorexim">收货人姓名</string>
+    <string name="sojihma">手机号码</string>
+    <string name="yozbma">邮政编码</string>
+    <string name="sesqu">省、市、区</string>
+    <string name="xxidiz">详细地址</string>
+
+    <!--阿青家客服-->
+    <string name="aiqjiakehu">阿青家客服</string>
+    <string name="yowti">有问题，找阿青</string>
+    <string name="faso">发送</string>
 
     <!--zxy-->
     <string-array name="menu_parepre_one">

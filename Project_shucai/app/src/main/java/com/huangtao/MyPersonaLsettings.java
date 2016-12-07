@@ -8,16 +8,17 @@ import android.widget.ImageButton;
 import com.example.along.ui1project.R;
 
 /**
- * Created by Long on 2016/11/30.
+ * Created by Administrator on 2016/12/6.
  */
-public class MyFansManagementActivity extends Activity {
+public class MyPersonaLsettings extends Activity {
     ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_fans_ht);
+        setContentView(R.layout.activity_personalsettings_ht);
 
-        imageButton= (ImageButton) findViewById(R.id.fesdefah);
+        imageButton= (ImageButton) findViewById(R.id.gersezfah);
+
 
         imageButton.setOnClickListener(onClickListener);
     }
@@ -25,9 +26,9 @@ public class MyFansManagementActivity extends Activity {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case R.id.fesdefah:
+                case R.id.gersezfah:
                     finish();
-                    break;
+               break;
             }
         }
     };

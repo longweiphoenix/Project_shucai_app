@@ -22,15 +22,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
-import com.example.along.ui1project.callback.TransmitFragmentData;
 import com.example.along.ui1project.fragment.HomePageFragment;
 import com.example.along.ui1project.fragment.MePageFragment;
 import com.example.along.ui1project.fragment.ShopShowFragment;
+import com.huangtao.MyPersonaLsettings;
 import com.huangtao.MyShoppingcartchoose;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,7 +39,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -216,7 +216,7 @@ public class MyHomePageActivity extends FragmentActivity{
             @Override
             public void onClick(View v) {
                 //跳转到个人设置界面 需要bundle数据？？
-                Intent intent=new Intent(MyHomePageActivity.this,PersonalInfoActivity.class);
+                Intent intent=new Intent(MyHomePageActivity.this,MyPersonaLsettings.class);
                 startActivity(intent);
             }
         });

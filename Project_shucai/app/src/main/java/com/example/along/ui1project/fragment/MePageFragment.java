@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.along.ui1project.MyFavoriteManageActivity;
 import com.example.along.ui1project.MyTopicksActivity;
+import com.example.along.ui1project.PersonalInfoActivity;
 import com.example.along.ui1project.R;
 import com.example.along.ui1project.adpaters.MeAdapter;
 import com.example.first.project.CustomerServiceActivity;
@@ -34,6 +36,7 @@ public class MePageFragment extends android.support.v4.app.Fragment {
     LayoutInflater layoutInflater;
 
     TextView watch,fans;
+    ImageView imageView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,14 @@ public class MePageFragment extends android.support.v4.app.Fragment {
         //我的页面列表
         myList = (ListView) view.findViewById(R.id.home_list_view);
 
+        imageView= (ImageView) view.findViewById(R.id.wodetox);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), PersonalInfoActivity.class);
+                startActivity(intent);
+            }
+        });
         watch= (TextView) view.findViewById(R.id.watch);
         watch.setOnClickListener(new View.OnClickListener() {
             @Override

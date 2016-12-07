@@ -11,6 +11,7 @@
 
 
         <ImageView
+            android:id="@+id/wodetox"
             android:layout_width="@dimen/large_head"
             android:layout_height="@dimen/large_head"
             android:layout_gravity="center_horizontal"

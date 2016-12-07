@@ -11,7 +11,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/imagebutton"
             android:background="@null"
             android:src="@mipmap/arow" />
 
@@ -19,88 +19,88 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="收货人信息"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:textSize="18sp"
+            android:text="@string/sohuorexxi"
+            android:layout_marginTop="@dimen/textviewtop"
+            android:layout_marginBottom="@dimen/textviewbottom"
+            android:textSize="@dimen/shuorzti"
             android:textColor="#323232"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="12dp"
+            android:layout_marginRight="@dimen/textviewright"
             android:layout_alignParentRight="true"
-            android:text="保存"
-            android:textSize="15dp"
+            android:text="@string/bacue"
+            android:textSize="@dimen/textviewtextsize"
             android:textColor="#698D45"/>
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/view"
         android:background="#cdcdcd"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="收货人姓名"
+        android:layout_height="@dimen/edittextheight"
+        android:hint="@string/sohuorexim"
         android:background="#f2f2f2"
         android:textColorHint="#cdcdcd"
-        android:textSize="15dp"
-        android:layout_marginLeft="12dp"
+        android:textSize="@dimen/edittexttextsize"
+        android:layout_marginLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/view"
         android:background="#cdcdcd"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="手机号码"
+        android:layout_height="@dimen/edittextheight"
+        android:hint="@string/sojihma"
         android:textColorHint="#cdcdcd"
         android:background="#f2f2f2"
-        android:textSize="15dp"
-        android:layout_marginLeft="12dp"
+        android:textSize="@dimen/edittexttextsize"
+        android:layout_marginLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/view"
         android:background="#cdcdcd"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="邮政编码"
+        android:layout_height="@dimen/edittextheight"
+        android:hint="@string/yozbma"
         android:textColorHint="#cdcdcd"
         android:background="#f2f2f2"
-        android:textSize="15dp"
-        android:layout_marginLeft="12dp"
+        android:textSize="@dimen/edittexttextsize"
+        android:layout_marginLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/view"
         android:background="#cdcdcd"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="省、市、区"
+        android:layout_height="@dimen/edittextheight"
+        android:hint="@string/sesqu"
         android:background="#f2f2f2"
-        android:textSize="15dp"
-        android:layout_marginLeft="12dp"
+        android:textSize="@dimen/edittexttextsize"
+        android:layout_marginLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/view"
         android:background="#cdcdcd"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:hint="详细地址"
+        android:layout_height="@dimen/edittextheight"
+        android:hint="@string/xxidiz"
         android:textColorHint="#cdcdcd"
         android:background="#f2f2f2"
-        android:textSize="15dp"
-        android:layout_marginLeft="12dp"
+        android:textSize="@dimen/edittexttextsize"
+        android:layout_marginLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="@dimen/view"
         android:background="#cdcdcd"/>
 </LinearLayout>
 

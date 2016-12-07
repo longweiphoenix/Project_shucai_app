@@ -14,9 +14,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginBottom="12dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="@dimen/kehubottom"
+            android:layout_marginLeft="@dimen/kehuleft"
+            android:layout_marginTop="@dimen/kehutop"
             android:background="@null"
             android:src="@mipmap/arow" />
 
@@ -24,11 +24,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:text="阿青家客服"
+            android:layout_marginBottom="@dimen/kehutextviewbottom"
+            android:layout_marginTop="@dimen/kehutextviewtop"
+            android:text="@string/aiqjiakehu"
             android:textColor="#323232"
-            android:textSize="18sp" />
+            android:textSize="@dimen/kehutextviewsize" />
     </RelativeLayout>
     <ListView
         android:id="@+id/list_view"
@@ -40,24 +40,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="@dimen/padding">
         <EditText
             android:id="@+id/question"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="有问题，找阿青"
-            android:textSize="15sp"
-            android:paddingLeft="10dp"
+            android:hint="@string/yowti"
+            android:textSize="@dimen/edittextsize"
+            android:paddingLeft="@dimen/padding"
             android:textColor="#787878"
             android:background="@null"/>
         <TextView
             android:id="@+id/add_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="发送"
-            android:textSize="15sp"
-            android:layout_marginLeft="10dp"/>
+            android:text="@string/faso"
+            android:textSize="@dimen/edittextsize"
+            android:layout_marginLeft="@dimen/padding"/>
     </LinearLayout>
 
 </LinearLayout>

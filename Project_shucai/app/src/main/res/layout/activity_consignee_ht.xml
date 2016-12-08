@@ -42,10 +42,10 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/edittextheight"
         android:hint="@string/sohuorexim"
-        android:background="#f2f2f2"
+        android:background="#fffefe"
         android:textColorHint="#cdcdcd"
         android:textSize="@dimen/edittexttextsize"
-        android:layout_marginLeft="@dimen/edittextleft"
+        android:paddingLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"
@@ -56,9 +56,9 @@
         android:layout_height="@dimen/edittextheight"
         android:hint="@string/sojihma"
         android:textColorHint="#cdcdcd"
-        android:background="#f2f2f2"
+        android:background="#fffefe"
         android:textSize="@dimen/edittexttextsize"
-        android:layout_marginLeft="@dimen/edittextleft"
+        android:paddingLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"
@@ -69,9 +69,9 @@
         android:layout_height="@dimen/edittextheight"
         android:hint="@string/yozbma"
         android:textColorHint="#cdcdcd"
-        android:background="#f2f2f2"
+        android:background="#fffefe"
         android:textSize="@dimen/edittexttextsize"
-        android:layout_marginLeft="@dimen/edittextleft"
+        android:paddingLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"
@@ -81,9 +81,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/edittextheight"
         android:hint="@string/sesqu"
-        android:background="#f2f2f2"
+        android:background="#fffefe"
         android:textSize="@dimen/edittexttextsize"
-        android:layout_marginLeft="@dimen/edittextleft"
+        android:paddingLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"
@@ -94,9 +94,9 @@
         android:layout_height="@dimen/edittextheight"
         android:hint="@string/xxidiz"
         android:textColorHint="#cdcdcd"
-        android:background="#f2f2f2"
+        android:background="#fffefe"
         android:textSize="@dimen/edittexttextsize"
-        android:layout_marginLeft="@dimen/edittextleft"
+        android:paddingLeft="@dimen/edittextleft"
         android:gravity="center_vertical"/>
     <View
         android:layout_width="match_parent"

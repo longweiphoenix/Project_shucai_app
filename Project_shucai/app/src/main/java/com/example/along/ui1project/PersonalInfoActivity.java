@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +19,11 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.first.project.application.Data;
+import com.example.first.project.application.DataApplication;
 import com.example.zxy.NameSettingActivity;
 import com.example.zxy.SignatureSettingActivity;
 
 import java.io.File;
-import java.util.Date;
 
 /**
  * Created by Long on 2016/10/20.
@@ -85,7 +83,7 @@ public class PersonalInfoActivity extends Activity {
                 startActivity(intent);
             }
         });
-        Data application= (Data) getApplication();
+        DataApplication application= (DataApplication) getApplication();
         user_nick_name.setText(application.getName());
         info_head_portrait = (ImageView) findViewById(R.id.info_head_portrait);//用户头像
         info_head_change = (LinearLayout) findViewById(R.id.info_head_change);//更换用户头像

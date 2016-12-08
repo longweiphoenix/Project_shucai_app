@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.along.ui1project.PersonalInfoActivity;
 import com.example.along.ui1project.R;
-import com.example.first.project.application.Data;
+import com.example.first.project.application.DataApplication;
 import com.example.zxy.http.NameAccount;
 
 import org.json.JSONException;
@@ -56,7 +55,7 @@ public class NameSettingActivity extends Activity {
         });
     }
     public void commit(){
-        Data application= (Data) getApplication();//获得Application对象
+        DataApplication application= (DataApplication) getApplication();//获得Application对象
         int userId=application.getId();
         try {
            NameAccount nameAccount=new NameAccount(name.getText().toString().trim(),userId);

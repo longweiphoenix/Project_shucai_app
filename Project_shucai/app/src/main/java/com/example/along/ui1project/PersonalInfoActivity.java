@@ -21,9 +21,6 @@ import android.widget.Toast;
 
 import com.example.BaseActivity;
 import com.example.first.project.application.DataApplication;
-
-import com.example.first.project.application.DataApplication;
-
 import com.example.zxy.NameSettingActivity;
 import com.example.zxy.SignatureSettingActivity;
 
@@ -88,6 +85,8 @@ public class PersonalInfoActivity extends BaseActivity {
             }
         });
         DataApplication application= (DataApplication) getApplication();
+
+
         user_nick_name.setText(application.getName());//更改昵称
 
         personalized_edit_signature.setText(application.getSignature());//更改个性签名

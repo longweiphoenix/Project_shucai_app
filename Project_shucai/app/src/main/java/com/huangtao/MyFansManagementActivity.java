@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.R;
 
 /**
  * Created by Long on 2016/11/30.
  */
-public class MyFansManagementActivity extends Activity {
+public class MyFansManagementActivity extends BaseActivity {
     ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

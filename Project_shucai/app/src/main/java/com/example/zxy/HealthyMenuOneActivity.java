@@ -14,13 +14,14 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 
 /**
  * Created by Administrator on 2016/10/30.
  */
-public class HealthyMenuOneActivity extends Activity {
+public class HealthyMenuOneActivity extends BaseActivity {
     Button heartOne;//收藏
     boolean isFavorite=true;
     ViewFlipper viewFlipper;

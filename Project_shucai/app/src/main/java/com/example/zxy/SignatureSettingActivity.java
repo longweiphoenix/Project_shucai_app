@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.PersonalInfoActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.application.DataApplication;
@@ -24,7 +26,7 @@ import java.net.MalformedURLException;
 /**
  * Created by Administrator on 2016/10/23.
  */
-public class SignatureSettingActivity extends Activity {
+public class SignatureSettingActivity extends BaseActivity {
     TextView signatureCommit;//提交
     ImageView signatureArow;//返回
     EditText signature;//输入框
@@ -53,6 +55,7 @@ public class SignatureSettingActivity extends Activity {
             }
         });
     }
+
     public void commit(){
         DataApplication application= (DataApplication) getApplication();
         int userId=application.getId();

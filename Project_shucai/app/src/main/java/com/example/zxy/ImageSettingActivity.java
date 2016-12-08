@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.PersonalSettingActivity;
 import com.example.along.ui1project.R;
 
 /**
  * Created by Administrator on 2016/10/20.
  */
-public class ImageSettingActivity extends Activity{
+public class ImageSettingActivity extends BaseActivity {
     ImageView imageSettingArowImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.utils.TimerUtil;
 import com.huangtao.MyShoppingcartchoose;
@@ -17,7 +18,7 @@ import com.huangtao.MyShoppingcartchoose;
  * Created by Administrator on 2016/11/0008.
  */
 
-public class YiHomeActivity extends Activity {
+public class YiHomeActivity extends BaseActivity {
     ImageView back; //返回上级页面
     TextView name; //收货人
     Button commit; //提交

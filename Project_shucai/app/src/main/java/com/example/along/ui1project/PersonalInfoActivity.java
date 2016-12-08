@@ -19,6 +19,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.BaseActivity;
 import com.example.first.project.application.DataApplication;
 
 import com.example.first.project.application.DataApplication;
@@ -31,7 +32,7 @@ import java.io.File;
 /**
  * Created by Long on 2016/10/20.
  */
-public class PersonalInfoActivity extends Activity {
+public class PersonalInfoActivity extends BaseActivity {
     TextView info_back_arrow,//个人信息返回箭头
             user_nick_name,//用户昵称
             head_portrait_next_arrow,//头像箭头
@@ -90,7 +91,6 @@ public class PersonalInfoActivity extends Activity {
         user_nick_name.setText(application.getName());//更改昵称
 
         personalized_edit_signature.setText(application.getSignature());//更改个性签名
-        user_nick_name.setText(application.getName());
         info_head_portrait = (ImageView) findViewById(R.id.info_head_portrait);//用户头像
         info_head_change = (LinearLayout) findViewById(R.id.info_head_change);//更换用户头像
         name_setting = (LinearLayout) findViewById(R.id.name_setting);

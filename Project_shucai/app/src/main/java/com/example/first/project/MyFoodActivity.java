@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 import com.example.zxy.InviteFriendActivity;
@@ -16,7 +17,7 @@ import com.example.zxy.InviteFriendActivity;
  * Created by Administrator on 2016/11/0010.
  */
 
-public class MyFoodActivity extends Activity {
+public class MyFoodActivity extends BaseActivity {
     ImageView back; //返回上级
     TextView rules; //粮票使用规则
     ImageView getFood; //获得粮票

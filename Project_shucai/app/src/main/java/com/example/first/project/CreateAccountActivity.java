@@ -12,6 +12,8 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -22,6 +24,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.http.CreateAccentHttp;
@@ -40,7 +43,7 @@ import cn.smssdk.SMSSDK;
  * Created by Administrator on 2016/11/0005.
  */
 
-public class CreateAccountActivity extends Activity {
+public class CreateAccountActivity extends BaseActivity {
     ImageView accountHead; //账户头像
     EditText nickName; // 昵称
     EditText phoneNumber; //手机号

@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.R;
 import com.example.zxy.Adapter.CookingParepreAdapter;
 import com.example.zxy.Adapter.CookingProcessAdapter;
@@ -21,7 +22,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/10/30.
  */
-public class CookingActivity extends Activity {
+public class CookingActivity extends BaseActivity {
     ListView listView;//制作准备的listView
     ListView newListView;//制作过程的listView
     List<HashMap<String,Object>> list;

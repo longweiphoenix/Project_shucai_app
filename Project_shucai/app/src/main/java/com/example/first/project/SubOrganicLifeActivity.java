@@ -11,6 +11,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.R;
 
 import java.net.MalformedURLException;
@@ -19,7 +20,7 @@ import java.net.URL;
 /**
  * Created by Administrator on 2016/11/28.
  */
-public class SubOrganicLifeActivity extends Activity {
+public class SubOrganicLifeActivity extends BaseActivity {
 
     ImageView back;
     ImageView share;

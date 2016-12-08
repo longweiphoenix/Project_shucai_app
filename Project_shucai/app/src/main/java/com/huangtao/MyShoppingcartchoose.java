@@ -16,6 +16,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.OrderToPageActivity;
 import com.huangtao.Adapter.MyShoppingCartChooseAdapter;
@@ -27,7 +28,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/11/25.
  */
-public class MyShoppingcartchoose extends Activity {
+public class MyShoppingcartchoose extends BaseActivity {
     ListView listView;
     List<HashMap<String,Object>> list;
     LayoutInflater layoutInflater;

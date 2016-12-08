@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.adpaters.MeAdapter;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ import java.util.List;
 /**
  * Created by Long on 2016/10/25.
  */
-public class PersonalSettingActivity extends Activity {
+public class PersonalSettingActivity extends BaseActivity {
     ListView personalSettingListView;
     List<HashMap<String,Object>> list;
     LayoutInflater inflater;

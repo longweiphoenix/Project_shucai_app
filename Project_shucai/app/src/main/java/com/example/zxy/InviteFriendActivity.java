@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.MyFoodActivity;
 
 /**
  * Created by Administrator on 2016/10/23.
  */
-public class InviteFriendActivity extends Activity {
+public class InviteFriendActivity extends BaseActivity {
     ImageView inviteArowImageView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

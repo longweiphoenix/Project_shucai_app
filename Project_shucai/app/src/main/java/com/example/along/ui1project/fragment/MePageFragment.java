@@ -20,6 +20,8 @@ import com.example.along.ui1project.adpaters.MeAdapter;
 import com.example.first.project.CustomerServiceActivity;
 import com.example.first.project.MyFoodActivity;
 import com.example.first.project.YiHomeActivity;
+import com.example.first.project.application.DataApplication;
+import com.huangtao.ConsigneeActivity;
 import com.huangtao.MyFansManagementActivity;
 import com.huangtao.MyWodegzu;
 
@@ -48,7 +50,6 @@ public class MePageFragment extends android.support.v4.app.Fragment {
         View view = inflater.inflate(R.layout.me_page, container, false);
         //我的页面列表
         myList = (ListView) view.findViewById(R.id.home_list_view);
-
         imageView= (ImageView) view.findViewById(R.id.wodetox);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +97,7 @@ public class MePageFragment extends android.support.v4.app.Fragment {
                         startActivity(intent);
                         break;
                     case 4:
-                        intent=new Intent(getActivity(), YiHomeActivity.class);
+                        intent=new Intent(getActivity(),ConsigneeActivity.class);
                         startActivity(intent);
                         break;
                     case 5:
@@ -152,4 +153,5 @@ public class MePageFragment extends android.support.v4.app.Fragment {
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
     }
+
 }

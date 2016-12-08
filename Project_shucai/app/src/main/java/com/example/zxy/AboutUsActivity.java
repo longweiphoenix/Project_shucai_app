@@ -6,13 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.MyHomePageActivity;
+import com.example.along.ui1project.PersonalInfoActivity;
 import com.example.along.ui1project.R;
+import com.huangtao.MyPersonaLsettings;
 
 /**
  * Created by Administrator on 2016/10/20.
  */
-public class AboutUsActivity extends Activity {
+public class AboutUsActivity extends BaseActivity {
     ImageView aboutUsImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,7 @@ public class AboutUsActivity extends Activity {
         aboutUsImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AboutUsActivity.this, MyHomePageActivity.class);
+                Intent intent = new Intent(AboutUsActivity.this, MyPersonaLsettings.class);
                 startActivity(intent);
             }
         });

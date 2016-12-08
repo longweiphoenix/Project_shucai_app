@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.GestureDetector;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,10 +22,13 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.along.ui1project.fragment.HomePageFragment;
 import com.example.along.ui1project.fragment.MePageFragment;
 import com.example.along.ui1project.fragment.ShopShowFragment;
+import com.example.first.project.application.DataApplication;
+import com.example.zxy.http.FlashImfomation;
 import com.huangtao.MyPersonaLsettings;
 import com.huangtao.MyShoppingcartchoose;
 
@@ -37,6 +41,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -124,7 +129,6 @@ public class MyHomePageActivity extends FragmentActivity{
         });
       /*  mGestureDetector = new GestureDetector(this, gestureDetector);*/
 
-
         homePage = (RadioButton) findViewById(R.id.home);
         /*二级界面三个页面的显示*/
         shop = (RadioButton) findViewById(R.id.shop);
@@ -160,6 +164,15 @@ public class MyHomePageActivity extends FragmentActivity{
                         shop.setTextColor(getResources().getColor(R.color.fontblack));
                         me.setTextColor(getResources().getColor(R.color.fontgreen));
                         changeView(2);
+
+                        new Thread(){
+                            @Override
+                            public void run() {
+
+                                commeit();
+                            }
+                        }.start();
+
                         break;
                 }
             }
@@ -389,5 +402,39 @@ public class MyHomePageActivity extends FragmentActivity{
         }
     };
 
+    public void commeit(){
+        DataApplication dataApplication = (DataApplication) getApplication();
+        Log.i("id===>",dataApplication.getId()+"");
+        try {
+            FlashImfomation flashImfomation = new FlashImfomation(dataApplication.getId());
+            String string = flashImfomation.getStringBuilder().toString().trim();
+            JSONObject object = new JSONObject(string);
+            JSONObject result = object.getJSONObject("result");
+            Log.i("commeit=====>",object.toString().trim());
+            //视图转换
+            Holder holder = new Holder();
+            LayoutInflater inflater = LayoutInflater.from(MyHomePageActivity.this);
+            View view = inflater.inflate(R.layout.info_personal,null);
+          //  holder.infoHead = (ImageView) view.findViewById(R.id.info_head_portrait);
+            holder.username = (TextView) view.findViewById(R.id.user_nick_name);
+            holder.usersex = (TextView) view.findViewById(R.id.user_sex);
+            holder.signature = (TextView) view.findViewById(R.id.personalized_edit_signature);
 
+        //    holder.infoHead.setImageResource(result.getInt("headimg"));
+            holder.username.setText(result.getString("username"));
+            holder.usersex.setText(result.getString("sex"));
+            holder.signature.setText(result.getString("signature"));
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+}
+class Holder{
+    ImageView infoHead;
+    TextView username;
+    TextView usersex;
+    TextView signature;
 }

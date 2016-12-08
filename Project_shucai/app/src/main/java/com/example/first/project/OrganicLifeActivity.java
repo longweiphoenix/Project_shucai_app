@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.adapter.OrganicLifeAdapter;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
  * Created by Administrator on 2016/11/0011.
  */
 
-public class OrganicLifeActivity extends Activity {
+public class OrganicLifeActivity extends BaseActivity {
 
     ImageView back; //返回上级
     ListView organicLife;

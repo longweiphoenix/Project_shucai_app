@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.utils.TimerUtil;
 
@@ -16,7 +17,7 @@ import com.example.first.project.utils.TimerUtil;
  * Created by Administrator on 2016/11/0008.
  */
 
-public class OrderToPageActivity extends Activity {
+public class OrderToPageActivity extends BaseActivity {
     ImageView back; //返回上一级页面
     TextView cancel; //取消订单
     TextView name; //收货人

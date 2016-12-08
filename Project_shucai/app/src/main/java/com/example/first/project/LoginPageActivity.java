@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.application.DataApplication;
@@ -28,7 +29,7 @@ import java.net.MalformedURLException;
  * Created by Administrator on 2016/11/0008.
  */
 
-public class LoginPageActivity extends Activity {
+public class LoginPageActivity extends BaseActivity {
     EditText info; //信息
     EditText passWord; //密码
     Button register; //登录
@@ -103,8 +104,8 @@ public class LoginPageActivity extends Activity {
             //获取当前用户的id
             JSONObject userId = object.getJSONObject("id");
             DataApplication id  = (DataApplication) getApplication();
+            Log.i("ID===>",""+userId.getInt("id"));
             id.setId(userId.getInt("id"));
-
             Message message = new Message();
             int status = object.getInt("status");
             if ((isPhone(info.getText().toString().trim())) && (info.getText() != null)){

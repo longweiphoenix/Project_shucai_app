@@ -5,12 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.BaseActivity;
 import com.example.first.project.FoodRulesActivity;
 
 /**
  * Created by Long on 2016/11/30.
  */
-public class MyFavoriteManageActivity extends Activity {
+public class MyFavoriteManageActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

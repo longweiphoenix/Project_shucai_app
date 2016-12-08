@@ -8,12 +8,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.R;
 
 /**
  * Created by Long on 2016/11/30.
  */
-public class CustomerServiceActivity extends Activity {
+public class CustomerServiceActivity extends BaseActivity {
     ListView listView;
     EditText editText;
     TextView textView;

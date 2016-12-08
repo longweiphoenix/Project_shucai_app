@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.PersonalInfoActivity;
 import com.example.along.ui1project.R;
 import com.example.first.project.application.DataApplication;
@@ -25,7 +26,7 @@ import java.net.MalformedURLException;
 /**
  * Created by Administrator on 2016/10/23.
  */
-public class NameSettingActivity extends Activity {
+public class NameSettingActivity extends BaseActivity {
     ImageView nameSettingArowImageView;//返回
     TextView nameCommit;
     EditText name;
@@ -72,11 +73,6 @@ public class NameSettingActivity extends Activity {
                 message.arg1=1;
                 handler.sendMessage(message);
                 application.setName(jsonObject.getString("result"));
-
-//                LayoutInflater layoutInflater=LayoutInflater.from(NameSettingActivity.this);
-//                View view=layoutInflater.inflate(R.layout.info_personal,null);
-//                TextView name1= (TextView) view.findViewById(R.id.user_nick_name);
-//                name1.setText(name.getText().toString().trim());
                 Intent intent=new Intent(NameSettingActivity.this,PersonalInfoActivity.class);
                 startActivity(intent);
             }else if(status==0){

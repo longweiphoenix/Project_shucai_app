@@ -9,17 +9,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.MyHomePageActivity;
 import com.example.along.ui1project.R;
 import com.example.along.ui1project.objects.ShopItem;
 import com.example.first.project.fragment.GoodsDetailsEvaluateFragment;
 import com.example.first.project.fragment.GoodsDetailsFragment;
+import com.sina.weibo.sdk.api.share.Base;
 
 /**
  * Created by Administrator on 2016/11/0012.
  */
 
-public class GoodsDetailsActivity extends Activity {
+public class GoodsDetailsActivity extends BaseActivity {
     LinearLayout linearLayout; //添加fragment(评论与详情)
     TextView details; //商品详情
     ImageView left; //详情下边的横线

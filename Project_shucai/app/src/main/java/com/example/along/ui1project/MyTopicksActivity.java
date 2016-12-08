@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import com.example.BaseActivity;
+
 /**
  * Created by Long on 2016/12/1.
  */
-public class MyTopicksActivity extends Activity {
+public class MyTopicksActivity extends BaseActivity {
     ListView topics;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

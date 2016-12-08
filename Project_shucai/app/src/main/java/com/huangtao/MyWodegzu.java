@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.BaseActivity;
 import com.example.along.ui1project.R;
 import com.huangtao.Adapter.MyDarFragmentList;
 import com.huangtao.Adapter.MyHayoFragmentList;
@@ -17,7 +18,7 @@ import com.huangtao.Adapter.MyLocFragmentList;
 /**
  * Created by Administrator on 2016/12/1.
  */
-public class MyWodegzu extends Activity {
+public class MyWodegzu extends BaseActivity {
     ImageButton back; //返回上级页面
     TextView textView;
     TextView getTextView;
